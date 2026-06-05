@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contact" description="Have questions or propositions? Get in touch — info@yumearth.eu">
+  <Nav />
+  <main class="pt-32">
+
+    <section class="max-w-7xl mx-auto px-6 pb-16">
+      <div class="max-w-xl">
+        <div class="badge mb-6" style="background:rgba(196,91,174,0.12); color:var(--color-magenta);">
+          Reach Out
+        </div>
+        <h1 class="text-display mb-4" style="font-size:clamp(2.5rem,6vw,4.5rem);">
+          have questions?<br />
+          <span style="color:var(--color-teal);">send us a note.</span>
+        </h1>
+        <p class="text-xl" style="color:var(--color-ink-muted); line-height:1.65;">
+          Distributors, retailers, press, or any product questions.
+          We reply within 24-48h.
+        </p>
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-6 pb-24 grid grid-cols-1 lg:grid-cols-3 gap-16">
+
+      <!-- Contact info -->
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-widest mb-4" style="color:var(--color-ink-muted);">Direct contact</h3>
+          <a
+            href="mailto:info@yumearth.eu"
+            class="text-xl font-black transition-colors"
+            style="font-family:'Satoshi',sans-serif; color:var(--color-teal);"
+          >
+            info@yumearth.eu
+          </a>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-widest mb-4" style="color:var(--color-ink-muted);">Company</h3>
+          <p class="font-bold">Gurux Entertainment S.L</p>
+          <p class="text-sm mt-1" style="color:var(--color-ink-muted);">EMEA Master Distribution of YumEarth®</p>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-widest mb-4" style="color:var(--color-ink-muted);">Social</h3>
+          <div class="flex flex-col gap-2">
+            <a href="https://www.instagram.com/yumearth.eu/" target="_blank" rel="noopener" class="font-bold text-sm hover:text-teal transition-colors">
+              Instagram → @yumearth.eu
+            </a>
+            <a href="https://www.facebook.com/yumearth.eu" target="_blank" rel="noopener" class="font-bold text-sm hover:text-teal transition-colors">
+              Facebook → yumearth.eu
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-widest mb-4" style="color:var(--color-ink-muted);">FAQs</h3>
+          <a
+            href="https://yumearthhelp.zendesk.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm font-bold hover:text-teal transition-colors"
+          >
+            yumearthhelp.zendesk.com →
+          </a>
+          <p class="text-xs mt-1" style="color:var(--color-ink-muted);">Allergens, ingredients, certifications.</p>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="lg:col-span-2">
+        <form id="contact-form" class="space-y-5" novalidate>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="name" class="block text-sm font-bold mb-2">Name *</label>
+              <input
+                type="text" id="name" name="name" required
+                placeholder="Your name"
+                class="w-full px-4 py-3 rounded-2xl text-sm font-medium"
+                style="border:2px solid rgba(0,0,0,0.08); background:white; outline:none; transition:border-color 0.15s;"
+                onfocus="this.style.borderColor='var(--color-teal)'"
+                onblur="this.style.borderColor='rgba(0,0,0,0.08)'"
+              />
+            </div>
+            <div>
+              <label for="company" class="block text-sm font-bold mb-2">Company</label>
+              <input
+                type="text" id="company" name="company"
+                placeholder="Your company"
+                class="w-full px-4 py-3 rounded-2xl text-sm font-medium"
+                style="border:2px solid rgba(0,0,0,0.08); background:white; outline:none; transition:border-color 0.15s;"
+                onfocus="this.style.borderColor='var(--color-teal)'"
+                onblur="this.style.borderColor='rgba(0,0,0,0.08)'"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-bold mb-2">Email *</label>
+            <input
+              type="email" id="email" name="email" required
+              placeholder="you@company.com"
+              class="w-full px-4 py-3 rounded-2xl text-sm font-medium"
+              style="border:2px solid rgba(0,0,0,0.08); background:white; outline:none; transition:border-color 0.15s;"
+              onfocus="this.style.borderColor='var(--color-teal)'"
+              onblur="this.style.borderColor='rgba(0,0,0,0.08)'"
+            />
+          </div>
+          <div>
+            <label for="subject" class="block text-sm font-bold mb-2">Subject</label>
+            <select
+              id="subject" name="subject"
+              class="w-full px-4 py-3 rounded-2xl text-sm font-medium"
+              style="border:2px solid rgba(0,0,0,0.08); background:white; outline:none;"
+            >
+              <option value="">Select a subject</option>
+              <option value="distribution">I want to distribute YumEarth</option>
+              <option value="retail">I want to sell in my store / e-commerce</option>
+              <option value="product">Product question</option>
+              <option value="press">Press / collaboration</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-bold mb-2">Message *</label>
+            <textarea
+              id="message" name="message" required rows="5"
+              placeholder="Tell us how we can help..."
+              class="w-full px-4 py-3 rounded-2xl text-sm font-medium resize-none"
+              style="border:2px solid rgba(0,0,0,0.08); background:white; outline:none; transition:border-color 0.15s;"
+              onfocus="this.style.borderColor='var(--color-teal)'"
+              onblur="this.style.borderColor='rgba(0,0,0,0.08)'"
+            ></textarea>
+          </div>
+          <!-- Honeypot -->
+          <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" />
+
+          <button type="submit" id="submit-btn" class="btn-primary text-base w-full justify-center">
+            Send message
+          </button>
+          <div id="success-msg" class="hidden py-3 px-5 rounded-2xl text-sm font-bold text-center"
+            style="background:rgba(150,201,61,0.12); color:#5a9400;">
+            Message received. We'll be in touch shortly.
+          </div>
+          <div id="error-msg" class="hidden py-3 px-5 rounded-2xl text-sm font-bold text-center"
+            style="background:rgba(212,0,45,0.08); color:var(--color-lollipop);">
+            Error sending message. Write to us directly at info@yumearth.eu
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const btn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const successMsg = document.getElementById('success-msg')!;
+  const errorMsg = document.getElementById('error-msg')!;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const honeypot = (form.elements.namedItem('website') as HTMLInputElement)?.value;
+    if (honeypot) return;
+    btn.textContent = 'Sending...';
+    btn.setAttribute('disabled', '');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      });
+      if (res.ok) {
+        form.reset();
+        successMsg.classList.remove('hidden');
+        errorMsg.classList.add('hidden');
+      } else throw new Error();
+    } catch {
+      errorMsg.classList.remove('hidden');
+      successMsg.classList.add('hidden');
+    } finally {
+      btn.textContent = 'Send message';
+      btn.removeAttribute('disabled');
+    }
+  });
+</script>

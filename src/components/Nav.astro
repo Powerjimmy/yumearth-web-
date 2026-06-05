@@ -1,0 +1,147 @@
+---
+const navLinks = [
+  { href: '/products', label: 'Products' },
+  { href: '/distribution', label: 'Distribution' },
+  { href: 'https://yumearthhelp.zendesk.com', label: 'FAQs', external: true },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <!-- Announcement bar -->
+  <div id="announcement-bar" class="w-full py-2 text-center text-xs font-black tracking-wider transition-all duration-300 px-4" style="background:var(--color-green); color:white;">
+    Organic. Allergen-free. Made with real fruit. <span class="hidden sm:inline">&nbsp;·&nbsp; EMEA Master Distribution</span>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 group">
+      <img
+        src="/images/yumearth-logo.png"
+        alt="YumEarth EU"
+        width="200" height="86"
+        class="h-14 w-auto"
+        onerror="this.style.display='none'; document.getElementById('logo-text').style.display='flex'"
+      />
+      <span id="logo-text" class="hidden items-center gap-1">
+        <span class="text-2xl font-black" style="font-family:'Nunito',sans-serif; color:var(--color-teal); letter-spacing:-0.03em;">
+          yum<span style="color:var(--color-green);">earth</span>
+        </span>
+        <span class="text-[9px] font-black px-1.5 py-0.5 rounded text-white" style="background:var(--color-teal);">EU</span>
+      </span>
+    </a>
+
+    <!-- Desktop links -->
+    <ul class="hidden md:flex items-center gap-8">
+      {navLinks.map(link => (
+        <li>
+          <a
+            href={link.href}
+            target={link.external ? '_blank' : undefined}
+            rel={link.external ? 'noopener noreferrer' : undefined}
+            class:list={[
+              'text-sm font-black transition-colors duration-150',
+              !link.external && (currentPath === link.href || currentPath.startsWith(link.href + '/'))
+                ? 'text-teal'
+                : 'text-ink hover:text-teal'
+            ]}
+            style="font-family:'Satoshi',sans-serif;"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Desktop CTA + Instagram icon -->
+    <div class="hidden md:flex items-center gap-4">
+      <a
+        href="https://www.instagram.com/yumearth.eu/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        class="transition-opacity opacity-50 hover:opacity-100"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        </svg>
+      </a>
+      <a href="/contact" class="btn-primary text-sm">
+        Get in touch
+      </a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button id="menu-toggle" aria-label="Open menu" class="md:hidden flex flex-col gap-[5px] p-2">
+      <span class="block w-7 h-[2.5px] rounded-full transition-all duration-200" style="background:var(--color-ink);" id="bar1"></span>
+      <span class="block w-7 h-[2.5px] rounded-full transition-all duration-200" style="background:var(--color-ink);" id="bar2"></span>
+      <span class="block w-7 h-[2.5px] rounded-full transition-all duration-200" style="background:var(--color-ink);" id="bar3"></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden px-6 py-6 flex flex-col gap-5"
+    style="background:var(--color-cream); border-top:1px solid rgba(0,0,0,0.06);"
+  >
+    {navLinks.map(link => (
+      <a
+        href={link.href}
+        target={link.external ? '_blank' : undefined}
+        rel={link.external ? 'noopener noreferrer' : undefined}
+        class="text-lg font-black text-ink hover:text-teal transition-colors"
+        style="font-family:'Satoshi',sans-serif;"
+      >
+        {link.label}
+      </a>
+    ))}
+    <a href="/contact" class="btn-primary text-sm mt-2">Get in touch</a>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById('nav')!;
+  const toggle = document.getElementById('menu-toggle')!;
+  const mobileMenu = document.getElementById('mobile-menu')!;
+  const bar1 = document.getElementById('bar1')!;
+  const bar2 = document.getElementById('bar2')!;
+  const bar3 = document.getElementById('bar3')!;
+
+  const announcementBar = document.getElementById('announcement-bar');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      nav.style.background = 'rgba(253,252,248,0.92)';
+      nav.style.backdropFilter = 'blur(20px)';
+      nav.style.boxShadow = '0 1px 0 rgba(0,0,0,0.06)';
+      if (announcementBar) {
+        announcementBar.style.maxHeight = '0';
+        announcementBar.style.padding = '0';
+        announcementBar.style.overflow = 'hidden';
+      }
+    } else {
+      nav.style.background = 'transparent';
+      nav.style.backdropFilter = 'none';
+      nav.style.boxShadow = 'none';
+      if (announcementBar) {
+        announcementBar.style.maxHeight = '40px';
+        announcementBar.style.padding = '';
+        announcementBar.style.overflow = '';
+      }
+    }
+  });
+
+  let open = false;
+  toggle.addEventListener('click', () => {
+    open = !open;
+    mobileMenu.classList.toggle('hidden', !open);
+    bar1.style.transform = open ? 'translateY(8px) rotate(45deg)' : '';
+    bar2.style.opacity = open ? '0' : '1';
+    bar3.style.transform = open ? 'translateY(-8px) rotate(-45deg)' : '';
+  });
+</script>

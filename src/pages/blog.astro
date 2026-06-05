@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const posts = [
+  {
+    slug: 'plant-based-food-revolution',
+    title: 'The Plant-Based Food Revolution: Why Companies Need to Pay Attention',
+    date: '2024',
+    category: 'Health & Sustainability',
+    excerpt: "Today's customers are more aware than ever of what they consume. They're seeking foods that not only are healthy but also ethically and sustainably produced.",
+    body: [
+      {
+        type: 'intro',
+        text: "Today's customers are more aware than ever of what they consume. They're seeking foods that not only are healthy but also ethically and sustainably produced. This has resulted in a demand explosion for plant-based meat substitutes, non-dairy foods, and other vegan-compliant products.",
+      },
+      {
+        type: 'text',
+        text: "Here's why companies need to take this transition seriously:",
+      },
+      {
+        type: 'heading',
+        text: 'Health Benefits',
+      },
+      {
+        type: 'text',
+        text: 'A lot of consumers are embracing plant-based diets in order to reduce cholesterol, enhance digestion, and prevent chronic diseases. Research has indicated that plant-based diets are associated with weight loss, a healthy heart, and improved blood sugar levels.',
+      },
+      {
+        type: 'heading',
+        text: 'Sustainability',
+      },
+      {
+        type: 'text',
+        text: 'A plant-based food system consumes less and emits less carbon, making it an eco-friendly option. The international plant-based food market is estimated to grow to $113.05 billion by 2031, indicating increased consumer demand for sustainable food.',
+      },
+      {
+        type: 'heading',
+        text: 'Ethical Concerns',
+      },
+      {
+        type: 'text',
+        text: 'Increasing numbers of consumers are opting for vegan products to promote animal welfare.',
+      },
+      {
+        type: 'heading',
+        text: 'Diverse Consumer Base',
+      },
+      {
+        type: 'text',
+        text: 'Veganism is now mainstream — not a niche, from flexitarians to hardline vegans looking for plant-based alternatives.',
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Blog" description="YumEarth EU blog — organic food, sustainability, and the plant-based movement.">
+  <Nav />
+  <main class="pt-32">
+
+    <section class="max-w-7xl mx-auto px-6 pb-16">
+      <div class="max-w-2xl">
+        <div class="badge mb-6" style="background:rgba(150,201,61,0.12); color:var(--color-green-dark);">
+          Blog
+        </div>
+        <h1 class="text-display mb-4" style="font-size:clamp(2.5rem,6vw,4.5rem);">
+          good reads.<br />
+          <span style="color:var(--color-teal);">better candy.</span>
+        </h1>
+        <p class="text-xl" style="color:var(--color-ink-muted); line-height:1.65;">
+          Organic food, sustainability, health — and the occasional sweet obsession.
+        </p>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+      {posts.map(post => (
+        <article class="max-w-3xl">
+          <div class="mb-3 flex items-center gap-3">
+            <span class="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
+              style="background:rgba(0,178,191,0.10); color:var(--color-teal);">
+              {post.category}
+            </span>
+            <span class="text-xs" style="color:var(--color-ink-muted);">{post.date}</span>
+          </div>
+
+          <h2 class="font-black mb-8" style="font-family:'ClashDisplay','Satoshi',sans-serif; font-size:clamp(1.6rem,3vw,2.5rem); line-height:1.1; letter-spacing:-0.02em;">
+            {post.title}
+          </h2>
+
+          <div class="space-y-5 text-base" style="color:var(--color-ink); line-height:1.75;">
+            {post.body.map(block => (
+              block.type === 'heading'
+                ? <h3 class="font-black text-lg mt-8 mb-2" style="font-family:'Satoshi',sans-serif;">{block.text}</h3>
+                : block.type === 'intro'
+                  ? <p class="text-xl font-medium" style="color:var(--color-ink-muted); line-height:1.65;">{block.text}</p>
+                  : <p>{block.text}</p>
+            ))}
+          </div>
+
+          <!-- CTA after article -->
+          <div class="mt-16 rounded-3xl p-10" style="background:var(--color-surface);">
+            <p class="text-xs font-black uppercase tracking-widest mb-3" style="color:var(--color-teal);">
+              Organic & allergen-friendly
+            </p>
+            <h3 class="font-black mb-3" style="font-family:'ClashDisplay','Satoshi',sans-serif; font-size:clamp(1.5rem,3vw,2rem);">
+              YumEarth fits the movement.
+            </h3>
+            <p class="text-base mb-6" style="color:var(--color-ink-muted); line-height:1.65; max-width:480px;">
+              USDA Organic certified. Vegan. Gluten-free. No artificial colors, no artificial flavors.
+              Available across Europe, Middle East and beyond.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="/products" class="btn-primary text-sm">View products →</a>
+              <a href="/contact" class="btn-secondary text-sm">Get in touch</a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </section>
+
+  </main>
+  <Footer />
+</Layout>

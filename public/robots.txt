@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yumearth.eu/sitemap-index.xml

@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const europe = [
+  'Albania', 'Azerbaijan', 'Belgium', 'Bulgaria', 'Cyprus', 'Czech Republic',
+  'Denmark', 'Estonia', 'Finland', 'France', 'Georgia', 'Greece', 'Hungary',
+  'Ireland', 'Iceland', 'Kazakhstan', 'Kosovo', 'Kyrgyzstan', 'Latvia',
+  'Lithuania', 'Moldova', 'Poland', 'Romania', 'Russia', 'Serbia', 'Slovakia',
+  'Spain', 'Switzerland', 'Ukraine', 'Uzbekistan'
+];
+
+const mena = [
+  'Bahrain', 'India', 'Israel', 'Ivory Coast', 'Jordan', 'Kuwait', 'Lebanon',
+  'Morocco', 'Oman', 'Qatar', 'Saudi Arabia', 'UAE', 'Vietnam', 'South Africa'
+];
+---
+
+<Layout title="Distribution" description="YumEarth EU available in 30+ countries across Europe, the Middle East and Central Asia.">
+  <Nav />
+  <main class="pt-32">
+
+    <section class="max-w-7xl mx-auto px-6 pb-20">
+      <div class="max-w-2xl">
+        <div class="badge mb-6" style="background:rgba(0,178,191,0.12); color:var(--color-teal);">
+          Distribution
+        </div>
+        <h1 class="text-display mb-4" style="font-size:clamp(2.5rem,6vw,4.5rem);">
+          where to find us
+        </h1>
+        <p class="text-xl" style="color:var(--color-ink-muted); line-height:1.65;">
+          We distribute across 30+ countries. If you own a store or distribute in your region,
+          get in touch.
+        </p>
+      </div>
+    </section>
+
+    <!-- Europe -->
+    <section class="py-16" style="background:var(--color-surface);">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex items-center gap-3 mb-8">
+          <span class="text-3xl">🇪🇺</span>
+          <h2 class="text-2xl font-black" style="font-family:'Satoshi',sans-serif;">Europe</h2>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          {europe.map(country => (
+            <span
+              class="px-4 py-2 rounded-full text-sm font-bold"
+              style="background:white; color:var(--color-ink);"
+            >
+              {country}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- MENA -->
+    <section class="py-16" style="background:var(--color-cream);">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex items-center gap-3 mb-8">
+          <span class="text-3xl">🌍</span>
+          <h2 class="text-2xl font-black" style="font-family:'Satoshi',sans-serif;">Middle East & Other Territories</h2>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          {mena.map(country => (
+            <span
+              class="px-4 py-2 rounded-full text-sm font-bold"
+              style="background:white; color:var(--color-ink); border:1px solid rgba(0,0,0,0.06);"
+            >
+              {country}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA B2B -->
+    <section class="py-20" style="background:#E8F7F9;">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8"
+          style="background:white; box-shadow:0 4px 24px rgba(0,0,0,0.06);"
+        >
+          <div>
+            <h2 class="text-display mb-3" style="font-size:clamp(1.8rem,4vw,2.8rem); color:var(--color-ink);">
+              distributor or retailer?
+            </h2>
+            <p class="text-lg" style="color:var(--color-ink-muted); max-width:420px; line-height:1.6;">
+              Want to add YumEarth to your catalogue? We have stock, B2B pricing and full support for your territory.
+            </p>
+          </div>
+          <a href="/contact" class="btn-primary whitespace-nowrap text-base">
+            Get in touch
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>

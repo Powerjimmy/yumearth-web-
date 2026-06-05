@@ -1,0 +1,37 @@
+---
+// Infinite scroll ticker — no JS needed, pure CSS
+const items = [
+  'organic', 'non-gmo', 'gluten free', 'vegan',
+  'no artificial colors', 'no artificial flavors',
+  'allergen friendly', 'usda certified', 'made with love',
+  '#besteverlollipop', 'it\'s delicious',
+];
+---
+
+<div class="marquee-wrapper overflow-hidden py-4" style="background:var(--color-teal);">
+  <div class="marquee-track flex" aria-hidden="true">
+    {[...items, ...items].map((item, i) => (
+      <span class="marquee-item flex-shrink-0 flex items-center gap-3 px-2">
+        <span class="text-sm font-black uppercase tracking-widest text-white">{item}</span>
+        <span class="text-white/40 text-lg">✦</span>
+      </span>
+    ))}
+  </div>
+</div>
+
+<style>
+  .marquee-track {
+    animation: marquee 28s linear infinite;
+    width: max-content;
+    will-change: transform;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .marquee-wrapper:hover .marquee-track {
+      animation-play-state: paused;
+    }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+</style>

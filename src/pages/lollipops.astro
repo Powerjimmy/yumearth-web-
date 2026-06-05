@@ -1,0 +1,176 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const products = [
+  {
+    name: 'Classic Assorted Lollipops',
+    pack: '14-pack',
+    desc: 'The original YumEarth lollipop. Real fruit juice, colored by plants, zero artificial anything. Four classic flavors in every bag.',
+    flavors: ['Pomegranate Pucker', 'Strawberry Smash', 'Very Very Cherry', 'Perfectly Peach'],
+    image: '/images/products/bolsa-lollipops-14.png',
+    fallback: '/images/products/lollipops.png',
+    color: '#FFF0F2',
+    accent: '#D7002D',
+    badge: '#besteverlollipop',
+  },
+  {
+    name: 'Juicy Pops',
+    pack: 'Assorted bag',
+    desc: 'A bolder mix with a sour twist. Tart apple, cherry, and grape — all certified organic, all real fruit flavor.',
+    flavors: ['Sour Apple Tart', 'Very Very Cherry', 'Googly Grape'],
+    image: '/images/products/bolsa-juicy-pops.png',
+    fallback: '/images/products/lollipops.png',
+    color: '#FFF5E0',
+    accent: '#FF7803',
+    badge: 'Juicy & bold',
+  },
+  {
+    name: 'Vitamin C Pops',
+    pack: '14-pack',
+    desc: '100% daily Vitamin C per pop. All the flavor of a classic YumEarth lollipop with an immune system boost built in.',
+    flavors: ['Strawberry Smash', 'Very Very Cherry', 'Razzmatazz Berry'],
+    image: '/images/products/bolsa-vitamin-c.png',
+    fallback: '/images/products/vitamin-lollipops.png',
+    color: '#FFF5E6',
+    accent: '#FF7803',
+    badge: '100% Daily Vitamin C',
+  },
+  {
+    name: 'Assorted Bulk',
+    pack: '40-pack',
+    desc: 'The family bag. All the classic YumEarth flavors, in bulk. Perfect for parties, classrooms, or serious lollipop fans.',
+    flavors: ['Pomegranate Pucker', 'Strawberry Smash', 'Very Very Cherry', 'Perfectly Peach', 'And more'],
+    image: '/images/products/bolsa-lollipops-40.png',
+    fallback: '/images/products/lollipops.png',
+    color: '#F0FFF0',
+    accent: '#4a9100',
+    badge: '40 pops',
+  },
+];
+
+// Individual lollipop wrapper images
+const wrappers = [
+  { src: '/images/products/lollipops/pomegranate-pucker.png', label: 'Pomegranate Pucker', color: '#8b1a4a' },
+  { src: '/images/products/lollipops/strawberry-smash.png', label: 'Strawberry Smash', color: '#D7002D' },
+  { src: '/images/products/lollipops/very-very-cherry.png', label: 'Very Very Cherry', color: '#c0001a' },
+  { src: '/images/products/lollipops/perfectly-peach.png', label: 'Perfectly Peach', color: '#e87c2a' },
+  { src: '/images/products/lollipops/googly-grape.png', label: 'Googly Grape', color: '#6b2fa0' },
+  { src: '/images/products/lollipops/razzmatazz-berry.png', label: 'Razzmatazz Berry', color: '#c21460' },
+  { src: '/images/products/lollipops/watermelon.png', label: 'Watermelon', color: '#2d9e4a' },
+  { src: '/images/products/lollipops/mango-tango.png', label: 'Mango Tango', color: '#e8920a' },
+];
+---
+
+<Layout title="Lollipops" description="YumEarth EU organic lollipops — Classic Assorted, Juicy Pops, Vitamin C Pops. Real fruit, zero artificial anything.">
+  <Nav />
+  <main class="pt-32">
+
+    <!-- Header -->
+    <section class="max-w-7xl mx-auto px-6 pb-16">
+      <div class="flex items-center gap-3 mb-6">
+        <a href="/products" class="text-sm font-bold hover:text-teal transition-colors" style="color:var(--color-ink-muted);">
+          ← Products
+        </a>
+      </div>
+      <div class="max-w-2xl">
+        <div class="badge mb-6" style="background:rgba(215,0,45,0.10); color:#D7002D;">
+          #besteverlollipop
+        </div>
+        <h1 class="text-display mb-4" style="font-size:clamp(2.5rem,6vw,4.5rem);">
+          Lollipops
+        </h1>
+        <p class="text-xl" style="color:var(--color-ink-muted); line-height:1.65;">
+          Four varieties. All USDA Organic. Made with real fruit juice,
+          colored by plants, free from artificial dyes and flavors.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-2 mt-8">
+        {['USDA Organic', 'Gluten Free', 'Vegan', 'No Artificial Colors', 'No Artificial Flavors'].map(b => (
+          <span class="text-xs font-bold px-3 py-1.5 rounded-full" style="background:rgba(215,0,45,0.08); color:#D7002D;">
+            {b}
+          </span>
+        ))}
+      </div>
+    </section>
+
+    <!-- Individual flavor wrappers -->
+    <section class="pb-16" style="background:var(--color-surface);">
+      <div class="max-w-7xl mx-auto px-6 py-12">
+        <p class="text-xs font-black uppercase tracking-widest mb-8 text-center" style="color:var(--color-ink-muted);">All flavors</p>
+        <div class="grid grid-cols-4 sm:grid-cols-8 gap-4">
+          {wrappers.map(w => (
+            <div class="flex flex-col items-center gap-2 group">
+              <div class="w-full aspect-square rounded-2xl flex items-center justify-center p-3 transition-transform duration-300 group-hover:-translate-y-1"
+                style="background:white; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+                <img
+                  src={w.src}
+                  alt={w.label}
+                  class="w-full h-full object-contain"
+                  style="filter:drop-shadow(0 4px 8px rgba(0,0,0,0.15));"
+                  loading="lazy"
+                  onerror="this.parentElement.style.background='#f5f5f5'"
+                />
+              </div>
+              <p class="text-xs font-bold text-center leading-tight" style={`color:${w.color};`}>{w.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Product bags -->
+    <section class="max-w-7xl mx-auto px-6 pb-24 pt-8">
+      <div class="space-y-6">
+        {products.map((p, i) => (
+          <div
+            class="card-lift grid grid-cols-1 md:grid-cols-2 rounded-3xl overflow-hidden"
+            style={`background:${p.color};`}
+          >
+            <div class={`flex items-center justify-center p-10 min-h-[300px] ${i % 2 === 1 ? 'md:order-2' : ''}`}>
+              <img
+                src={p.image}
+                alt={p.name}
+                class="w-48 h-48 md:w-64 md:h-64 object-contain transition-transform duration-500 hover:scale-105"
+                style="filter:drop-shadow(0 20px 40px rgba(0,0,0,0.18));"
+                loading="lazy"
+                onerror={`this.src='${p.fallback}'`}
+              />
+            </div>
+            <div class={`p-10 flex flex-col justify-center ${i % 2 === 1 ? 'md:order-1' : ''}`}>
+              <p class="text-xs font-black uppercase tracking-widest mb-2" style={`color:${p.accent};`}>{p.badge}</p>
+              <h2 class="font-black mb-1" style={`font-family:'ClashDisplay',sans-serif; font-size:clamp(1.6rem,3vw,2.4rem); line-height:0.95; letter-spacing:-0.02em;`}>
+                {p.name}
+              </h2>
+              <p class="text-xs font-bold mb-4 uppercase tracking-widest" style="color:rgba(0,0,0,0.35);">{p.pack}</p>
+              <p class="text-base mb-6" style="color:rgba(0,0,0,0.55); line-height:1.65; max-width:380px;">{p.desc}</p>
+              <div class="flex flex-wrap gap-2">
+                {p.flavors.map(f => (
+                  <span class="text-xs font-bold px-3 py-1.5 rounded-full" style="background:rgba(255,255,255,0.8); color:rgba(0,0,0,0.6);">
+                    {f}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20" style="background:#FFF0F2;">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div>
+          <h2 class="text-display mb-2" style="font-size:clamp(1.8rem,4vw,2.8rem); color:var(--color-ink);">want to stock these?</h2>
+          <p style="color:var(--color-ink-muted); max-width:420px; line-height:1.6;">
+            Distributors and retailers — stock, B2B pricing and full support for your territory.
+          </p>
+        </div>
+        <a href="/contact" class="btn-primary whitespace-nowrap text-base">Get in touch</a>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>

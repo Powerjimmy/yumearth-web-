@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Marquee from '../components/Marquee.astro';
+import WaveDivider from '../components/WaveDivider.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="About Us" description="YumEarth EU — organic candy made with much love and few (if any) allergens. EMEA Master Distribution.">
+  <Nav />
+  <main class="pt-32">
+    <section class="max-w-7xl mx-auto px-6 pb-20">
+      <div class="max-w-3xl reveal-on-scroll">
+        <p class="text-xs font-black uppercase tracking-widest mb-4" style="color:var(--color-teal);">About Us</p>
+        <h1 class="font-black mb-6" style="font-family:'Nunito',sans-serif; font-size:clamp(3rem,8vw,5rem); line-height:0.95; letter-spacing:-0.03em;">
+          supported<br /><span style="color:var(--color-teal);">with pride.</span>
+        </h1>
+        <p class="text-xl max-w-lg" style="color:var(--color-ink-muted); line-height:1.65; font-weight:500;">
+          We're proud to bring you organic, simple, natural candies made with much love and few (if any) allergens.
+        </p>
+      </div>
+    </section>
+    <Marquee />
+    <section class="py-28" style="background:#E8F7F9;">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="reveal-on-scroll">
+            <p class="text-xs font-black uppercase tracking-widest mb-4" style="color:var(--color-teal);">Our Mission</p>
+            <h2 class="font-black mb-8" style="font-family:'Nunito',sans-serif; font-size:clamp(2rem,5vw,3rem); line-height:1.0; letter-spacing:-0.03em; color:var(--color-ink);">
+              EMEA Master<br /><span style="color:var(--color-teal);">Distribution</span>
+            </h2>
+            <div class="space-y-5 text-base" style="color:var(--color-ink-muted); line-height:1.7; font-weight:500;">
+              <p>YumEarth is the #1 organic candy brand in the US — USDA Organic certified across the entire range. No artificial colors, no artificial flavors, no compromise.</p>
+              <p>Gurux Entertainment S.L. is the official EMEA Master Distribution. We distribute in Spain and 30+ countries across Europe, Middle East, and Central Asia.</p>
+              <p>Our job: get these products to the right hands — distributors, retailers and stores that understand what they're selling and why it matters.</p>
+            </div>
+          </div>
+          <div class="reveal-on-scroll grid grid-cols-2 gap-4">
+            <div class="p-8 rounded-3xl" style="background:white; box-shadow:0 2px 12px rgba(0,0,0,0.06);"><div class="text-5xl font-black mb-2" style="color:var(--color-teal); font-family:'Nunito',sans-serif;">#1</div><div class="text-sm font-bold" style="color:var(--color-ink-muted);">organic candy brand in the US</div></div>
+            <div class="p-8 rounded-3xl" style="background:white; box-shadow:0 2px 12px rgba(0,0,0,0.06);"><div class="text-5xl font-black mb-2" style="color:var(--color-green); font-family:'Nunito',sans-serif;">30+</div><div class="text-sm font-bold" style="color:var(--color-ink-muted);">distribution countries</div></div>
+            <div class="p-8 rounded-3xl" style="background:white; box-shadow:0 2px 12px rgba(0,0,0,0.06);"><div class="text-5xl font-black mb-2" style="color:var(--color-magenta); font-family:'Nunito',sans-serif;">0</div><div class="text-sm font-bold" style="color:var(--color-ink-muted);">artificial colors or flavors</div></div>
+            <div class="p-8 rounded-3xl" style="background:white; box-shadow:0 2px 12px rgba(0,0,0,0.06);"><div class="text-5xl font-black mb-2" style="color:var(--color-teal); font-family:'Nunito',sans-serif;">6</div><div class="text-sm font-bold" style="color:var(--color-ink-muted);">product lines</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <WaveDivider topColor="#E8F7F9" bottomColor="var(--color-surface)" flip={true} />
+    <section class="py-24" style="background:var(--color-surface);">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 reveal-on-scroll">
+          <h2 class="font-black" style="font-family:'Nunito',sans-serif; font-size:clamp(2rem,5vw,3rem); line-height:1.0; letter-spacing:-0.03em;">what drives us</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="reveal-on-scroll bg-white rounded-3xl p-8 card-lift">
+            <div class="w-12 h-12 rounded-2xl mb-5 flex items-center justify-center" style="background:rgba(0,178,191,0.08);"><div class="w-4 h-4 rounded-full" style="background:var(--color-teal);"></div></div>
+            <h3 class="text-xl font-black mb-3" style="font-family:'Nunito',sans-serif;">organic, no asterisks</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--color-ink-muted);">Real USDA Organic certification on every product. Not "made with organic ingredients." Not "natural flavors." All or nothing.</p>
+          </div>
+          <div class="reveal-on-scroll bg-white rounded-3xl p-8 card-lift">
+            <div class="w-12 h-12 rounded-2xl mb-5 flex items-center justify-center" style="background:rgba(150,201,61,0.10);"><div class="w-4 h-4 rounded-full" style="background:var(--color-green);"></div></div>
+            <h3 class="text-xl font-black mb-3" style="font-family:'Nunito',sans-serif;">readable ingredients</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--color-ink-muted);">If you can't pronounce it, it isn't in our products. Short list, clear ingredients, no hidden surprises.</p>
+          </div>
+          <div class="reveal-on-scroll bg-white rounded-3xl p-8 card-lift">
+            <div class="w-12 h-12 rounded-2xl mb-5 flex items-center justify-center" style="background:rgba(196,91,174,0.08);"><div class="w-4 h-4 rounded-full" style="background:var(--color-magenta);"></div></div>
+            <h3 class="text-xl font-black mb-3" style="font-family:'Nunito',sans-serif;">allergen friendly</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--color-ink-muted);">Formulated for families with restrictions — no gluten, vegan, free from the most common allergens.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20" style="background:var(--color-cream);">
+      <div class="max-w-xl mx-auto px-6 text-center reveal-on-scroll">
+        <h2 class="font-black mb-4" style="font-family:'Nunito',sans-serif; font-size:clamp(1.8rem,4vw,2.5rem); line-height:1.0; letter-spacing:-0.03em;">want to work together?</h2>
+        <p class="text-lg mb-8" style="color:var(--color-ink-muted);">Distributors, retailers, online stores — tell us about your project.</p>
+        <a href="/contact" class="btn-primary text-base">Get in touch →</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        (el.target as HTMLElement).style.opacity = '1';
+        (el.target as HTMLElement).style.transform = 'translateY(0)';
+        observer.unobserve(el.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+    (el as HTMLElement).style.opacity = '0';
+    (el as HTMLElement).style.transform = 'translateY(40px)';
+    (el as HTMLElement).style.transition = 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)';
+    observer.observe(el);
+  });
+</script>

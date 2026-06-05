@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const products = [
+  {
+    name: 'Fruit Snacks',
+    desc: 'Organic fruit snacks packed with 100% daily Vitamin C per pouch. Cherry, Peach, Strawberry, Banana. Zero artificial anything.',
+    flavors: ['Cherry', 'Peach', 'Strawberry', 'Banana'],
+    image: '/images/products/bolsa-fruit-snacks.png',
+    fallback: '/images/products/fruit-snacks.png',
+    units: ['/images/products/soft-candy/fruit-snack-unit.png'],
+    color: '#F0EAFF',
+    accent: '#7314A1',
+    badge: '100% Daily Vitamin C',
+  },
+  {
+    name: 'Sour Beans',
+    desc: 'Organic jelly beans coated in pure sour sugar. Apple, Peach, Mango, Cherry. Dangerously good.',
+    flavors: ['Apple', 'Peach', 'Mango', 'Cherry'],
+    image: '/images/products/bolsa-sour-beans.png',
+    fallback: '/images/products/sour-beans.png',
+    units: ['/images/products/soft-candy/sour-beans-unit.png'],
+    color: '#EAF8EE',
+    accent: '#2a8a48',
+    badge: 'Sour sugar coated',
+  },
+  {
+    name: 'Gummy Bears',
+    desc: 'The classic gummy bear, certified organic. Colored by plants, flavored with real pomegranate. Allergen friendly.',
+    flavors: ['Pomegranate'],
+    image: '/images/products/bolsa-gummy-bears.png',
+    fallback: '/images/products/gummy-bears.png',
+    units: ['/images/products/soft-candy/gummy-bears-unit.png'],
+    color: '#EFF8E6',
+    accent: '#4a9100',
+    badge: 'Organic & allergen friendly',
+  },
+  {
+    name: 'Giggles',
+    desc: 'Small, soft, easy-to-chew organic gummies for younger kids. Strawberry, Orange, Lemon, Green Apple. The ideal lunchbox snack.',
+    flavors: ['Strawberry', 'Orange', 'Lemon', 'Green Apple'],
+    image: '/images/products/bolsa-giggles.png',
+    fallback: '/images/products/giggles.png',
+    units: [
+      '/images/products/soft-candy/giggles-strawberry.png',
+      '/images/products/soft-candy/giggles-orange.png',
+      '/images/products/soft-candy/giggles-lemon.png',
+      '/images/products/soft-candy/giggles-green-apple.png',
+    ],
+    color: '#FFE8F0',
+    accent: '#C45BAE',
+    badge: 'New · Perfect for little ones',
+  },
+];
+---
+
+<Layout title="Soft Candy" description="YumEarth EU organic soft candy — Fruit Snacks, Sour Beans, Gummy Bears, Giggles. Allergen-friendly and vegan.">
+  <Nav />
+  <main class="pt-32">
+
+    <!-- Header -->
+    <section class="max-w-7xl mx-auto px-6 pb-16">
+      <div class="flex items-center gap-3 mb-6">
+        <a href="/products" class="text-sm font-bold hover:text-teal transition-colors" style="color:var(--color-ink-muted);">
+          ← Products
+        </a>
+      </div>
+      <div class="max-w-2xl">
+        <div class="badge mb-6" style="background:rgba(74,145,0,0.10); color:#4a9100;">
+          Organic soft candy
+        </div>
+        <h1 class="text-display mb-4" style="font-size:clamp(2.5rem,6vw,4.5rem);">
+          Soft Candy
+        </h1>
+        <p class="text-xl" style="color:var(--color-ink-muted); line-height:1.65;">
+          Four varieties. All USDA Organic, allergen-friendly, and vegan.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-2 mt-8">
+        {['USDA Organic', 'Gluten Free', 'Vegan', 'No Artificial Colors', 'No Artificial Flavors', 'Allergen Friendly'].map(b => (
+          <span class="text-xs font-bold px-3 py-1.5 rounded-full" style="background:rgba(74,145,0,0.10); color:#4a9100;">
+            {b}
+          </span>
+        ))}
+      </div>
+    </section>
+
+    <!-- Products with individual unit images -->
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+      <div class="space-y-6">
+        {products.map((p, i) => (
+          <div
+            class="card-lift rounded-3xl overflow-hidden"
+            style={`background:${p.color};`}
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2">
+
+              <!-- Image side: bag + unit images -->
+              <div class={`flex items-center justify-center gap-6 p-10 min-h-[300px] ${i % 2 === 1 ? 'md:order-2' : ''}`}>
+                <!-- Main bag -->
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  class="w-40 md:w-52 object-contain flex-shrink-0 transition-transform duration-500 hover:scale-105"
+                  style="filter:drop-shadow(0 20px 40px rgba(0,0,0,0.18)); height:auto;"
+                  loading="lazy"
+                  onerror={`this.src='${p.fallback}'`}
+                />
+                <!-- Unit images (individual pieces) -->
+                {p.units.length > 1 && (
+                  <div class="flex flex-col gap-2">
+                    {p.units.map((u, ui) => (
+                      <img
+                        src={u}
+                        alt={`${p.name} piece`}
+                        class="w-14 h-14 object-contain"
+                        style="filter:drop-shadow(0 4px 8px rgba(0,0,0,0.15));"
+                        loading="lazy"
+                        onerror="this.style.display='none'"
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <!-- Copy side -->
+              <div class={`p-10 flex flex-col justify-center ${i % 2 === 1 ? 'md:order-1' : ''}`}>
+                <p class="text-xs font-black uppercase tracking-widest mb-2" style={`color:${p.accent};`}>{p.badge}</p>
+                <h2 class="font-black mb-4" style={`font-family:'ClashDisplay',sans-serif; font-size:clamp(1.6rem,3vw,2.4rem); line-height:0.95; letter-spacing:-0.02em;`}>
+                  {p.name}
+                </h2>
+                <p class="text-base mb-6" style="color:rgba(0,0,0,0.55); line-height:1.65; max-width:380px;">{p.desc}</p>
+                <div class="flex flex-wrap gap-2">
+                  {p.flavors.map(f => (
+                    <span class="text-xs font-bold px-3 py-1.5 rounded-full" style="background:rgba(255,255,255,0.8); color:rgba(0,0,0,0.6);">
+                      {f}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20" style="background:#EFF8E6;">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div>
+          <h2 class="text-display mb-2" style="font-size:clamp(1.8rem,4vw,2.8rem); color:var(--color-ink);">want to stock these?</h2>
+          <p style="color:var(--color-ink-muted); max-width:420px; line-height:1.6;">
+            Distributors and retailers — stock, B2B pricing and full support for your territory.
+          </p>
+        </div>
+        <a href="/contact" class="btn-primary whitespace-nowrap text-base">Get in touch</a>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>

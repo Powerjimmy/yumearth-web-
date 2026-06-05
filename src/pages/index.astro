@@ -1,17 +1,107 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Marquee from '../components/Marquee.astro';
+import WaveDivider from '../components/WaveDivider.astro';
+import Footer from '../components/Footer.astro';
+import AllergenBadges from '../components/react/AllergenBadges';
+import CategoryCards from '../components/react/CategoryCards';
+import ProductFloat3D from '../components/react/ProductFloat3D';
+import VideoShowcase from '../components/react/VideoShowcase';
+import WhySection from '../components/react/WhySection';
+import StatsSection from '../components/react/StatsSection';
+import LifestyleGallery from '../components/react/LifestyleGallery';
+import TestimonialsSection from '../components/react/TestimonialsSection';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="YumEarth EU"
+  description="Organic, simple, natural candies made with much love and few (if any) allergens. EMEA Master Distribution of YumEarth."
+>
+  <Nav />
+  <main>
+
+    <!-- HERO -->
+    <Hero />
+
+    <!-- ALLERGEN BADGES -->
+    <AllergenBadges client:load />
+
+    <!-- MARQUEE TICKER — below hero, above categories -->
+    <Marquee />
+
+    <!-- 2 CATEGORIES — it's delicious -->
+    <CategoryCards client:visible />
+
+    <!-- WHY YUMEARTH — no shortcuts. no compromises. -->
+    <WhySection client:visible />
+
+    <!-- VIDEO SHOWCASE — see it in action -->
+    <VideoShowcase client:visible />
+
+    <!-- 3D PRODUCT FLOAT — real ingredients. real flavor. -->
+    <ProductFloat3D client:visible />
+
+    <!-- LIFESTYLE GALLERY — the full range -->
+    <LifestyleGallery client:visible />
+
+    <!-- DISTRIBUTION teaser — Europe. Middle East. And beyond. -->
+    <section class="py-24" style="background:var(--color-surface);">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <p class="text-xs font-black uppercase tracking-widest mb-4" style="color:var(--color-teal);">Distribution</p>
+        <h2
+          class="font-black mb-4"
+          style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(2rem,5vw,3.5rem); line-height:0.95; letter-spacing:-0.03em;"
+        >
+          Europe. Middle East.<br />
+          <span style="color:var(--color-teal);">And beyond.</span>
+        </h2>
+        <p class="text-xl mb-10 max-w-xl mx-auto" style="color:var(--color-ink-muted); line-height:1.65;">
+          Spain, France, Belgium, Poland, Greece and 25+ more countries.
+          If you want YumEarth in your market, we're your people.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto mb-12">
+          {['Spain','France','Belgium','Poland','Greece','Ireland','Denmark','Sweden','Finland','Czech Republic','Romania','Bulgaria','Hungary','Switzerland'].map(c => (
+            <span
+              class="text-sm font-bold px-4 py-2 rounded-full"
+              style="background:white; color:var(--color-dark); box-shadow:0 1px 4px rgba(0,0,0,0.06);"
+            >{c}</span>
+          ))}
+          <a href="/distribution" class="text-sm font-bold px-4 py-2 rounded-full" style="background:var(--color-teal); color:white;">
+            + more →
+          </a>
+        </div>
+
+        <a href="/distribution" class="btn-primary text-base">View all distribution →</a>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <TestimonialsSection client:visible />
+
+    <!-- CONTACT CTA -->
+    <section class="py-24" style="background:var(--color-cream);">
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <h2
+          class="font-black mb-4"
+          style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(2rem,5vw,3rem); line-height:0.95; letter-spacing:-0.03em;"
+        >
+          have questions?<br />
+          <span style="color:var(--color-teal);">send us a note.</span>
+        </h2>
+        <p class="text-xl mb-10" style="color:var(--color-ink-muted); line-height:1.65;">
+          Distributors, retailers, press, or just curious about the products.
+          We reply within 24-48h.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="/contact" class="btn-primary text-base">Get in touch →</a>
+          <a href="mailto:info@yumearth.eu" class="btn-secondary text-base">info@yumearth.eu</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>

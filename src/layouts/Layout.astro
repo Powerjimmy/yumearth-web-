@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = 'YumEarth EU — Organic candy & snacks. No artificial colors, no artificial flavors. EMEA Master Distribution.',
+  ogImage = '/images/og-default.jpg'
+} = Astro.props;
+
+const siteUrl = 'https://yumearth.eu';
+const fullTitle = title === 'YumEarth EU' ? title : `${title} | YumEarth EU`;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#00B2BF" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+    <!-- ClashDisplay (headlines) + Satoshi (body) via Fontshare -->
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Nunito fallback (Houschka Rounded stand-in for brand-exact type) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={`${siteUrl}${Astro.url.pathname}`} />
+    <title>{fullTitle}</title>
+    <ClientRouter />
+
+    <!-- JSON-LD: Organization -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "YumEarth EU",
+      "url": "https://yumearth.eu",
+      "logo": "https://yumearth.eu/images/yumearth-logo.png",
+      "description": "EMEA Master Distribution of YumEarth organic candy. No artificial colors, no artificial flavors.",
+      "areaServed": "Europe",
+      "sameAs": ["https://www.instagram.com/yumearth.eu/"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@yumearth.eu",
+        "contactType": "customer service"
+      }
+    })} />
+  </head>
+  <body style="font-family:'Satoshi','Nunito',sans-serif; overflow-x:hidden;">
+    <!-- Global background blobs — fixed, cover whole page -->
+    <div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;">
+      <div style="position:absolute;left:-200px;top:10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,178,191,0.22) 0%,transparent 65%);animation:blob-drift-a 20s ease-in-out infinite;"></div>
+      <div style="position:absolute;right:-150px;top:35%;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle,rgba(150,201,61,0.18) 0%,transparent 65%);animation:blob-drift-b 24s ease-in-out infinite;"></div>
+      <div style="position:absolute;left:20%;bottom:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(196,91,174,0.14) 0%,transparent 65%);animation:blob-drift-c 28s ease-in-out infinite;"></div>
+    </div>
+    <div style="position:relative;z-index:1;">
+      <slot />
+    </div>
+  </body>
+</html>
