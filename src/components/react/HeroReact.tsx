@@ -29,7 +29,7 @@ export default function HeroReact() {
           background: 'linear-gradient(180deg, rgba(0,178,191,0.10) 0%, rgba(150,201,61,0.07) 35%, rgba(253,252,248,1) 85%)',
         }}
       >
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 lg:pt-40 pb-4 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 lg:pt-40 pb-4 lg:pb-16 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
 
           {/* ── Left: copy ── */}
           <motion.div variants={stagger} initial="hidden" animate="show" style={{ y: textY }}>

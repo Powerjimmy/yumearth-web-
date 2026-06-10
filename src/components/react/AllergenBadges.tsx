@@ -1,6 +1,6 @@
 export default function AllergenBadges() {
   return (
-    <section className="pb-6" style={{ background: 'white' }}>
+    <section className="pb-6 pt-6 md:pt-32" style={{ background: 'white' }}>
       <div className="max-w-5xl mx-auto px-4 flex items-center justify-center">
         <img
           src="/images/img/icons-allergy.friendly.png"

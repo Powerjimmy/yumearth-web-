@@ -172,7 +172,7 @@ export default function CategoryCards() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <section className="blob-bg py-24" style={{ background: 'var(--color-cream)' }}>
+      <section className="blob-bg pt-10 pb-24 md:py-24" style={{ background: 'var(--color-cream)' }}>
         <div className="max-w-6xl mx-auto px-6">
 
           <motion.div
