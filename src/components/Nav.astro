@@ -38,13 +38,13 @@ const currentPath = Astro.url.pathname;
     <!-- Desktop links -->
     <ul class="hidden md:flex items-center gap-8">
       {navLinks.map(link => (
-        <li>
+        <li class={link.href === '/products' ? 'nav-has-dropdown relative' : ''}>
           <a
             href={link.href}
             target={link.external ? '_blank' : undefined}
             rel={link.external ? 'noopener noreferrer' : undefined}
             class:list={[
-              'text-sm font-black transition-colors duration-150',
+              'text-sm font-black transition-colors duration-150 flex items-center gap-1',
               !link.external && (currentPath === link.href || currentPath.startsWith(link.href + '/'))
                 ? 'text-teal'
                 : 'text-ink hover:text-teal'
@@ -52,7 +52,29 @@ const currentPath = Astro.url.pathname;
             style="font-family:'Satoshi',sans-serif;"
           >
             {link.label}
+            {link.href === '/products' && (
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" class="nav-chevron" aria-hidden="true">
+                <path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            )}
           </a>
+
+          {link.href === '/products' && (
+            <div class="nav-dropdown absolute top-full left-1/2 pt-3" style="transform:translateX(-50%);">
+              <div class="rounded-2xl overflow-hidden py-2" style="background:white; box-shadow:0 8px 32px rgba(0,0,0,0.12); border:1px solid rgba(0,0,0,0.06); min-width:180px;">
+                <a href="/lollipops" class="nav-dd-item flex items-center gap-3 px-5 py-3 text-sm font-bold transition-colors"
+                  style={`color:${currentPath.startsWith('/lollipops') ? 'var(--color-lollipop)' : 'var(--color-ink)'};`}>
+                  <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:var(--color-lollipop);"></span>
+                  Lollipops
+                </a>
+                <a href="/soft-candy" class="nav-dd-item flex items-center gap-3 px-5 py-3 text-sm font-bold transition-colors"
+                  style={`color:${currentPath.startsWith('/soft-candy') ? 'var(--color-green)' : 'var(--color-ink)'};`}>
+                  <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:var(--color-green);"></span>
+                  Soft Candy
+                </a>
+              </div>
+            </div>
+          )}
         </li>
       ))}
     </ul>
@@ -90,15 +112,35 @@ const currentPath = Astro.url.pathname;
     style="background:var(--color-cream); border-top:1px solid rgba(0,0,0,0.06);"
   >
     {navLinks.map(link => (
-      <a
-        href={link.href}
-        target={link.external ? '_blank' : undefined}
-        rel={link.external ? 'noopener noreferrer' : undefined}
-        class="text-lg font-black text-ink hover:text-teal transition-colors"
-        style="font-family:'Satoshi',sans-serif;"
-      >
-        {link.label}
-      </a>
+      link.href === '/products' ? (
+        <div class="flex flex-col gap-1">
+          <a
+            href="/products"
+            class="text-lg font-black text-ink hover:text-teal transition-colors"
+            style="font-family:'Satoshi',sans-serif;"
+          >
+            Products
+          </a>
+          <div class="flex flex-col gap-1 pl-4 border-l-2" style="border-color:rgba(0,0,0,0.08);">
+            <a href="/lollipops" class="text-base font-bold transition-colors hover:text-teal" style="color:var(--color-lollipop); font-family:'Satoshi',sans-serif;">
+              Lollipops
+            </a>
+            <a href="/soft-candy" class="text-base font-bold transition-colors hover:text-teal" style="color:var(--color-green); font-family:'Satoshi',sans-serif;">
+              Soft Candy
+            </a>
+          </div>
+        </div>
+      ) : (
+        <a
+          href={link.href}
+          target={link.external ? '_blank' : undefined}
+          rel={link.external ? 'noopener noreferrer' : undefined}
+          class="text-lg font-black text-ink hover:text-teal transition-colors"
+          style="font-family:'Satoshi',sans-serif;"
+        >
+          {link.label}
+        </a>
+      )
     ))}
     <a href="/contact" class="btn-primary text-sm mt-2">Get in touch</a>
   </div>
@@ -116,7 +158,7 @@ const currentPath = Astro.url.pathname;
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
-      nav.style.background = 'rgba(253,252,248,0.92)';
+      nav.style.background = 'rgba(255,255,255,1)';
       nav.style.backdropFilter = 'blur(20px)';
       nav.style.boxShadow = '0 1px 0 rgba(0,0,0,0.06)';
       if (announcementBar) {
@@ -145,3 +187,30 @@ const currentPath = Astro.url.pathname;
     bar3.style.transform = open ? 'translateY(-8px) rotate(-45deg)' : '';
   });
 </script>
+
+<style>
+  /* Products dropdown */
+  .nav-dropdown {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(-6px);
+    transition: opacity 180ms cubic-bezier(0.23,1,0.32,1), transform 180ms cubic-bezier(0.23,1,0.32,1);
+  }
+  .nav-has-dropdown:hover .nav-dropdown,
+  .nav-has-dropdown:focus-within .nav-dropdown {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+  .nav-chevron {
+    transition: transform 180ms cubic-bezier(0.23,1,0.32,1);
+  }
+  .nav-has-dropdown:hover .nav-chevron,
+  .nav-has-dropdown:focus-within .nav-chevron {
+    transform: rotate(180deg);
+  }
+  .nav-dd-item:hover {
+    background: rgba(0,0,0,0.04);
+    color: var(--color-teal) !important;
+  }
+</style>

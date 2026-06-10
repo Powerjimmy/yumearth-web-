@@ -28,7 +28,7 @@ const fullTitle = title === 'YumEarth EU' ? title : `${title} | YumEarth EU`;
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={siteUrl} />
+    <meta property="og:url" content={`${siteUrl}${Astro.url.pathname}`} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`${siteUrl}${ogImage}`} />
@@ -74,13 +74,13 @@ const fullTitle = title === 'YumEarth EU' ? title : `${title} | YumEarth EU`;
     })} />
   </head>
   <body style="font-family:'Satoshi','Nunito',sans-serif; overflow-x:hidden;">
-    <!-- Global background blobs — fixed, cover whole page -->
-    <div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;">
-      <div style="position:absolute;left:-200px;top:10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,178,191,0.22) 0%,transparent 65%);animation:blob-drift-a 20s ease-in-out infinite;"></div>
-      <div style="position:absolute;right:-150px;top:35%;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle,rgba(150,201,61,0.18) 0%,transparent 65%);animation:blob-drift-b 24s ease-in-out infinite;"></div>
-      <div style="position:absolute;left:20%;bottom:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(196,91,174,0.14) 0%,transparent 65%);animation:blob-drift-c 28s ease-in-out infinite;"></div>
+    <!-- Global background blobs — above content, below nav, multiply blend -->
+    <div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:40;overflow:hidden;mix-blend-mode:multiply;">
+      <div style="position:absolute;left:-200px;top:10%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(0,178,191,0.16) 0%,transparent 65%);animation:blob-drift-a 20s ease-in-out infinite;"></div>
+      <div style="position:absolute;right:-150px;top:35%;width:650px;height:650px;border-radius:50%;background:radial-gradient(circle,rgba(150,201,61,0.13) 0%,transparent 65%);animation:blob-drift-b 24s ease-in-out infinite;"></div>
+      <div style="position:absolute;left:20%;bottom:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(196,91,174,0.11) 0%,transparent 65%);animation:blob-drift-c 28s ease-in-out infinite;"></div>
     </div>
-    <div style="position:relative;z-index:1;">
+    <div>
       <slot />
     </div>
   </body>

@@ -10,6 +10,7 @@ const products = [
     desc: 'The original YumEarth lollipop. Real fruit juice, colored by plants, zero artificial anything. Four classic flavors in every bag.',
     flavors: ['Pomegranate Pucker', 'Strawberry Smash', 'Very Very Cherry', 'Perfectly Peach'],
     image: '/images/products/bolsa-lollipops-14.png',
+    hoverImage: '/images/products/3d-1024-back-yumearth-2.png',
     fallback: '/images/products/lollipops.png',
     color: '#FFF0F2',
     accent: '#D7002D',
@@ -18,9 +19,10 @@ const products = [
   {
     name: 'Juicy Pops',
     pack: 'Assorted bag',
-    desc: 'A bolder mix with a sour twist. Tart apple, cherry, and grape — all certified organic, all real fruit flavor.',
+    desc: 'A bolder mix with a sour twist. Tart apple, cherry, and grape: all certified organic, all real fruit flavor.',
     flavors: ['Sour Apple Tart', 'Very Very Cherry', 'Googly Grape'],
     image: '/images/products/bolsa-juicy-pops.png',
+    hoverImage: '/images/products/3d-1026-back-organic-juicy-2.png',
     fallback: '/images/products/lollipops.png',
     color: '#FFF5E0',
     accent: '#FF7803',
@@ -32,38 +34,52 @@ const products = [
     desc: '100% daily Vitamin C per pop. All the flavor of a classic YumEarth lollipop with an immune system boost built in.',
     flavors: ['Strawberry Smash', 'Very Very Cherry', 'Razzmatazz Berry'],
     image: '/images/products/bolsa-vitamin-c.png',
+    hoverImage: '/images/products/3d-1669-back-vitaminC-2.png',
     fallback: '/images/products/vitamin-lollipops.png',
     color: '#FFF5E6',
     accent: '#FF7803',
     badge: '100% Daily Vitamin C',
   },
   {
-    name: 'Assorted Bulk',
+    name: 'Assorted 40 Lollipops',
     pack: '40-pack',
     desc: 'The family bag. All the classic YumEarth flavors, in bulk. Perfect for parties, classrooms, or serious lollipop fans.',
     flavors: ['Pomegranate Pucker', 'Strawberry Smash', 'Very Very Cherry', 'Perfectly Peach', 'And more'],
     image: '/images/products/bolsa-lollipops-40.png',
+    hoverImage: '/images/products/3d-1025-back-yumearth-2.png',
     fallback: '/images/products/lollipops.png',
     color: '#F0FFF0',
     accent: '#4a9100',
     badge: '40 pops',
   },
+  {
+    name: '100-unit Assorted',
+    pack: '100-pack',
+    desc: 'One box, every flavor. 100 individually wrapped lollipops ready for countertops, checkout displays, and bulk retail. The easiest yes for any buyer.',
+    flavors: ['Pomegranate Pucker', 'Strawberry Smash', 'Very Very Cherry', 'Perfectly Peach', 'Googly Grape', 'And more'],
+    image: '/images/img/3D-1008-Organic-Assorted-Lollipops_100_pops.png',
+    hoverImage: null,
+    fallback: '/images/products/lollipops.png',
+    color: '#EBF5FF',
+    accent: '#0066CC',
+    badge: '100 pops',
+  },
 ];
 
 // Individual lollipop wrapper images
 const wrappers = [
-  { src: '/images/products/lollipops/pomegranate-pucker.png', label: 'Pomegranate Pucker', color: '#8b1a4a' },
-  { src: '/images/products/lollipops/strawberry-smash.png', label: 'Strawberry Smash', color: '#D7002D' },
-  { src: '/images/products/lollipops/very-very-cherry.png', label: 'Very Very Cherry', color: '#c0001a' },
-  { src: '/images/products/lollipops/perfectly-peach.png', label: 'Perfectly Peach', color: '#e87c2a' },
-  { src: '/images/products/lollipops/googly-grape.png', label: 'Googly Grape', color: '#6b2fa0' },
-  { src: '/images/products/lollipops/razzmatazz-berry.png', label: 'Razzmatazz Berry', color: '#c21460' },
-  { src: '/images/products/lollipops/watermelon.png', label: 'Watermelon', color: '#2d9e4a' },
-  { src: '/images/products/lollipops/mango-tango.png', label: 'Mango Tango', color: '#e8920a' },
+  { src: '/images/products/lollipops/pomegranate-pucker.png', hover: '/images/products/Lollipops%20unidades/PopWrappers_Pomegranate.png', label: 'Pomegranate Pucker', color: '#8b1a4a' },
+  { src: '/images/products/lollipops/strawberry-smash.png', hover: '/images/products/Lollipops%20unidades/PopWrappers_Strawberry.png', label: 'Strawberry Smash', color: '#D7002D' },
+  { src: '/images/products/lollipops/very-very-cherry.png', hover: '/images/products/Lollipops%20unidades/PopWrappers_Cherry.png', label: 'Very Very Cherry', color: '#c0001a' },
+  { src: '/images/products/lollipops/perfectly-peach.png', hover: '/images/products/Lollipops%20unidades/PopWrappers_Peach.png', label: 'Perfectly Peach', color: '#e87c2a' },
+  { src: '/images/products/lollipops/googly-grape.png', hover: '/images/products/Lollipops%20unidades/PopWrappers_Grape.png', label: 'Googly Grape', color: '#6b2fa0' },
+  { src: '/images/products/lollipops/razzmatazz-berry.png', hover: '/images/products/Lollipops%20unidades/PopWrappers_Blueberry.png', label: 'Razzmatazz Berry', color: '#c21460' },
+  { src: '/images/products/lollipops/watermelon.png', hover: '/images/products/Lollipops%20unidades/PopWrappers_Watermelon.png', label: 'Watermelon', color: '#2d9e4a' },
+  { src: '/images/products/lollipops/mango-tango.png', hover: '/images/products/Lollipops%20unidades/PopWrappers_Mango.png', label: 'Mango Tango', color: '#e8920a' },
 ];
 ---
 
-<Layout title="Lollipops" description="YumEarth EU organic lollipops — Classic Assorted, Juicy Pops, Vitamin C Pops. Real fruit, zero artificial anything.">
+<Layout title="Lollipops" description="YumEarth EU organic lollipops — Classic Assorted, Juicy Pops, Vitamin C Pops, 100-unit bulk. Real fruit, zero artificial anything.">
   <Nav />
   <main class="pt-32">
 
@@ -74,24 +90,25 @@ const wrappers = [
           ← Products
         </a>
       </div>
-      <div class="max-w-2xl">
+      <div class="max-w-3xl">
         <div class="badge mb-6" style="background:rgba(215,0,45,0.10); color:#D7002D;">
           #besteverlollipop
         </div>
-        <h1 class="text-display mb-4" style="font-size:clamp(2.5rem,6vw,4.5rem);">
+        <h1 class="font-black mb-4" style="font-family:'Nunito',sans-serif; font-size:clamp(2.5rem,6vw,4.5rem); line-height:0.95; letter-spacing:-0.03em;">
           Lollipops
         </h1>
         <p class="text-xl" style="color:var(--color-ink-muted); line-height:1.65;">
-          Four varieties. All USDA Organic. Made with real fruit juice,
+          Five varieties. All USDA Organic. Made with real fruit juice,
           colored by plants, free from artificial dyes and flavors.
         </p>
       </div>
-      <div class="flex flex-wrap gap-2 mt-8">
-        {['USDA Organic', 'Gluten Free', 'Vegan', 'No Artificial Colors', 'No Artificial Flavors'].map(b => (
-          <span class="text-xs font-bold px-3 py-1.5 rounded-full" style="background:rgba(215,0,45,0.08); color:#D7002D;">
-            {b}
-          </span>
-        ))}
+      <div class="mt-4">
+        <img
+          src="/images/img/icons-allergy.friendly.png"
+          alt="USDA Organic, Gluten Free, Vegan, No Artificial Colors, No Artificial Flavors, Allergen Friendly"
+          style="width:100%; max-width:860px; height:auto;"
+          loading="eager"
+        />
       </div>
     </section>
 
@@ -99,18 +116,24 @@ const wrappers = [
     <section class="pb-16" style="background:var(--color-surface);">
       <div class="max-w-7xl mx-auto px-6 py-12">
         <p class="text-xs font-black uppercase tracking-widest mb-8 text-center" style="color:var(--color-ink-muted);">All flavors</p>
-        <div class="grid grid-cols-4 sm:grid-cols-8 gap-4">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
           {wrappers.map(w => (
-            <div class="flex flex-col items-center gap-2 group">
-              <div class="w-full aspect-square rounded-2xl flex items-center justify-center p-3 transition-transform duration-300 group-hover:-translate-y-1"
-                style="background:white; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+            <div class="flex flex-col items-center gap-2">
+              <div class="flavor-swap w-full aspect-square rounded-2xl flex items-center justify-center p-3"
+                style="background:white; box-shadow:0 2px 12px rgba(0,0,0,0.08); position:relative; overflow:hidden;">
                 <img
                   src={w.src}
                   alt={w.label}
-                  class="w-full h-full object-contain"
-                  style="filter:drop-shadow(0 4px 8px rgba(0,0,0,0.15));"
+                  class="flavor-base w-full h-full object-contain"
+                  style="filter:drop-shadow(0 4px 8px rgba(0,0,0,0.15)); transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);"
                   loading="lazy"
-                  onerror="this.parentElement.style.background='#f5f5f5'"
+                />
+                <img
+                  src={w.hover}
+                  alt={`${w.label} individual wrapper`}
+                  class="flavor-hover absolute inset-0 w-full h-full object-contain p-3"
+                  style="filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2)); opacity:0; transform:scale(0.9); transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);"
+                  loading="lazy"
                 />
               </div>
               <p class="text-xs font-bold text-center leading-tight" style={`color:${w.color};`}>{w.label}</p>
@@ -129,25 +152,60 @@ const wrappers = [
             style={`background:${p.color};`}
           >
             <div class={`flex items-center justify-center p-10 min-h-[300px] ${i % 2 === 1 ? 'md:order-2' : ''}`}>
-              <img
-                src={p.image}
-                alt={p.name}
-                class="w-48 h-48 md:w-64 md:h-64 object-contain transition-transform duration-500 hover:scale-105"
-                style="filter:drop-shadow(0 20px 40px rgba(0,0,0,0.18));"
-                loading="lazy"
-                onerror={`this.src='${p.fallback}'`}
-              />
+              {p.hoverImage ? (
+                <button
+                  class="product-swap relative w-56 h-56 md:w-64 md:h-64 cursor-zoom-in"
+                  data-lightbox-front={p.image}
+                  data-lightbox-back={p.hoverImage}
+                  data-lightbox-name={p.name}
+                  aria-label={`View ${p.name} front and back`}
+                  type="button"
+                >
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    class="img-base"
+                    style="filter:drop-shadow(0 20px 40px rgba(0,0,0,0.18)); transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);"
+                    loading="lazy"
+                    onerror={`this.src='${p.fallback}'`}
+                  />
+                  <img
+                    src={p.hoverImage}
+                    alt={`${p.name} back of pack`}
+                    class="img-hover"
+                    style="filter:drop-shadow(0 20px 40px rgba(0,0,0,0.25)); opacity:0; transform:scale(0.95); transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);"
+                    loading="lazy"
+                  />
+                </button>
+              ) : (
+                <button
+                  class="product-single relative w-48 h-48 md:w-64 md:h-64 cursor-zoom-in"
+                  data-lightbox-front={p.image}
+                  data-lightbox-name={p.name}
+                  aria-label={`Zoom ${p.name}`}
+                  type="button"
+                >
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    class="w-full h-full object-contain"
+                    style="filter:drop-shadow(0 20px 40px rgba(0,0,0,0.18)); transition: transform 0.3s var(--ease-out);"
+                    loading="lazy"
+                    onerror={`this.src='${p.fallback}'`}
+                  />
+                </button>
+              )}
             </div>
             <div class={`p-10 flex flex-col justify-center ${i % 2 === 1 ? 'md:order-1' : ''}`}>
               <p class="text-xs font-black uppercase tracking-widest mb-2" style={`color:${p.accent};`}>{p.badge}</p>
-              <h2 class="font-black mb-1" style={`font-family:'ClashDisplay',sans-serif; font-size:clamp(1.6rem,3vw,2.4rem); line-height:0.95; letter-spacing:-0.02em;`}>
+              <h2 class="font-black mb-1" style={`font-family:'Nunito',sans-serif; font-size:clamp(1.6rem,3vw,2.4rem); line-height:0.95; letter-spacing:-0.02em;`}>
                 {p.name}
               </h2>
-              <p class="text-xs font-bold mb-4 uppercase tracking-widest" style="color:rgba(0,0,0,0.35);">{p.pack}</p>
-              <p class="text-base mb-6" style="color:rgba(0,0,0,0.55); line-height:1.65; max-width:380px;">{p.desc}</p>
+              <p class="text-xs font-bold mb-4 uppercase tracking-widest" style="color:rgba(0,0,0,0.5);">{p.pack}</p>
+              <p class="text-base mb-6" style="color:rgba(0,0,0,0.65); line-height:1.65; max-width:380px;">{p.desc}</p>
               <div class="flex flex-wrap gap-2">
                 {p.flavors.map(f => (
-                  <span class="text-xs font-bold px-3 py-1.5 rounded-full" style="background:rgba(255,255,255,0.8); color:rgba(0,0,0,0.6);">
+                  <span class="text-xs font-bold px-3 py-1.5 rounded-full" style="background:rgba(255,255,255,0.8); color:rgba(0,0,0,0.65);">
                     {f}
                   </span>
                 ))}
@@ -158,13 +216,64 @@ const wrappers = [
       </div>
     </section>
 
+    <!-- PLV & Displays -->
+    <section style="background:#FEF7E8; overflow:hidden;">
+      <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Text -->
+        <div class="order-2 md:order-1">
+          <p class="text-xs font-black uppercase tracking-widest mb-4" style="color:#C8860A;">For retailers</p>
+          <h2 class="font-black mb-5" style="font-family:'Nunito',sans-serif; font-size:clamp(2rem,4vw,3.2rem); line-height:0.95; letter-spacing:-0.03em; color:var(--color-ink);">
+            PLV &amp; Displays
+          </h2>
+          <p class="text-lg mb-6" style="color:var(--color-ink-muted); line-height:1.65; max-width:420px;">
+            Ready-to-place gravity feed displays and counter units. Designed for high-traffic retail: no setup, no fuss, maximum visibility.
+          </p>
+          <ul class="space-y-3 mb-8" role="list">
+            {[
+              'Gravity feed display: self-refilling countertop unit',
+              'Horizontal display: shelf-ready, planogram-friendly',
+              'Pre-filled or empty options available',
+              'Co-branded with your logo on request',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-sm" style="color:var(--color-ink-muted);">
+                <span aria-hidden="true" style="color:#C8860A; flex-shrink:0; margin-top:2px; font-weight:900;">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="/contact" class="plv-btn inline-flex items-center gap-2 font-bold text-sm px-6 py-3 rounded-full"
+            style="background:#C8860A; color:white;">
+            Ask about displays
+          </a>
+        </div>
+        <!-- Image -->
+        <div class="order-1 md:order-2 flex items-center justify-center">
+          <button
+            class="display-zoom cursor-zoom-in rounded-2xl overflow-hidden"
+            data-lightbox-front="/images/img/displays.png"
+            data-lightbox-name="PLV Display"
+            aria-label="Zoom PLV display image"
+            type="button"
+          >
+            <img
+              src="/images/img/displays.png"
+              alt="YumEarth gravity feed display and horizontal shelf unit for retail"
+              class="w-full max-w-md block"
+              style="filter:drop-shadow(0 32px 64px rgba(0,0,0,0.5)); border-radius:16px; transition: transform 0.3s var(--ease-out);"
+              loading="lazy"
+            />
+          </button>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="py-20" style="background:#FFF0F2;">
       <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
         <div>
-          <h2 class="text-display mb-2" style="font-size:clamp(1.8rem,4vw,2.8rem); color:var(--color-ink);">want to stock these?</h2>
+          <h2 class="font-black mb-2" style="font-family:'Nunito',sans-serif; font-size:clamp(1.8rem,4vw,2.8rem); line-height:0.95; letter-spacing:-0.03em; color:var(--color-ink);">want to stock these?</h2>
           <p style="color:var(--color-ink-muted); max-width:420px; line-height:1.6;">
-            Distributors and retailers — stock, B2B pricing and full support for your territory.
+            Distributors and retailers: pricing, stock, and full support for your territory.
           </p>
         </div>
         <a href="/contact" class="btn-primary whitespace-nowrap text-base">Get in touch</a>
@@ -174,3 +283,155 @@ const wrappers = [
   </main>
   <Footer />
 </Layout>
+
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Product image zoom" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.88); cursor:zoom-out; align-items:center; justify-content:center; padding:24px;">
+  <div class="lightbox-inner">
+    <img id="lightbox-img-front" src="" alt="" style="border-radius:16px; filter:drop-shadow(0 24px 48px rgba(0,0,0,0.5));" />
+    <img id="lightbox-img-back" src="" alt="" style="border-radius:16px; filter:drop-shadow(0 24px 48px rgba(0,0,0,0.5));" />
+  </div>
+  <button id="lightbox-close" aria-label="Close" style="position:absolute; top:20px; right:24px; background:rgba(255,255,255,0.12); border:none; color:white; width:40px; height:40px; border-radius:50%; cursor:pointer; font-size:18px; display:flex; align-items:center; justify-content:center; transition:background 0.2s;">✕</button>
+</div>
+
+<script>
+  const lb = document.getElementById('lightbox')!;
+  const imgFront = document.getElementById('lightbox-img-front') as HTMLImageElement;
+  const imgBack = document.getElementById('lightbox-img-back') as HTMLImageElement;
+  const closeBtn = document.getElementById('lightbox-close')!;
+  let prevFocus: HTMLElement | null = null;
+
+  function openLightbox(front: string, back: string | null, name: string) {
+    prevFocus = document.activeElement as HTMLElement;
+    imgFront.src = front;
+    imgFront.alt = name;
+    if (back) {
+      imgBack.src = back;
+      imgBack.alt = `${name} back of pack`;
+      imgBack.style.display = '';
+    } else {
+      imgBack.src = '';
+      imgBack.style.display = 'none';
+    }
+    lb.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeLightbox() {
+    lb.style.display = 'none';
+    document.body.style.overflow = '';
+    prevFocus?.focus();
+  }
+
+  // Event delegation — all lightbox triggers
+  document.addEventListener('click', (e) => {
+    const trigger = (e.target as HTMLElement).closest<HTMLElement>('[data-lightbox-front]');
+    if (trigger) {
+      const front = trigger.dataset.lightboxFront!;
+      const back = trigger.dataset.lightboxBack ?? null;
+      const name = trigger.dataset.lightboxName ?? '';
+      openLightbox(front, back, name);
+      return;
+    }
+    if (e.target === lb || (e.target as HTMLElement).closest('.lightbox-inner') === null && lb.style.display === 'flex') {
+      closeLightbox();
+    }
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+
+  // Focus trap inside lightbox
+  lb.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { closeLightbox(); return; }
+    if (e.key !== 'Tab') return;
+    const focusable = lb.querySelectorAll<HTMLElement>('button, [href], input, [tabindex]:not([tabindex="-1"])');
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey ? document.activeElement === first : document.activeElement === last) {
+      e.preventDefault();
+      (e.shiftKey ? last : first).focus();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lb.style.display === 'flex') closeLightbox();
+  });
+
+  // Touch toggle for flavor swap cards
+  document.querySelectorAll<HTMLElement>('.flavor-swap').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('touch-flipped');
+    });
+  });
+</script>
+
+<style>
+  /* Product hover swap — height-based sizing so both images appear identical scale */
+  .product-swap .img-base,
+  .product-swap .img-hover {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    height: 82%;
+    width: auto;
+    max-width: 82%;
+    object-fit: contain;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .product-swap:hover .img-base { opacity: 0; transform: scale(0.95); }
+    .product-swap:hover .img-hover { opacity: 1 !important; transform: scale(1) !important; }
+  }
+  .product-swap:active { transform: scale(0.97); }
+
+  /* Flavor hover swap */
+  .flavor-swap { cursor: pointer; transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out); }
+  @media (hover: hover) and (pointer: fine) {
+    .flavor-swap:hover .flavor-base { opacity: 0; transform: scale(0.9); }
+    .flavor-swap:hover .flavor-hover { opacity: 1 !important; transform: scale(1) !important; }
+    .flavor-swap:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important; }
+  }
+  /* Touch tap-to-flip */
+  .flavor-swap.touch-flipped .flavor-base { opacity: 0; transform: scale(0.9); }
+  .flavor-swap.touch-flipped .flavor-hover { opacity: 1 !important; transform: scale(1) !important; }
+  .flavor-swap:active { transform: scale(0.97) !important; }
+
+  /* PLV button */
+  .plv-btn { transition: background-color 0.18s var(--ease-out), transform 0.18s var(--ease-out), box-shadow 0.18s var(--ease-out); }
+  .plv-btn:hover { background-color: #e09510 !important; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,134,10,0.35); }
+  .plv-btn:active { transform: translateY(1px) scale(0.97); box-shadow: none; }
+
+  /* Single-image product zoom */
+  .product-single { background: none; border: none; padding: 0; }
+  .product-single:hover img { transform: scale(1.04); }
+  .product-single:active { transform: scale(0.97); }
+
+  /* Display zoom */
+  .display-zoom { background: none; border: none; padding: 0; display: block; }
+  .display-zoom:hover img { transform: scale(1.03); }
+  .display-zoom:active { transform: scale(0.98); }
+
+  /* Lightbox inner layout */
+  .lightbox-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    max-width: 100%;
+  }
+  .lightbox-inner img {
+    height: 65vh;
+    width: auto;
+    max-width: 44vw;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .lightbox-inner { flex-direction: column; gap: 16px; }
+    .lightbox-inner img { height: 36vh; width: auto; max-width: 85vw; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .product-swap *, .flavor-swap *, .plv-btn { transition-duration: 0.01ms !important; }
+  }
+</style>

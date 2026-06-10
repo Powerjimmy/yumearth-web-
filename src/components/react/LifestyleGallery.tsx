@@ -14,51 +14,51 @@ interface IgPost {
 // Fallback static photos — used if Instagram API fails
 const FALLBACK_PHOTOS = [
   {
-    src: 'https://picsum.photos/seed/yum1/600/800',
-    alt: 'Kids enjoying YumEarth candy',
+    src: '/images/img/bolsa-lollipop-14.png',
+    alt: 'YumEarth Lollipops',
     caption: '#besteverlollipop',
     tall: true,
     bg: '#FFF0F2',
     href: 'https://www.instagram.com/yumearth.eu/',
   },
   {
-    src: 'https://picsum.photos/seed/yum2/600/450',
-    alt: 'YumEarth Fruit Snacks on table',
-    caption: '100% Daily Vitamin C',
+    src: '/images/img/bolsa-fruit-sancks.png',
+    alt: 'YumEarth Fruit Snacks',
+    caption: '100% organic fruit snacks',
     tall: false,
     bg: '#F0EAFF',
     href: 'https://www.instagram.com/yumearth.eu/',
   },
   {
-    src: 'https://picsum.photos/seed/yum3/600/450',
-    alt: 'Organic lollipop closeup',
-    caption: 'Real fruit. Real flavor.',
-    tall: false,
-    bg: '#FFF0F2',
-    href: 'https://www.instagram.com/yumearth.eu/',
-  },
-  {
-    src: 'https://picsum.photos/seed/yum4/600/800',
+    src: '/images/img/bolsa-gummy-bears.png',
     alt: 'YumEarth Gummy Bears',
-    caption: 'Organic & allergen friendly',
-    tall: true,
+    caption: 'Organic gummy bears',
+    tall: false,
     bg: '#EFF8E6',
     href: 'https://www.instagram.com/yumearth.eu/',
   },
   {
-    src: 'https://picsum.photos/seed/yum5/600/450',
-    alt: 'Giggles for little ones',
+    src: '/images/products/bolsas/3d-bolsa-candy-sourbeans.png',
+    alt: 'YumEarth Sour Beans',
+    caption: 'Your new sour obsession',
+    tall: true,
+    bg: '#EAF8EE',
+    href: 'https://www.instagram.com/yumearth.eu/',
+  },
+  {
+    src: '/images/products/bolsas/3D-NEW-GIGGLES_ok_2025-front.png',
+    alt: 'YumEarth Giggles',
     caption: 'Perfect for little ones',
     tall: false,
     bg: '#FFE8F0',
     href: 'https://www.instagram.com/yumearth.eu/',
   },
   {
-    src: 'https://picsum.photos/seed/yum6/600/450',
-    alt: 'Sour Beans snack',
-    caption: 'Your new sour obsession',
+    src: '/images/products/bolsas/3d-1669-2024-vitaminC-1.png',
+    alt: 'YumEarth Vitamin C Lollipops',
+    caption: '100% Daily Vitamin C',
     tall: false,
-    bg: '#EAF8EE',
+    bg: '#FFF8EC',
     href: 'https://www.instagram.com/yumearth.eu/',
   },
 ];
@@ -66,10 +66,12 @@ const FALLBACK_PHOTOS = [
 const BG_CYCLE = ['#FFF0F2', '#F0EAFF', '#EFF8E6', '#FFE8F0', '#EAF8EE', '#FFF8EC'];
 
 function igPostToPhoto(post: IgPost, i: number) {
-  const src =
+  const rawSrc =
     post.media_type === 'VIDEO'
       ? post.thumbnail_url ?? ''
       : post.media_url ?? '';
+  if (!rawSrc) return null;
+  const src = `/api/instagram-image?url=${encodeURIComponent(rawSrc)}`;
   return {
     src,
     alt: 'YumEarth on Instagram',
@@ -91,8 +93,9 @@ export default function LifestyleGallery() {
         const mapped = data.data
           .filter((p: IgPost) => p.media_type === 'VIDEO' ? !!p.thumbnail_url : !!p.media_url)
           .slice(0, 6)
-          .map(igPostToPhoto);
-        if (mapped.length > 0) setPhotos(mapped);
+          .map(igPostToPhoto)
+          .filter(Boolean);
+        if (mapped.length > 0) setPhotos(mapped as typeof FALLBACK_PHOTOS);
       })
       .catch(() => {
         // keep fallback
@@ -155,9 +158,9 @@ export default function LifestyleGallery() {
                     loading="lazy"
                   />
                 </div>
-                {/* Caption overlay */}
+                {/* Caption — always visible on touch, hover-reveal on desktop */}
                 <div
-                  className="absolute inset-x-0 bottom-0 px-4 py-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+                  className="absolute inset-x-0 bottom-0 px-4 py-3 transition-transform duration-300 translate-y-0 md:translate-y-full md:group-hover:translate-y-0"
                   style={{ background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(8px)' }}
                 >
                   <p className="text-xs font-black text-white uppercase tracking-widest">{photo.caption}</p>

@@ -58,16 +58,27 @@ import TestimonialsSection from '../components/react/TestimonialsSection';
           <span style="color:var(--color-teal);">And beyond.</span>
         </h2>
         <p class="text-xl mb-10 max-w-xl mx-auto" style="color:var(--color-ink-muted); line-height:1.65;">
-          Spain, France, Belgium, Poland, Greece and 25+ more countries.
+          Kazakhstan, Saudi Arabia, Greece, UAE, France and more.
           If you want YumEarth in your market, we're your people.
         </p>
 
         <div class="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto mb-12">
-          {['Spain','France','Belgium','Poland','Greece','Ireland','Denmark','Sweden','Finland','Czech Republic','Romania','Bulgaria','Hungary','Switzerland'].map(c => (
+          {[
+            { flag: '🇰🇿', name: 'Kazakhstan' },
+            { flag: '🇸🇦', name: 'Saudi Arabia' },
+            { flag: '🇬🇷', name: 'Greece' },
+            { flag: '🇨🇿', name: 'Czech Republic' },
+            { flag: '🇸🇰', name: 'Slovakia' },
+            { flag: '🇰🇬', name: 'Kyrgyzstan' },
+            { flag: '🇦🇪', name: 'UAE' },
+            { flag: '🇫🇷', name: 'France' },
+            { flag: '🇪🇪', name: 'Estonia' },
+            { flag: '🇵🇱', name: 'Poland' },
+          ].map(c => (
             <span
-              class="text-sm font-bold px-4 py-2 rounded-full"
+              class="text-sm font-bold px-4 py-2 rounded-full flex items-center gap-1.5"
               style="background:white; color:var(--color-dark); box-shadow:0 1px 4px rgba(0,0,0,0.06);"
-            >{c}</span>
+            ><span>{c.flag}</span>{c.name}</span>
           ))}
           <a href="/distribution" class="text-sm font-bold px-4 py-2 rounded-full" style="background:var(--color-teal); color:white;">
             + more →

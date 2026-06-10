@@ -6,53 +6,72 @@ import Footer from '../components/Footer.astro';
 const products = [
   {
     name: 'Fruit Snacks',
-    desc: 'Organic fruit snacks packed with 100% daily Vitamin C per pouch. Cherry, Peach, Strawberry, Banana. Zero artificial anything.',
+    pack: 'Assorted pouches',
+    desc: 'Organic fruit snacks with 100% daily Vitamin C per pouch. Cherry, Peach, Strawberry, Banana. Zero artificial anything.',
     flavors: ['Cherry', 'Peach', 'Strawberry', 'Banana'],
     image: '/images/products/bolsa-fruit-snacks.png',
+    hoverImage: '/images/products/bolsa-fruit-snacks-BACKok.png',
     fallback: '/images/products/fruit-snacks.png',
-    units: ['/images/products/soft-candy/fruit-snack-unit.png'],
     color: '#F0EAFF',
     accent: '#7314A1',
     badge: '100% Daily Vitamin C',
   },
   {
     name: 'Sour Beans',
+    pack: 'Assorted bag',
     desc: 'Organic jelly beans coated in pure sour sugar. Apple, Peach, Mango, Cherry. Dangerously good.',
     flavors: ['Apple', 'Peach', 'Mango', 'Cherry'],
     image: '/images/products/bolsa-sour-beans.png',
+    hoverImage: '/images/products/bolsa-sour-beans-back.png',
     fallback: '/images/products/sour-beans.png',
-    units: ['/images/products/soft-candy/sour-beans-unit.png'],
     color: '#EAF8EE',
     accent: '#2a8a48',
     badge: 'Sour sugar coated',
   },
   {
     name: 'Gummy Bears',
+    pack: 'Assorted bag',
     desc: 'The classic gummy bear, certified organic. Colored by plants, flavored with real pomegranate. Allergen friendly.',
     flavors: ['Pomegranate'],
     image: '/images/products/bolsa-gummy-bears.png',
+    hoverImage: '/images/products/bolsa-gummy-bears-back.png',
     fallback: '/images/products/gummy-bears.png',
-    units: ['/images/products/soft-candy/gummy-bears-unit.png'],
     color: '#EFF8E6',
     accent: '#4a9100',
-    badge: 'Organic & allergen friendly',
+    badge: 'Allergen friendly',
   },
   {
     name: 'Giggles',
+    pack: 'Assorted bag',
     desc: 'Small, soft, easy-to-chew organic gummies for younger kids. Strawberry, Orange, Lemon, Green Apple. The ideal lunchbox snack.',
     flavors: ['Strawberry', 'Orange', 'Lemon', 'Green Apple'],
     image: '/images/products/bolsa-giggles.png',
+    hoverImage: '/images/products/bolsa-giggles-BACKok.png',
     fallback: '/images/products/giggles.png',
-    units: [
-      '/images/products/soft-candy/giggles-strawberry.png',
-      '/images/products/soft-candy/giggles-orange.png',
-      '/images/products/soft-candy/giggles-lemon.png',
-      '/images/products/soft-candy/giggles-green-apple.png',
-    ],
     color: '#FFE8F0',
     accent: '#C45BAE',
-    badge: 'New · Perfect for little ones',
+    badge: 'Perfect for little ones',
   },
+  {
+    name: 'Fruit Snacks Multipack',
+    pack: '10 x 19.8g snack packs',
+    desc: 'Ten individual snack pouches in one bag. Banana Blast, Strawberry Smash, Very Very Cherry, Perfectly Peach. The ideal lunchbox pack.',
+    flavors: ['Banana Blast', 'Strawberry Smash', 'Very Very Cherry', 'Perfectly Peach'],
+    image: '/images/products/3d-1958_Fruit-20X10-front.png',
+    hoverImage: '/images/products/3d-1958_Fruit-20X10-back.png',
+    fallback: '/images/products/fruit-snacks.png',
+    color: '#F0EAFF',
+    accent: '#7314A1',
+    badge: '10 snack packs',
+  },
+];
+
+// Individual candy unit images
+const units = [
+  { src: '/images/products/SOFT%20CANDY%20unidades/todos-giggles.png', hover: '/images/products/SOFT%20CANDY%20unidades/todos-giggles.png',        label: 'Giggles',         color: '#C45BAE' },
+  { src: '/images/products/soft-candy/fruit-snack-unit.png',    hover: '/images/products/SOFT%20CANDY%20unidades/FruitSnack.png',                  label: 'Fruit Snack',     color: '#7314A1' },
+  { src: '/images/products/soft-candy/sour-beans-unit.png',     hover: '/images/products/SOFT%20CANDY%20unidades/sour%20Beans.png',                label: 'Sour Beans',      color: '#2a8a48' },
+  { src: '/images/products/soft-candy/gummy-bears-unit.png',    hover: '/images/products/SOFT%20CANDY%20unidades/gummybears.png',                  label: 'Gummy Bear',      color: '#4a9100' },
 ];
 ---
 
@@ -67,78 +86,105 @@ const products = [
           ← Products
         </a>
       </div>
-      <div class="max-w-2xl">
+      <div class="max-w-3xl">
         <div class="badge mb-6" style="background:rgba(74,145,0,0.10); color:#4a9100;">
           Organic soft candy
         </div>
-        <h1 class="text-display mb-4" style="font-size:clamp(2.5rem,6vw,4.5rem);">
+        <h1 class="font-black mb-4" style="font-family:'Nunito',sans-serif; font-size:clamp(2.5rem,6vw,4.5rem); line-height:0.95; letter-spacing:-0.03em;">
           Soft Candy
         </h1>
         <p class="text-xl" style="color:var(--color-ink-muted); line-height:1.65;">
           Four varieties. All USDA Organic, allergen-friendly, and vegan.
         </p>
       </div>
-      <div class="flex flex-wrap gap-2 mt-8">
-        {['USDA Organic', 'Gluten Free', 'Vegan', 'No Artificial Colors', 'No Artificial Flavors', 'Allergen Friendly'].map(b => (
-          <span class="text-xs font-bold px-3 py-1.5 rounded-full" style="background:rgba(74,145,0,0.10); color:#4a9100;">
-            {b}
-          </span>
-        ))}
+      <div class="mt-4">
+        <img
+          src="/images/img/icons-allergy.friendly.png"
+          alt="USDA Organic, Gluten Free, Vegan, No Artificial Colors, No Artificial Flavors, Allergen Friendly"
+          style="width:100%; max-width:860px; height:auto;"
+          loading="eager"
+        />
       </div>
     </section>
 
-    <!-- Products with individual unit images -->
-    <section class="max-w-7xl mx-auto px-6 pb-24">
+    <!-- Individual candy units -->
+    <section class="pb-16" style="background:var(--color-surface);">
+      <div class="max-w-7xl mx-auto px-6 py-12">
+        <p class="text-xs font-black uppercase tracking-widest mb-8 text-center" style="color:var(--color-ink-muted);">All varieties</p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+          {units.map(u => (
+            <div class="flex flex-col items-center gap-2">
+              <div class="flavor-swap w-full aspect-square rounded-2xl flex items-center justify-center p-3"
+                style="background:white; box-shadow:0 2px 12px rgba(0,0,0,0.08); position:relative; overflow:hidden;">
+                <img
+                  src={u.src}
+                  alt={u.label}
+                  class="flavor-base w-full h-full object-contain"
+                  style="filter:drop-shadow(0 4px 8px rgba(0,0,0,0.15)); transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);"
+                  loading="lazy"
+                />
+                <img
+                  src={u.hover}
+                  alt={`${u.label} individual piece`}
+                  class="flavor-hover absolute inset-0 w-full h-full object-contain p-3"
+                  style="filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2)); opacity:0; transform:scale(0.9); transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);"
+                  loading="lazy"
+                />
+              </div>
+              <p class="text-xs font-bold text-center leading-tight" style={`color:${u.color};`}>{u.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Product bags -->
+    <section class="max-w-7xl mx-auto px-6 pb-24 pt-8">
       <div class="space-y-6">
         {products.map((p, i) => (
           <div
-            class="card-lift rounded-3xl overflow-hidden"
+            class="card-lift grid grid-cols-1 md:grid-cols-2 rounded-3xl overflow-hidden"
             style={`background:${p.color};`}
           >
-            <div class="grid grid-cols-1 md:grid-cols-2">
-
-              <!-- Image side: bag + unit images -->
-              <div class={`flex items-center justify-center gap-6 p-10 min-h-[300px] ${i % 2 === 1 ? 'md:order-2' : ''}`}>
-                <!-- Main bag -->
+            <div class={`flex items-center justify-center p-10 min-h-[300px] ${i % 2 === 1 ? 'md:order-2' : ''}`}>
+              <button
+                class="product-swap relative w-56 h-56 md:w-64 md:h-64 cursor-zoom-in"
+                data-lightbox-front={p.image}
+                data-lightbox-back={p.hoverImage}
+                data-lightbox-name={p.name}
+                aria-label={`View ${p.name} front and back`}
+                type="button"
+              >
                 <img
                   src={p.image}
                   alt={p.name}
-                  class="w-40 md:w-52 object-contain flex-shrink-0 transition-transform duration-500 hover:scale-105"
-                  style="filter:drop-shadow(0 20px 40px rgba(0,0,0,0.18)); height:auto;"
+                  class="img-base"
+                  style="filter:drop-shadow(0 20px 40px rgba(0,0,0,0.18)); transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);"
                   loading="lazy"
                   onerror={`this.src='${p.fallback}'`}
                 />
-                <!-- Unit images (individual pieces) -->
-                {p.units.length > 1 && (
-                  <div class="flex flex-col gap-2">
-                    {p.units.map((u, ui) => (
-                      <img
-                        src={u}
-                        alt={`${p.name} piece`}
-                        class="w-14 h-14 object-contain"
-                        style="filter:drop-shadow(0 4px 8px rgba(0,0,0,0.15));"
-                        loading="lazy"
-                        onerror="this.style.display='none'"
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <!-- Copy side -->
-              <div class={`p-10 flex flex-col justify-center ${i % 2 === 1 ? 'md:order-1' : ''}`}>
-                <p class="text-xs font-black uppercase tracking-widest mb-2" style={`color:${p.accent};`}>{p.badge}</p>
-                <h2 class="font-black mb-4" style={`font-family:'ClashDisplay',sans-serif; font-size:clamp(1.6rem,3vw,2.4rem); line-height:0.95; letter-spacing:-0.02em;`}>
-                  {p.name}
-                </h2>
-                <p class="text-base mb-6" style="color:rgba(0,0,0,0.55); line-height:1.65; max-width:380px;">{p.desc}</p>
-                <div class="flex flex-wrap gap-2">
-                  {p.flavors.map(f => (
-                    <span class="text-xs font-bold px-3 py-1.5 rounded-full" style="background:rgba(255,255,255,0.8); color:rgba(0,0,0,0.6);">
-                      {f}
-                    </span>
-                  ))}
-                </div>
+                <img
+                  src={p.hoverImage}
+                  alt={`${p.name} 3D render`}
+                  class="img-hover"
+                  style="filter:drop-shadow(0 20px 40px rgba(0,0,0,0.25)); opacity:0; transform:scale(0.95); transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);"
+                  loading="lazy"
+                />
+              </button>
+            </div>
+            <div class={`p-10 flex flex-col justify-center ${i % 2 === 1 ? 'md:order-1' : ''}`}>
+              <p class="text-xs font-black uppercase tracking-widest mb-2" style={`color:${p.accent};`}>{p.badge}</p>
+              <h2 class="font-black mb-1" style={`font-family:'Nunito',sans-serif; font-size:clamp(1.6rem,3vw,2.4rem); line-height:0.95; letter-spacing:-0.02em;`}>
+                {p.name}
+              </h2>
+              <p class="text-xs font-bold mb-4 uppercase tracking-widest" style="color:rgba(0,0,0,0.5);">{p.pack}</p>
+              <p class="text-base mb-6" style="color:rgba(0,0,0,0.65); line-height:1.65; max-width:380px;">{p.desc}</p>
+              <div class="flex flex-wrap gap-2">
+                {p.flavors.map(f => (
+                  <span class="text-xs font-bold px-3 py-1.5 rounded-full" style="background:rgba(255,255,255,0.8); color:rgba(0,0,0,0.65);">
+                    {f}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
@@ -150,9 +196,9 @@ const products = [
     <section class="py-20" style="background:#EFF8E6;">
       <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
         <div>
-          <h2 class="text-display mb-2" style="font-size:clamp(1.8rem,4vw,2.8rem); color:var(--color-ink);">want to stock these?</h2>
+          <h2 class="font-black mb-2" style="font-family:'Nunito',sans-serif; font-size:clamp(1.8rem,4vw,2.8rem); line-height:0.95; letter-spacing:-0.03em; color:var(--color-ink);">want to stock these?</h2>
           <p style="color:var(--color-ink-muted); max-width:420px; line-height:1.6;">
-            Distributors and retailers — stock, B2B pricing and full support for your territory.
+            Distributors and retailers: pricing, stock, and full support for your territory.
           </p>
         </div>
         <a href="/contact" class="btn-primary whitespace-nowrap text-base">Get in touch</a>
@@ -162,3 +208,142 @@ const products = [
   </main>
   <Footer />
 </Layout>
+
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Product image zoom" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.88); cursor:zoom-out; align-items:center; justify-content:center; padding:24px;">
+  <div class="lightbox-inner">
+    <img id="lightbox-img-front" src="" alt="" style="border-radius:16px; filter:drop-shadow(0 24px 48px rgba(0,0,0,0.5));" />
+    <img id="lightbox-img-back" src="" alt="" style="border-radius:16px; filter:drop-shadow(0 24px 48px rgba(0,0,0,0.5));" />
+  </div>
+  <button id="lightbox-close" aria-label="Close" style="position:absolute; top:20px; right:24px; background:rgba(255,255,255,0.12); border:none; color:white; width:40px; height:40px; border-radius:50%; cursor:pointer; font-size:18px; display:flex; align-items:center; justify-content:center; transition:background 0.2s;">✕</button>
+</div>
+
+<script>
+  const lb = document.getElementById('lightbox')!;
+  const imgFront = document.getElementById('lightbox-img-front') as HTMLImageElement;
+  const imgBack = document.getElementById('lightbox-img-back') as HTMLImageElement;
+  const closeBtn = document.getElementById('lightbox-close')!;
+  let prevFocus: HTMLElement | null = null;
+
+  function openLightbox(front: string, back: string | null, name: string) {
+    prevFocus = document.activeElement as HTMLElement;
+    imgFront.src = front;
+    imgFront.alt = name;
+    if (back) {
+      imgBack.src = back;
+      imgBack.alt = `${name} 3D render`;
+      imgBack.style.display = '';
+    } else {
+      imgBack.src = '';
+      imgBack.style.display = 'none';
+    }
+    lb.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeLightbox() {
+    lb.style.display = 'none';
+    document.body.style.overflow = '';
+    prevFocus?.focus();
+  }
+
+  // Event delegation — all lightbox triggers
+  document.addEventListener('click', (e) => {
+    const trigger = (e.target as HTMLElement).closest<HTMLElement>('[data-lightbox-front]');
+    if (trigger) {
+      const front = trigger.dataset.lightboxFront!;
+      const back = trigger.dataset.lightboxBack ?? null;
+      const name = trigger.dataset.lightboxName ?? '';
+      openLightbox(front, back, name);
+      return;
+    }
+    if (e.target === lb || (e.target as HTMLElement).closest('.lightbox-inner') === null && lb.style.display === 'flex') {
+      closeLightbox();
+    }
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+
+  // Focus trap inside lightbox
+  lb.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { closeLightbox(); return; }
+    if (e.key !== 'Tab') return;
+    const focusable = lb.querySelectorAll<HTMLElement>('button, [href], input, [tabindex]:not([tabindex="-1"])');
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey ? document.activeElement === first : document.activeElement === last) {
+      e.preventDefault();
+      (e.shiftKey ? last : first).focus();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lb.style.display === 'flex') closeLightbox();
+  });
+
+  // Touch toggle for flavor swap cards
+  document.querySelectorAll<HTMLElement>('.flavor-swap').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('touch-flipped');
+    });
+  });
+</script>
+
+<style>
+  /* Product swap — height-based sizing so both images appear identical scale */
+  .product-swap .img-base,
+  .product-swap .img-hover {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    height: 82%;
+    width: auto;
+    max-width: 82%;
+    object-fit: contain;
+  }
+
+  /* Flavor/unit swap */
+  .flavor-swap { cursor: pointer; transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out); }
+  @media (hover: hover) and (pointer: fine) {
+    .flavor-swap:hover .flavor-base { opacity: 0; transform: scale(0.9); }
+    .flavor-swap:hover .flavor-hover { opacity: 1 !important; transform: scale(1) !important; }
+    .flavor-swap:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important; }
+  }
+  /* Touch tap-to-flip */
+  .flavor-swap.touch-flipped .flavor-base { opacity: 0; transform: scale(0.9); }
+  .flavor-swap.touch-flipped .flavor-hover { opacity: 1 !important; transform: scale(1) !important; }
+  .flavor-swap:active { transform: scale(0.97) !important; }
+
+  /* Product swap */
+  @media (hover: hover) and (pointer: fine) {
+    .product-swap:hover .img-base { opacity: 0; transform: scale(0.95); }
+    .product-swap:hover .img-hover { opacity: 1 !important; transform: scale(1) !important; }
+  }
+  .product-swap:active { transform: scale(0.97); }
+
+  /* Lightbox */
+  .lightbox-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    max-width: 100%;
+  }
+  .lightbox-inner img {
+    height: 65vh;
+    width: auto;
+    max-width: 44vw;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .lightbox-inner { flex-direction: column; gap: 16px; }
+    .lightbox-inner img { height: 36vh; width: auto; max-width: 85vw; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .product-swap *, .flavor-swap * { transition-duration: 0.01ms !important; }
+  }
+</style>

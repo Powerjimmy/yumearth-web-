@@ -28,22 +28,6 @@ const statements = [
 export default function WhySection() {
   return (
     <>
-      <style>{`
-        @keyframes blob-drift-a {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          40%       { transform: translate(40px, -30px) scale(1.06); }
-          70%       { transform: translate(-25px, 20px) scale(0.96); }
-        }
-        @keyframes blob-drift-b {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          35%       { transform: translate(-35px, 25px) scale(1.04); }
-          65%       { transform: translate(20px, -15px) scale(0.98); }
-        }
-        @keyframes blob-drift-c {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          50%       { transform: translate(20px, 30px) scale(1.07); }
-        }
-      `}</style>
       <LazyMotion features={domAnimation}>
       <section className="py-24" style={{ background: 'var(--color-surface)', position: 'relative', overflow: 'hidden' }}>
 

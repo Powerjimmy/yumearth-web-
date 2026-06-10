@@ -1,17 +1,41 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, LazyMotion, domAnimation } from 'framer-motion';
 
 const VIDEO_SRC = '/videos/video-src.mp4';
 
 export default function VideoShowcase() {
-  const [playing, setPlaying] = useState(false);
+  const [muted, setMuted] = useState(true);
+  const [started, setStarted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const handlePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-      setPlaying(true);
-    }
+  // Autoplay muted when section enters viewport
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().then(() => setStarted(true)).catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  const handleUnmute = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = false;
+    setMuted(false);
+    video.play().catch(() => {});
   };
 
   return (
@@ -49,36 +73,45 @@ export default function VideoShowcase() {
               src={VIDEO_SRC}
               className="w-full h-full object-cover"
               playsInline
-              preload="none"
-              onEnded={() => setPlaying(false)}
-              controls={playing}
+              muted
+              loop
+              preload="metadata"
             />
 
-            {/* Play button overlay */}
-            {!playing && (
+            {/* Unmute button — shown after autoplay starts */}
+            {started && muted && (
               <motion.button
-                className="absolute inset-0 flex flex-col items-center justify-center gap-6 cursor-pointer"
-                style={{ background: 'rgba(0,0,0,0.35)', backdropFilter: 'blur(2px)' }}
-                onClick={handlePlay}
-                whileHover={{ background: 'rgba(0,0,0,0.20)' }}
-                transition={{ duration: 0.2 }}
-                aria-label="Play video"
+                className="absolute bottom-5 right-5 flex items-center gap-2 px-4 py-2 rounded-full cursor-pointer"
+                style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(8px)', color: 'white', border: 'none', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase' }}
+                onClick={handleUnmute}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.3 }}
+                aria-label="Unmute video"
+                whileHover={{ background: 'rgba(0,0,0,0.75)' }}
+                whileTap={{ scale: 0.97 }}
               >
-                {/* Play circle */}
-                <motion.div
-                  className="w-20 h-20 rounded-full flex items-center justify-center"
-                  style={{ background: 'rgba(255,255,255,0.95)' }}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
-                >
-                  {/* Triangle */}
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M6 4l14 8-14 8V4z" fill="var(--color-ink)" />
-                  </svg>
-                </motion.div>
-
+                {/* Muted speaker icon */}
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                  <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" strokeWidth="2"/>
+                </svg>
+                Unmute
               </motion.button>
+            )}
+
+            {/* Initial overlay — before autoplay fires */}
+            {!started && (
+              <div
+                className="absolute inset-0 flex items-center justify-center"
+                style={{ background: 'rgba(0,0,0,0.35)' }}
+              >
+                <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.15)' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                    <path d="M6 4l14 8-14 8V4z"/>
+                  </svg>
+                </div>
+              </div>
             )}
           </motion.div>
 

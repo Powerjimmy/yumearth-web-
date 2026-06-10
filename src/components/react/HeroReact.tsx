@@ -38,7 +38,7 @@ export default function HeroReact() {
                 className="inline-block text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded-full mb-8"
                 style={{ background: 'rgba(0,178,191,0.12)', color: 'var(--color-teal)' }}
               >
-                🇪🇺 EMEA Master Distribution
+                EU · EMEA Master Distribution
               </span>
             </motion.div>
 
@@ -283,7 +283,7 @@ export default function HeroReact() {
               transition={{ duration: 0.6, delay: 1.2, ease: [0.23, 1, 0.32, 1] }}
             >
               <p className="text-xs font-black uppercase tracking-widest" style={{ color: 'var(--color-green)' }}>Ships to</p>
-              <p className="text-sm font-black" style={{ color: 'var(--color-ink)' }}>30+ Countries 🇪🇺</p>
+              <p className="text-sm font-black" style={{ color: 'var(--color-ink)' }}>30+ Countries in EU</p>
             </motion.div>
           </motion.div>
         </div>
