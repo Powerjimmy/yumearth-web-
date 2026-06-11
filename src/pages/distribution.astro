@@ -2,18 +2,62 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import GlobeMap from '../components/react/GlobeMap';
+
+function flag(iso: string) {
+  return [...iso.toUpperCase()].map(c =>
+    String.fromCodePoint(0x1F1E6 + c.charCodeAt(0) - 65)
+  ).join("")
+}
 
 const europe = [
-  'Albania', 'Azerbaijan', 'Belgium', 'Bulgaria', 'Cyprus', 'Czech Republic',
-  'Denmark', 'Estonia', 'Finland', 'France', 'Georgia', 'Greece', 'Hungary',
-  'Ireland', 'Iceland', 'Kazakhstan', 'Kosovo', 'Kyrgyzstan', 'Latvia',
-  'Lithuania', 'Moldova', 'Poland', 'Romania', 'Russia', 'Serbia', 'Slovakia',
-  'Spain', 'Switzerland', 'Ukraine', 'Uzbekistan'
+  { name: 'Albania',        iso: 'AL' },
+  { name: 'Azerbaijan',     iso: 'AZ' },
+  { name: 'Belgium',        iso: 'BE' },
+  { name: 'Bulgaria',       iso: 'BG' },
+  { name: 'Cyprus',         iso: 'CY' },
+  { name: 'Czech Republic', iso: 'CZ' },
+  { name: 'Denmark',        iso: 'DK' },
+  { name: 'Estonia',        iso: 'EE' },
+  { name: 'Finland',        iso: 'FI' },
+  { name: 'France',         iso: 'FR' },
+  { name: 'Georgia',        iso: 'GE' },
+  { name: 'Greece',         iso: 'GR' },
+  { name: 'Hungary',        iso: 'HU' },
+  { name: 'Ireland',        iso: 'IE' },
+  { name: 'Iceland',        iso: 'IS' },
+  { name: 'Kazakhstan',     iso: 'KZ' },
+  { name: 'Kosovo',         iso: 'XK' },
+  { name: 'Kyrgyzstan',     iso: 'KG' },
+  { name: 'Latvia',         iso: 'LV' },
+  { name: 'Lithuania',      iso: 'LT' },
+  { name: 'Moldova',        iso: 'MD' },
+  { name: 'Poland',         iso: 'PL' },
+  { name: 'Romania',        iso: 'RO' },
+  { name: 'Russia',         iso: 'RU' },
+  { name: 'Serbia',         iso: 'RS' },
+  { name: 'Slovakia',       iso: 'SK' },
+  { name: 'Spain',          iso: 'ES' },
+  { name: 'Switzerland',    iso: 'CH' },
+  { name: 'Ukraine',        iso: 'UA' },
+  { name: 'Uzbekistan',     iso: 'UZ' },
 ];
 
 const mena = [
-  'Bahrain', 'India', 'Israel', 'Ivory Coast', 'Jordan', 'Kuwait', 'Lebanon',
-  'Morocco', 'Oman', 'Qatar', 'Saudi Arabia', 'UAE', 'Vietnam', 'South Africa'
+  { name: 'Bahrain',      iso: 'BH' },
+  { name: 'India',        iso: 'IN' },
+  { name: 'Israel',       iso: 'IL' },
+  { name: 'Ivory Coast',  iso: 'CI' },
+  { name: 'Jordan',       iso: 'JO' },
+  { name: 'Kuwait',       iso: 'KW' },
+  { name: 'Lebanon',      iso: 'LB' },
+  { name: 'Morocco',      iso: 'MA' },
+  { name: 'Oman',         iso: 'OM' },
+  { name: 'Qatar',        iso: 'QA' },
+  { name: 'Saudi Arabia', iso: 'SA' },
+  { name: 'UAE',          iso: 'AE' },
+  { name: 'Vietnam',      iso: 'VN' },
+  { name: 'South Africa', iso: 'ZA' },
 ];
 ---
 
@@ -26,7 +70,7 @@ const mena = [
         <div class="badge mb-6" style="background:rgba(0,178,191,0.12); color:var(--color-teal);">
           Distribution
         </div>
-        <h1 class="text-display mb-4" style="font-size:clamp(2.5rem,6vw,4.5rem);">
+        <h1 class="mb-4" style="font-family:'Nunito',sans-serif; font-weight:900; font-size:clamp(2.5rem,6vw,4.5rem); line-height:0.95; letter-spacing:-0.03em; color:var(--color-ink);">
           where to find us
         </h1>
         <p class="text-xl" style="color:var(--color-ink-muted); line-height:1.65;">
@@ -36,20 +80,24 @@ const mena = [
       </div>
     </section>
 
+    <section class="max-w-5xl mx-auto px-6 pb-16">
+      <GlobeMap client:visible />
+    </section>
+
     <!-- Europe -->
     <section class="py-16" style="background:var(--color-surface);">
       <div class="max-w-7xl mx-auto px-6">
         <div class="flex items-center gap-3 mb-8">
           <span class="text-3xl">🇪🇺</span>
-          <h2 class="text-2xl font-black" style="font-family:'Satoshi',sans-serif;">Europe</h2>
+          <h2 class="text-2xl" style="font-family:'Nunito',sans-serif; font-weight:900;">Europe</h2>
         </div>
         <div class="flex flex-wrap gap-3">
-          {europe.map(country => (
+          {europe.map(({ name, iso }) => (
             <span
-              class="px-4 py-2 rounded-full text-sm font-bold"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold"
               style="background:white; color:var(--color-ink);"
             >
-              {country}
+              <span aria-hidden="true">{flag(iso)}</span>{name}
             </span>
           ))}
         </div>
@@ -61,15 +109,15 @@ const mena = [
       <div class="max-w-7xl mx-auto px-6">
         <div class="flex items-center gap-3 mb-8">
           <span class="text-3xl">🌍</span>
-          <h2 class="text-2xl font-black" style="font-family:'Satoshi',sans-serif;">Middle East & Other Territories</h2>
+          <h2 class="text-2xl" style="font-family:'Nunito',sans-serif; font-weight:900;">Middle East & Other Territories</h2>
         </div>
         <div class="flex flex-wrap gap-3">
-          {mena.map(country => (
+          {mena.map(({ name, iso }) => (
             <span
-              class="px-4 py-2 rounded-full text-sm font-bold"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold"
               style="background:white; color:var(--color-ink); border:1px solid rgba(0,0,0,0.06);"
             >
-              {country}
+              <span aria-hidden="true">{flag(iso)}</span>{name}
             </span>
           ))}
         </div>
@@ -84,7 +132,7 @@ const mena = [
           style="background:white; box-shadow:0 4px 24px rgba(0,0,0,0.06);"
         >
           <div>
-            <h2 class="text-display mb-3" style="font-size:clamp(1.8rem,4vw,2.8rem); color:var(--color-ink);">
+            <h2 class="mb-3" style="font-family:'Nunito',sans-serif; font-weight:900; font-size:clamp(1.8rem,4vw,2.8rem); line-height:0.95; letter-spacing:-0.03em; color:var(--color-ink);">
               distributor or retailer?
             </h2>
             <p class="text-lg" style="color:var(--color-ink-muted); max-width:420px; line-height:1.6;">

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence, LazyMotion, domAnimation } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Star } from '@phosphor-icons/react';
 
 const testimonials = [
@@ -49,7 +49,7 @@ export default function TestimonialsSection() {
   const visible = [current, (current + 1) % testimonials.length];
 
   return (
-    <LazyMotion features={domAnimation}>
+    
       <section className="py-24" style={{ background: 'var(--color-cream)' }}>
         <div className="max-w-6xl mx-auto px-6">
 
@@ -142,6 +142,6 @@ export default function TestimonialsSection() {
           </div>
         </div>
       </section>
-    </LazyMotion>
+    
   );
 }

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { motion, useInView, LazyMotion, domAnimation } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 
 function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -38,7 +38,7 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <LazyMotion features={domAnimation}>
+    
       <section className="py-28" style={{ background: 'var(--color-surface)' }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -101,6 +101,6 @@ export default function StatsSection() {
           </div>
         </div>
       </section>
-    </LazyMotion>
+    
   );
 }

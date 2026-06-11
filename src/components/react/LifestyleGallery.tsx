@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { LazyMotion, domAnimation } from 'framer-motion';
 
 interface IgPost {
   id: string;
@@ -103,7 +102,7 @@ export default function LifestyleGallery() {
   }, []);
 
   return (
-    <LazyMotion features={domAnimation}>
+    
       <section className="py-24" style={{ background: 'var(--color-surface)' }}>
         <div className="max-w-7xl mx-auto px-6">
 
@@ -174,6 +173,6 @@ export default function LifestyleGallery() {
           </div>
         </div>
       </section>
-    </LazyMotion>
+    
   );
 }

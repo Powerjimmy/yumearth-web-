@@ -1,9 +1,8 @@
 import { useRef, lazy, Suspense } from 'react';
-import { motion, useScroll, useTransform, LazyMotion, domAnimation } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from '@phosphor-icons/react';
 
 const ConfettiBurst = lazy(() => import('./ConfettiBurst'));
-
 
 const stagger = {
   hidden: {},
@@ -15,13 +14,32 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.23, 1, 0.32, 1] } },
 };
 
+// CSS keyframes for float animations — GPU composited, off main thread
+const FLOAT_STYLES = `
+  @keyframes hf1  { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(5px) rotate(-5deg)} }
+  @keyframes hf2  { 0%,100%{transform:translateY(0) rotate(-4deg)} 50%{transform:translateY(-6px) rotate(4deg)} }
+  @keyframes hf3  { 0%,100%{transform:translateY(-4px) rotate(0deg)} 50%{transform:translateY(0) rotate(5deg)} }
+  @keyframes hf4  { 0%,100%{transform:translateY(4px)} 50%{transform:translateY(0)} }
+  @keyframes hf5  { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  @keyframes hf6  { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+  @keyframes hf7  { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-10px) rotate(8deg)} }
+  @keyframes hf8  { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(8px) rotate(-5deg)} }
+  @keyframes hf9  { 0%,100%{transform:translateY(0) rotate(-5deg)} 50%{transform:translateY(-12px) rotate(5deg)} }
+  @keyframes hf10 { 0%,100%{transform:translateY(8px)} 50%{transform:translateY(0)} }
+  @keyframes hf11 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+  @keyframes hf12 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(10px)} }
+  @keyframes hf13 { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-7px) rotate(6deg)} }
+  @keyframes hf14 { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(6px) rotate(-5deg)} }
+`;
+
 export default function HeroReact() {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end start'] });
   const textY = useTransform(scrollYProgress, [0, 1], [0, 40]);
 
   return (
-    <LazyMotion features={domAnimation}>
+    <>
+      <style>{FLOAT_STYLES}</style>
       <section
         ref={sectionRef}
         className="relative flex items-start overflow-hidden"
@@ -95,70 +113,63 @@ export default function HeroReact() {
             initial="hidden"
             animate="show"
           >
-            {/* Simple flex row: 3 bags side by side, vertically aligned at bottom */}
             <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'center', gap: '8px', padding: '0 8px', position: 'relative' }}>
 
-              {/* Floater soft-candy — above left bag (fruit snacks) */}
-              <motion.img
+              {/* Floater soft-candy */}
+              <img
                 src="/images/img/soft-candy.png" alt=""
                 style={{ position: 'absolute', left: '10%', top: '-8px',
                   width: 34, objectFit: 'contain', zIndex: 35,
-                  filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.18))' }}
-                animate={{ y: [0, 5, 0], rotate: [0, -5, 0] }}
-                transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
+                  filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.18))',
+                  animation: 'hf1 4.2s ease-in-out infinite 0.8s' }}
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
               />
 
-              {/* Floater lollipop-ok — above center bag, shifted right */}
-              <motion.img
+              {/* Floater lollipop-ok */}
+              <img
                 src="/images/img/lollipop-ok.png" alt=""
                 style={{ position: 'absolute', right: '22%', top: '-10px',
                   width: 36, objectFit: 'contain', zIndex: 35,
-                  filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.20))' }}
-                animate={{ y: [0, -6, 0], rotate: [-4, 4, -4] }}
-                transition={{ duration: 4.0, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
+                  filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.20))',
+                  animation: 'hf2 4.0s ease-in-out infinite 0.6s' }}
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
               />
 
-              {/* Floater gummy-bears — above right bag */}
-              <motion.img
+              {/* Floater gummy-bears */}
+              <img
                 src="/images/img/gummy-bears.png" alt=""
                 style={{ position: 'absolute', right: '8%', top: '-8px',
                   width: 28, objectFit: 'contain', zIndex: 35,
-                  filter: 'drop-shadow(0 3px 6px rgba(0,0,0,0.18))' }}
-                animate={{ y: [-4, 0, -4], rotate: [0, 5, 0] }}
-                transition={{ duration: 3.6, repeat: Infinity, ease: 'easeInOut', delay: 0.4 }}
+                  filter: 'drop-shadow(0 3px 6px rgba(0,0,0,0.18))',
+                  animation: 'hf3 3.6s ease-in-out infinite 0.4s' }}
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
               />
 
               {/* Bag left: fruit snacks */}
-              <motion.img
+              <img
                 src="/images/img/bolsa-fruit-sancks.png" alt="Fruit Snacks"
                 style={{ width: '28%', maxWidth: 110, objectFit: 'contain', flexShrink: 0,
-                  filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.15))', opacity: 0.9, zIndex: 10 }}
-                animate={{ y: [4, 0, 4] }}
-                transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
+                  filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.15))', opacity: 0.9, zIndex: 10,
+                  animation: 'hf4 4.8s ease-in-out infinite 0.6s' }}
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
               />
 
-              {/* Bag center: lollipops — tallest, sticks out above */}
-              <motion.img
+              {/* Bag center: lollipops */}
+              <img
                 src="/images/img/bolsa-lollipop-14.png" alt="YumEarth Lollipops"
                 style={{ width: '40%', maxWidth: 160, objectFit: 'contain', flexShrink: 0,
                   filter: 'drop-shadow(0 16px 32px rgba(0,0,0,0.22))', zIndex: 20,
-                  marginBottom: 0 }}
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut' }}
+                  marginBottom: 0,
+                  animation: 'hf5 4.2s ease-in-out infinite' }}
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
               />
 
               {/* Bag right: gummy bears */}
-              <motion.img
+              <img
                 src="/images/img/bolsa-gummy-bears.png" alt="Gummy Bears"
                 style={{ width: '26%', maxWidth: 100, objectFit: 'contain', flexShrink: 0,
-                  filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.13))', opacity: 0.85, zIndex: 10 }}
-                animate={{ y: [0, 6, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
+                  filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.13))', opacity: 0.85, zIndex: 10,
+                  animation: 'hf6 5s ease-in-out infinite 1.2s' }}
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
               />
 
@@ -173,7 +184,7 @@ export default function HeroReact() {
             transition={{ duration: 0.9, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
             style={{ height: '500px' }}
           >
-            {/* Badge: #1 Organic — centered top */}
+            {/* Badge: #1 Organic */}
             <motion.div
               className="absolute bg-white rounded-2xl shadow-lg px-4 py-3 z-30 text-center"
               style={{ top: 12, left: '50%', translateX: '-50%' }}
@@ -185,96 +196,85 @@ export default function HeroReact() {
               <p className="text-sm font-black" style={{ color: 'var(--color-ink)' }}>Candy Brand</p>
             </motion.div>
 
-            {/* Floater: lollipop-wrapper — far right top */}
-            <motion.img
+            {/* Floater: lollipop-wrapper */}
+            <img
               src="/images/img/lollipop-wrapper.png" alt=""
               style={{ position: 'absolute', right: '-3%', top: '6%', width: 60, zIndex: 30,
-                filter: 'drop-shadow(0 6px 14px rgba(0,0,0,0.18))' }}
-              animate={{ y: [0, -10, 0], rotate: [0, 8, 0] }}
-              transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 0.2 }}
+                filter: 'drop-shadow(0 6px 14px rgba(0,0,0,0.18))',
+                animation: 'hf7 3.8s ease-in-out infinite 0.2s' }}
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
 
-            {/* Floater: soft-candy — top left */}
-            <motion.img
+            {/* Floater: soft-candy */}
+            <img
               src="/images/img/soft-candy.png" alt=""
               style={{ position: 'absolute', left: '5%', top: '15%', width: 64, zIndex: 30,
-                filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.18))' }}
-              animate={{ y: [0, 8, 0], rotate: [0, -5, 0] }}
-              transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut', delay: 0.9 }}
+                filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.18))',
+                animation: 'hf8 4.2s ease-in-out infinite 0.9s' }}
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
 
-            {/* Floater: lollipop-ok — top center-right */}
-            <motion.img
+            {/* Floater: lollipop-ok */}
+            <img
               src="/images/img/lollipop-ok.png" alt=""
               style={{ position: 'absolute', right: '18%', top: '5%', width: 56, zIndex: 35,
-                filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.20))' }}
-              animate={{ y: [0, -12, 0], rotate: [-5, 5, -5] }}
-              transition={{ duration: 4.0, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
+                filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.20))',
+                animation: 'hf9 4.0s ease-in-out infinite 0.6s' }}
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
 
+            {/* Bag back-left: fruit snacks — wrapper handles positioning, img handles float */}
+            <div style={{ position: 'absolute', left: '2%', top: '50%', transform: 'translateY(-50%)', zIndex: 10 }}>
+              <img
+                src="/images/img/bolsa-fruit-sancks.png" alt=""
+                style={{ width: '155px', opacity: 0.85,
+                  filter: 'drop-shadow(0 16px 32px rgba(0,0,0,0.15))',
+                  animation: 'hf10 4.8s ease-in-out infinite 0.6s' }}
+                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+              />
+            </div>
 
-            {/* Bag back-left: fruit snacks */}
-            <motion.img
-              src="/images/img/bolsa-fruit-sancks.png" alt=""
-              style={{
-                position: 'absolute', left: '2%', top: '50%', translateY: '-50%',
-                width: '155px', opacity: 0.85,
-                filter: 'drop-shadow(0 16px 32px rgba(0,0,0,0.15))', zIndex: 10,
-              }}
-              animate={{ y: [8, 0, 8] }}
-              transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
-              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-            />
+            {/* Bag front-center: lollipops — wrapper handles centering, img handles float */}
+            <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', zIndex: 20 }}>
+              <img
+                src="/images/img/bolsa-lollipop-14.png" alt="YumEarth Lollipops"
+                style={{ width: '270px',
+                  filter: 'drop-shadow(0 28px 52px rgba(0,0,0,0.22))',
+                  animation: 'hf11 4.2s ease-in-out infinite' }}
+                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+              />
+            </div>
 
-            {/* Bag front-center: lollipops */}
-            <motion.img
-              src="/images/img/bolsa-lollipop-14.png" alt="YumEarth Lollipops"
-              style={{
-                position: 'absolute', left: '50%', top: '50%',
-                translateX: '-50%', translateY: '-50%',
-                width: '270px',
-                filter: 'drop-shadow(0 28px 52px rgba(0,0,0,0.22))', zIndex: 20,
-              }}
-              animate={{ y: [0, -14, 0] }}
-              transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut' }}
-              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-            />
+            {/* Bag back-right: gummy bears — wrapper handles positioning, img handles float */}
+            <div style={{ position: 'absolute', right: '0%', top: '62%', transform: 'translateY(-50%)', zIndex: 10 }}>
+              <img
+                src="/images/img/bolsa-gummy-bears.png" alt=""
+                style={{ width: '140px', opacity: 0.78,
+                  filter: 'drop-shadow(0 12px 24px rgba(0,0,0,0.13))',
+                  animation: 'hf12 5s ease-in-out infinite 1.2s' }}
+                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+              />
+            </div>
 
-            {/* Bag back-right: gummy bears — lowered to align with floaters */}
-            <motion.img
-              src="/images/img/bolsa-gummy-bears.png" alt=""
-              style={{
-                position: 'absolute', right: '0%', top: '62%', translateY: '-50%',
-                width: '140px', opacity: 0.78,
-                filter: 'drop-shadow(0 12px 24px rgba(0,0,0,0.13))', zIndex: 10,
-              }}
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
-              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-            />
-
-            {/* Floater: gummy-bears — bottom right x2 */}
-            <motion.img
+            {/* Floater: gummy-bears 1 */}
+            <img
               src="/images/img/gummy-bears.png" alt=""
               style={{ position: 'absolute', right: '2%', bottom: '15%', width: 58, zIndex: 35,
-                filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.18))' }}
-              animate={{ y: [0, -7, 0], rotate: [0, 6, 0] }}
-              transition={{ duration: 3.7, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-            />
-            <motion.img
-              src="/images/img/gummy-bears.png" alt=""
-              style={{ position: 'absolute', right: '8%', bottom: '8%', width: 48, zIndex: 35,
-                filter: 'drop-shadow(0 5px 10px rgba(0,0,0,0.15))' }}
-              animate={{ y: [0, 6, 0], rotate: [0, -5, 0] }}
-              transition={{ duration: 4.3, repeat: Infinity, ease: 'easeInOut', delay: 1.1 }}
+                filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.18))',
+                animation: 'hf13 3.7s ease-in-out infinite 0.5s' }}
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
 
-            {/* Badge: Ships to — bottom center */}
+            {/* Floater: gummy-bears 2 */}
+            <img
+              src="/images/img/gummy-bears.png" alt=""
+              style={{ position: 'absolute', right: '8%', bottom: '8%', width: 48, zIndex: 35,
+                filter: 'drop-shadow(0 5px 10px rgba(0,0,0,0.15))',
+                animation: 'hf14 4.3s ease-in-out infinite 1.1s' }}
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            />
+
+            {/* Badge: Ships to */}
             <motion.div
               className="absolute bottom-4 left-1/2 bg-white rounded-2xl shadow-xl px-5 py-3 z-30 text-center"
               style={{ translateX: '-50%' }}
@@ -289,6 +289,6 @@ export default function HeroReact() {
         </div>
 
       </section>
-    </LazyMotion>
+    </>
   );
 }

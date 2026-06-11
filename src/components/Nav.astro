@@ -10,7 +10,7 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+<nav id="nav" class="fixed top-0 left-0 right-0 z-50" style="transition: background 200ms var(--ease-out, cubic-bezier(0.23,1,0.32,1)), box-shadow 200ms var(--ease-out, cubic-bezier(0.23,1,0.32,1))">
   <!-- Announcement bar -->
   <div id="announcement-bar" class="w-full py-2 text-center text-xs font-black tracking-wider transition-all duration-300 px-4" style="background:var(--color-green); color:white;">
     Organic. Allergen-free. Made with real fruit. <span class="hidden sm:inline">&nbsp;·&nbsp; EMEA Master Distribution</span>
@@ -61,7 +61,7 @@ const currentPath = Astro.url.pathname;
 
           {link.href === '/products' && (
             <div class="nav-dropdown absolute top-full left-1/2 pt-3" style="transform:translateX(-50%);">
-              <div class="rounded-2xl overflow-hidden py-2" style="background:white; box-shadow:0 8px 32px rgba(0,0,0,0.12); border:1px solid rgba(0,0,0,0.06); min-width:180px;">
+              <div class="rounded-2xl overflow-hidden py-2" style="background:white; box-shadow:0 8px 32px rgba(0,0,0,0.12); border:1px solid rgba(0,0,0,0.06); min-width:180px; transform-origin:top center;">
                 <a href="/lollipops" class="nav-dd-item flex items-center gap-3 px-5 py-3 text-sm font-bold transition-colors"
                   style={`color:${currentPath.startsWith('/lollipops') ? 'var(--color-lollipop)' : 'var(--color-ink)'};`}>
                   <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:var(--color-lollipop);"></span>
@@ -99,17 +99,17 @@ const currentPath = Astro.url.pathname;
 
     <!-- Mobile hamburger -->
     <button id="menu-toggle" aria-label="Open menu" class="md:hidden flex flex-col gap-[5px] p-2">
-      <span class="block w-7 h-[2.5px] rounded-full transition-all duration-200" style="background:var(--color-ink);" id="bar1"></span>
-      <span class="block w-7 h-[2.5px] rounded-full transition-all duration-200" style="background:var(--color-ink);" id="bar2"></span>
-      <span class="block w-7 h-[2.5px] rounded-full transition-all duration-200" style="background:var(--color-ink);" id="bar3"></span>
+      <span class="block w-7 h-[2.5px] rounded-full" style="background:var(--color-ink); transition:transform 200ms cubic-bezier(0.23,1,0.32,1), opacity 200ms cubic-bezier(0.23,1,0.32,1);" id="bar1"></span>
+      <span class="block w-7 h-[2.5px] rounded-full" style="background:var(--color-ink); transition:transform 200ms cubic-bezier(0.23,1,0.32,1), opacity 200ms cubic-bezier(0.23,1,0.32,1);" id="bar2"></span>
+      <span class="block w-7 h-[2.5px] rounded-full" style="background:var(--color-ink); transition:transform 200ms cubic-bezier(0.23,1,0.32,1), opacity 200ms cubic-bezier(0.23,1,0.32,1);" id="bar3"></span>
     </button>
   </div>
 
   <!-- Mobile menu -->
   <div
     id="mobile-menu"
-    class="hidden md:hidden px-6 py-6 flex flex-col gap-5"
-    style="background:var(--color-cream); border-top:1px solid rgba(0,0,0,0.06);"
+    class="md:hidden px-6 flex flex-col gap-5"
+    style="background:var(--color-cream); border-top:1px solid rgba(0,0,0,0.06); opacity:0; max-height:0; overflow:hidden; padding-top:0; padding-bottom:0; transition:opacity 200ms cubic-bezier(0.23,1,0.32,1), max-height 220ms cubic-bezier(0.23,1,0.32,1), padding 200ms cubic-bezier(0.23,1,0.32,1);"
   >
     {navLinks.map(link => (
       link.href === '/products' ? (
@@ -156,32 +156,33 @@ const currentPath = Astro.url.pathname;
 
   const announcementBar = document.getElementById('announcement-bar');
 
+  let scrolled = false;
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      nav.style.background = 'rgba(255,255,255,1)';
-      nav.style.backdropFilter = 'blur(20px)';
-      nav.style.boxShadow = '0 1px 0 rgba(0,0,0,0.06)';
-      if (announcementBar) {
-        announcementBar.style.maxHeight = '0';
-        announcementBar.style.padding = '0';
-        announcementBar.style.overflow = 'hidden';
-      }
-    } else {
-      nav.style.background = 'transparent';
-      nav.style.backdropFilter = 'none';
-      nav.style.boxShadow = 'none';
-      if (announcementBar) {
-        announcementBar.style.maxHeight = '40px';
-        announcementBar.style.padding = '';
-        announcementBar.style.overflow = '';
-      }
+    const past = window.scrollY > 40;
+    if (past === scrolled) return;
+    scrolled = past;
+    nav.style.background = past ? 'rgba(255,255,255,1)' : 'transparent';
+    nav.style.backdropFilter = past ? 'blur(20px)' : 'none';
+    nav.style.boxShadow = past ? '0 1px 0 rgba(0,0,0,0.06)' : 'none';
+    if (announcementBar) {
+      announcementBar.classList.toggle('announcement-collapsed', past);
     }
-  });
+  }, { passive: true });
 
   let open = false;
   toggle.addEventListener('click', () => {
     open = !open;
-    mobileMenu.classList.toggle('hidden', !open);
+    if (open) {
+      mobileMenu.style.opacity = '1';
+      mobileMenu.style.maxHeight = '480px';
+      mobileMenu.style.paddingTop = '1.5rem';
+      mobileMenu.style.paddingBottom = '1.5rem';
+    } else {
+      mobileMenu.style.opacity = '0';
+      mobileMenu.style.maxHeight = '0';
+      mobileMenu.style.paddingTop = '0';
+      mobileMenu.style.paddingBottom = '0';
+    }
     bar1.style.transform = open ? 'translateY(8px) rotate(45deg)' : '';
     bar2.style.opacity = open ? '0' : '1';
     bar3.style.transform = open ? 'translateY(-8px) rotate(-45deg)' : '';
@@ -189,6 +190,19 @@ const currentPath = Astro.url.pathname;
 </script>
 
 <style>
+  /* Announcement bar collapse */
+  #announcement-bar {
+    overflow: hidden;
+    max-height: 40px;
+    transition: max-height 200ms cubic-bezier(0.23,1,0.32,1), padding 200ms cubic-bezier(0.23,1,0.32,1), opacity 200ms cubic-bezier(0.23,1,0.32,1);
+  }
+  #announcement-bar.announcement-collapsed {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+  }
+
   /* Products dropdown */
   .nav-dropdown {
     opacity: 0;
@@ -196,7 +210,6 @@ const currentPath = Astro.url.pathname;
     transform: translateX(-50%) translateY(-6px);
     transition: opacity 180ms cubic-bezier(0.23,1,0.32,1), transform 180ms cubic-bezier(0.23,1,0.32,1);
   }
-  .nav-has-dropdown:hover .nav-dropdown,
   .nav-has-dropdown:focus-within .nav-dropdown {
     opacity: 1;
     pointer-events: auto;
@@ -205,12 +218,21 @@ const currentPath = Astro.url.pathname;
   .nav-chevron {
     transition: transform 180ms cubic-bezier(0.23,1,0.32,1);
   }
-  .nav-has-dropdown:hover .nav-chevron,
   .nav-has-dropdown:focus-within .nav-chevron {
     transform: rotate(180deg);
   }
-  .nav-dd-item:hover {
-    background: rgba(0,0,0,0.04);
-    color: var(--color-teal) !important;
+  @media (hover: hover) and (pointer: fine) {
+    .nav-has-dropdown:hover .nav-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-has-dropdown:hover .nav-chevron {
+      transform: rotate(180deg);
+    }
+    .nav-dd-item:hover {
+      background: rgba(0,0,0,0.04);
+      color: var(--color-teal) !important;
+    }
   }
 </style>

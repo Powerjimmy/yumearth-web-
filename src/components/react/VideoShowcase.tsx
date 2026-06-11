@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { motion, LazyMotion, domAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const VIDEO_SRC = '/videos/video-src.mp4';
 
@@ -39,7 +39,7 @@ export default function VideoShowcase() {
   };
 
   return (
-    <LazyMotion features={domAnimation}>
+    
       <section className="py-24" style={{ background: 'var(--color-cream)' }}>
         <div className="max-w-6xl mx-auto px-6">
 
@@ -82,13 +82,14 @@ export default function VideoShowcase() {
             {started && muted && (
               <motion.button
                 className="absolute bottom-5 right-5 flex items-center gap-2 px-4 py-2 rounded-full cursor-pointer"
-                style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(8px)', color: 'white', border: 'none', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase' }}
+                style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(8px)', color: 'white', border: 'none', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', transition: 'background 150ms ease-out' }}
                 onClick={handleUnmute}
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.3 }}
                 aria-label="Unmute video"
-                whileHover={{ background: 'rgba(0,0,0,0.75)' }}
+                onMouseEnter={e => (e.currentTarget.style.background = 'rgba(0,0,0,0.75)')}
+                onMouseLeave={e => (e.currentTarget.style.background = 'rgba(0,0,0,0.55)')}
                 whileTap={{ scale: 0.97 }}
               >
                 {/* Muted speaker icon */}
@@ -117,6 +118,6 @@ export default function VideoShowcase() {
 
         </div>
       </section>
-    </LazyMotion>
+    
   );
 }

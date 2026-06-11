@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import {
   motion, useScroll, useTransform, useMotionValue, useSpring,
-  LazyMotion, domAnimation,
 } from 'framer-motion';
 
 const layers = [
@@ -130,7 +129,7 @@ export default function ProductFloat3D() {
   };
 
   return (
-    <LazyMotion features={domAnimation}>
+    
       <section
         ref={sectionRef}
         onMouseMove={handleMouseMove}
@@ -239,6 +238,6 @@ export default function ProductFloat3D() {
           </motion.a>
         </div>
       </section>
-    </LazyMotion>
+    
   );
 }

@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useMotionValue, useSpring, useTransform, useScroll, LazyMotion, domAnimation } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform, useScroll } from 'framer-motion';
 
 interface CardProps {
   href: string;
@@ -39,7 +39,7 @@ function Category3DCard({ href, title, tagline, desc, image, emoji, bg, accent, 
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1], delay: index * 0.12 }}
+      transition={{ duration: 0.55, ease: [0.23, 1, 0.32, 1], delay: index * 0.12 }}
       style={{ perspective: '900px' }}
     >
       <motion.div
@@ -117,12 +117,9 @@ function Category3DCard({ href, title, tagline, desc, image, emoji, bg, accent, 
               style={{ color: accent }}
             >
               View range
-              <motion.span
-                animate={{ x: [0, 4, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-              >
+              <span style={{ display: 'inline-block', animation: 'arrow-nudge 1.5s ease-in-out infinite' }}>
                 →
-              </motion.span>
+              </span>
             </span>
           </div>
 
@@ -171,7 +168,7 @@ export default function CategoryCards() {
   ];
 
   return (
-    <LazyMotion features={domAnimation}>
+    
       <section className="blob-bg pt-10 pb-24 md:py-24" style={{ background: 'var(--color-cream)' }}>
         <div className="max-w-6xl mx-auto px-6">
 
@@ -203,6 +200,6 @@ export default function CategoryCards() {
           </div>
         </div>
       </section>
-    </LazyMotion>
+    
   );
 }

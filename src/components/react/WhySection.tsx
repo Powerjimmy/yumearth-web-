@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { LazyMotion, domAnimation } from 'framer-motion';
 
 const statements = [
   {
@@ -28,7 +27,7 @@ const statements = [
 export default function WhySection() {
   return (
     <>
-      <LazyMotion features={domAnimation}>
+      
       <section className="py-24" style={{ background: 'var(--color-surface)', position: 'relative', overflow: 'hidden' }}>
 
 
@@ -118,7 +117,7 @@ export default function WhySection() {
           </div>
         </div>
       </section>
-      </LazyMotion>
+      
     </>
   );
 }
