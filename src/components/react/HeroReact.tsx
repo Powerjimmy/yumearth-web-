@@ -81,7 +81,7 @@ export default function HeroReact() {
               className="text-xl mb-8 max-w-md"
               style={{ color: 'var(--color-ink-muted)', lineHeight: 1.65, fontWeight: 500 }}
             >
-              Natural candies with real ingredients. No artificial dyes. No artificial flavors. Just the good stuff. Non-GMO, gluten free, vegan and kosher.
+              Tasty candies with organic ingredients. No artificial dyes. No artificial flavours. Vegan certified &amp; allergen friendly. Non-GMO, gluten free.
             </motion.p>
 
             {/* CTA */}
@@ -156,7 +156,7 @@ export default function HeroReact() {
 
               {/* Bag center: lollipops */}
               <img
-                src="/images/img/bolsa-lollipop-14.png" alt="YumEarth Lollipops"
+                src="/images/img/bolsa-lollipop-14.webp" alt="YumEarth Lollipops"
                 style={{ width: '40%', maxWidth: 160, objectFit: 'contain', flexShrink: 0,
                   filter: 'drop-shadow(0 16px 32px rgba(0,0,0,0.22))', zIndex: 20,
                   marginBottom: 0,
@@ -237,7 +237,7 @@ export default function HeroReact() {
             {/* Bag front-center: lollipops — wrapper handles centering, img handles float */}
             <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', zIndex: 20 }}>
               <img
-                src="/images/img/bolsa-lollipop-14.png" alt="YumEarth Lollipops"
+                src="/images/img/bolsa-lollipop-14.webp" alt="YumEarth Lollipops"
                 style={{ width: '270px',
                   filter: 'drop-shadow(0 28px 52px rgba(0,0,0,0.22))',
                   animation: 'hf11 4.2s ease-in-out infinite' }}
@@ -283,7 +283,7 @@ export default function HeroReact() {
               transition={{ duration: 0.6, delay: 1.2, ease: [0.23, 1, 0.32, 1] }}
             >
               <p className="text-xs font-black uppercase tracking-widest" style={{ color: 'var(--color-green)' }}>Ships to</p>
-              <p className="text-sm font-black" style={{ color: 'var(--color-ink)' }}>30+ Countries in EU</p>
+              <p className="text-sm font-black" style={{ color: 'var(--color-ink)' }}>40+ Countries in EMEA</p>
             </motion.div>
           </motion.div>
         </div>

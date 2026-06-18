@@ -82,7 +82,7 @@ function Category3DCard({ href, title, tagline, desc, image, emoji, bg, accent, 
                 key={i}
                 src={item.img}
                 alt=""
-                className="absolute pointer-events-none hidden sm:block"
+                className="absolute pointer-events-none"
                 style={{
                   width: item.size,
                   height: item.size,
@@ -139,30 +139,30 @@ export default function CategoryCards() {
     {
       href: '/lollipops',
       title: 'Lollipops',
-      tagline: '#besteverlollipop',
-      desc: 'Classic Assorted, Juicy Pops, Vitamin C Pops. Real fruit juice, colored by plants.',
-      image: '/images/products/bolsa-lollipops-red.png',
+      tagline: '',
+      desc: '',
+      image: '/images/products/bolsa-lollipops-red.webp',
       emoji: '🍭',
       bg: '#FFF0F2',
       accent: '#D7002D',
       floatItems: [
-        { img: '/images/products/bolsa-vitamin-c.png', emoji: '🍬', x: '5%', y: '12%', size: '80px', delay: 0.3 },
-        { img: '/images/products/lollipops/strawberry-smash.png', emoji: '🍭', x: '78%', y: '8%', size: '64px', delay: 0.8 },
+        { img: '/images/products/bolsa-vitamin-c.webp', emoji: '🍬', x: '5%', y: '12%', size: '80px', delay: 0.3 },
+        { img: '/images/products/lollipops/strawberry-smash.webp', emoji: '🍭', x: '78%', y: '8%', size: '64px', delay: 0.8 },
       ],
     },
     {
       href: '/soft-candy',
       title: 'Soft Candy',
-      tagline: 'Organic soft candy',
-      desc: 'Sour Beans, Fruit Snacks, Gummy Bears, Giggles. Allergen-friendly and vegan.',
-      image: '/images/products/bolsa-fruit-snacks.png',
+      tagline: '',
+      desc: '',
+      image: '/images/products/fruit-snacks.webp',
       emoji: '🍇',
       bg: '#EFF8E6',
       accent: '#4a9100',
       floatItems: [
-        { img: '/images/products/bolsa-gummy-bears.png', emoji: '🐻', x: '4%', y: '18%', size: '72px', delay: 0.2 },
-        { img: '/images/products/bolsa-sour-beans.png', emoji: '🫘', x: '78%', y: '8%', size: '64px', delay: 0.6 },
-        { img: '/images/products/bolsa-giggles.png', emoji: '😄', x: '74%', y: '55%', size: '56px', delay: 1.0 },
+        { img: '/images/products/gummy-bears.webp', emoji: '🐻', x: '4%', y: '18%', size: '72px', delay: 0.2 },
+        { img: '/images/products/sour-beans.webp', emoji: '🫘', x: '78%', y: '8%', size: '64px', delay: 0.6 },
+        { img: '/images/products/giggles.webp', emoji: '😄', x: '74%', y: '55%', size: '56px', delay: 1.0 },
       ],
     },
   ];

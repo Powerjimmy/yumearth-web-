@@ -6,72 +6,84 @@ import Footer from '../components/Footer.astro';
 const products = [
   {
     name: 'Fruit Snacks',
-    pack: 'Assorted pouches',
-    desc: 'Organic fruit snacks with 100% daily Vitamin C per pouch. Cherry, Peach, Strawberry, Banana. Zero artificial anything.',
+    pack: '50g',
+    desc: '',
     flavors: ['Cherry', 'Peach', 'Strawberry', 'Banana'],
-    image: '/images/products/bolsa-fruit-snacks.png',
-    hoverImage: '/images/products/bolsa-fruit-snacks-BACKok.png',
-    fallback: '/images/products/fruit-snacks.png',
+    image: '/images/products/bolsa-fruit-snacks.webp',
+    hoverImage: '/images/products/bolsa-fruit-snacks-BACKok.webp',
+    fallback: '/images/products/fruit-snacks.webp',
     color: '#F0EAFF',
     accent: '#7314A1',
-    badge: '100% Daily Vitamin C',
+    badge: '',
   },
   {
     name: 'Sour Beans',
-    pack: 'Assorted bag',
-    desc: 'Organic jelly beans coated in pure sour sugar. Apple, Peach, Mango, Cherry. Dangerously good.',
+    pack: '50g',
+    desc: '',
     flavors: ['Apple', 'Peach', 'Mango', 'Cherry'],
-    image: '/images/products/bolsa-sour-beans.png',
-    hoverImage: '/images/products/bolsa-sour-beans-back.png',
-    fallback: '/images/products/sour-beans.png',
+    image: '/images/products/bolsa-sour-beans.webp',
+    hoverImage: '/images/products/bolsa-sour-beans-back.webp',
+    fallback: '/images/products/sour-beans.webp',
     color: '#EAF8EE',
     accent: '#2a8a48',
-    badge: 'Sour sugar coated',
+    badge: '',
   },
   {
     name: 'Gummy Bears',
-    pack: 'Assorted bag',
-    desc: 'The classic gummy bear, certified organic. Colored by plants, flavored with real pomegranate. Allergen friendly.',
+    pack: '50g',
+    desc: '',
     flavors: ['Pomegranate'],
-    image: '/images/products/bolsa-gummy-bears.png',
-    hoverImage: '/images/products/bolsa-gummy-bears-back.png',
-    fallback: '/images/products/gummy-bears.png',
+    image: '/images/products/bolsa-gummy-bears.webp',
+    hoverImage: '/images/products/bolsa-gummy-bears-back.webp',
+    fallback: '/images/products/gummy-bears.webp',
     color: '#EFF8E6',
     accent: '#4a9100',
-    badge: 'Allergen friendly',
+    badge: '',
   },
   {
     name: 'Giggles',
-    pack: 'Assorted bag',
-    desc: 'Small, soft, easy-to-chew organic gummies for younger kids. Strawberry, Orange, Lemon, Green Apple. The ideal lunchbox snack.',
+    pack: '40g',
+    desc: '',
     flavors: ['Strawberry', 'Orange', 'Lemon', 'Green Apple'],
-    image: '/images/products/bolsa-giggles.png',
-    hoverImage: '/images/products/bolsa-giggles-BACKok.png',
-    fallback: '/images/products/giggles.png',
+    image: '/images/products/bolsa-giggles.webp',
+    hoverImage: '/images/products/bolsa-giggles-BACKok.webp',
+    fallback: '/images/products/giggles.webp',
     color: '#FFE8F0',
     accent: '#C45BAE',
-    badge: 'Perfect for little ones',
+    badge: '',
+  },
+  {
+    name: 'Chewys',
+    pack: '57g',
+    desc: '',
+    flavors: ['Lemon', 'Orange', 'Strawberry', 'Cherry'],
+    image: '/images/products/bolsas/Chewys_810165019607Front.webp',
+    hoverImage: '/images/products/bolsas/Chewys_810165019607Back.webp',
+    fallback: '/images/products/giggles.webp',
+    color: '#FFE8F0',
+    accent: '#C45BAE',
+    badge: '',
   },
   {
     name: 'Fruit Snacks Multipack',
     pack: '10 x 19.8g snack packs',
-    desc: 'Ten individual snack pouches in one bag. Banana Blast, Strawberry Smash, Very Very Cherry, Perfectly Peach. The ideal lunchbox pack.',
+    desc: '',
     flavors: ['Banana Blast', 'Strawberry Smash', 'Very Very Cherry', 'Perfectly Peach'],
-    image: '/images/products/3d-1958_Fruit-20X10-front.png',
-    hoverImage: '/images/products/3d-1958_Fruit-20X10-back.png',
-    fallback: '/images/products/fruit-snacks.png',
+    image: '/images/products/3d-1958_Fruit-20X10-front.webp',
+    hoverImage: '/images/products/3d-1958_Fruit-20X10-back.webp',
+    fallback: '/images/products/fruit-snacks.webp',
     color: '#F0EAFF',
     accent: '#7314A1',
-    badge: '10 snack packs',
+    badge: '',
   },
 ];
 
 // Individual candy unit images
 const units = [
-  { src: '/images/products/SOFT%20CANDY%20unidades/todos-giggles.png', hover: '/images/products/SOFT%20CANDY%20unidades/todos-giggles.png',        label: 'Giggles',         color: '#C45BAE' },
-  { src: '/images/products/soft-candy/fruit-snack-unit.png',    hover: '/images/products/SOFT%20CANDY%20unidades/FruitSnack.png',                  label: 'Fruit Snack',     color: '#7314A1' },
-  { src: '/images/products/soft-candy/sour-beans-unit.png',     hover: '/images/products/SOFT%20CANDY%20unidades/sour%20Beans.png',                label: 'Sour Beans',      color: '#2a8a48' },
-  { src: '/images/products/soft-candy/gummy-bears-unit.png',    hover: '/images/products/SOFT%20CANDY%20unidades/gummybears.png',                  label: 'Gummy Bear',      color: '#4a9100' },
+  { src: '/images/products/soft-candy-unidades/todos-giggles.png', hover: '/images/products/soft-candy-unidades/todos-giggles.png',        label: 'Giggles',         color: '#C45BAE' },
+  { src: '/images/products/soft-candy/fruit-snack-unit.png',    hover: '/images/products/soft-candy-unidades/FruitSnack.png',                  label: 'Fruit Snack',     color: '#7314A1' },
+  { src: '/images/products/soft-candy/sour-beans-unit.png',     hover: '/images/products/soft-candy-unidades/sour-beans.png',                label: 'Sour Beans',      color: '#2a8a48' },
+  { src: '/images/products/soft-candy/gummy-bears-unit.webp',    hover: '/images/products/soft-candy-unidades/gummybears.png',                  label: 'Gummy Bear',      color: '#4a9100' },
 ];
 ---
 
@@ -87,15 +99,9 @@ const units = [
         </a>
       </div>
       <div class="max-w-3xl">
-        <div class="badge mb-6" style="background:rgba(74,145,0,0.10); color:#4a9100;">
-          Organic soft candy
-        </div>
         <h1 class="font-black mb-4" style="font-family:'Nunito',sans-serif; font-size:clamp(2.5rem,6vw,4.5rem); line-height:0.95; letter-spacing:-0.03em;">
           Soft Candy
         </h1>
-        <p class="text-xl" style="color:var(--color-ink-muted); line-height:1.65;">
-          Four varieties. All USDA Organic, allergen-friendly, and vegan.
-        </p>
       </div>
       <div class="mt-4">
         <img
@@ -110,7 +116,6 @@ const units = [
     <!-- Individual candy units -->
     <section class="pb-16" style="background:var(--color-surface);">
       <div class="max-w-7xl mx-auto px-6 py-12">
-        <p class="text-xs font-black uppercase tracking-widest mb-8 text-center" style="color:var(--color-ink-muted);">All varieties</p>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
           {units.map(u => (
             <div class="flex flex-col items-center gap-2">
@@ -192,18 +197,6 @@ const units = [
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-20" style="background:#EFF8E6;">
-      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
-        <div>
-          <h2 class="font-black mb-2" style="font-family:'Nunito',sans-serif; font-size:clamp(1.8rem,4vw,2.8rem); line-height:0.95; letter-spacing:-0.03em; color:var(--color-ink);">want to stock these?</h2>
-          <p style="color:var(--color-ink-muted); max-width:420px; line-height:1.6;">
-            Distributors and retailers: pricing, stock, and full support for your territory.
-          </p>
-        </div>
-        <a href="/contact" class="btn-primary whitespace-nowrap text-base">Get in touch</a>
-      </div>
-    </section>
 
   </main>
   <Footer />

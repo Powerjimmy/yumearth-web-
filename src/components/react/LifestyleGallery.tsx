@@ -13,7 +13,7 @@ interface IgPost {
 // Fallback static photos — used if Instagram API fails
 const FALLBACK_PHOTOS = [
   {
-    src: '/images/img/bolsa-lollipop-14.png',
+    src: '/images/img/bolsa-lollipop-14.webp',
     alt: 'YumEarth Lollipops',
     caption: '#besteverlollipop',
     tall: true,
@@ -37,7 +37,7 @@ const FALLBACK_PHOTOS = [
     href: 'https://www.instagram.com/yumearth.eu/',
   },
   {
-    src: '/images/products/bolsas/3d-bolsa-candy-sourbeans.png',
+    src: '/images/products/bolsas/3d-bolsa-candy-sourbeans.webp',
     alt: 'YumEarth Sour Beans',
     caption: 'Your new sour obsession',
     tall: true,
@@ -45,7 +45,7 @@ const FALLBACK_PHOTOS = [
     href: 'https://www.instagram.com/yumearth.eu/',
   },
   {
-    src: '/images/products/bolsas/3D-NEW-GIGGLES_ok_2025-front.png',
+    src: '/images/products/bolsas/3D-NEW-GIGGLES_ok_2025-front.webp',
     alt: 'YumEarth Giggles',
     caption: 'Perfect for little ones',
     tall: false,
@@ -53,7 +53,7 @@ const FALLBACK_PHOTOS = [
     href: 'https://www.instagram.com/yumearth.eu/',
   },
   {
-    src: '/images/products/bolsas/3d-1669-2024-vitaminC-1.png',
+    src: '/images/products/bolsas/3d-1669-2024-vitaminC-1.webp',
     alt: 'YumEarth Vitamin C Lollipops',
     caption: '100% Daily Vitamin C',
     tall: false,

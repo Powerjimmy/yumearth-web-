@@ -17,7 +17,7 @@ import Footer from '../components/Footer.astro';
           "@type": "Product",
           "name": "Lollipops",
           "description": "Organic lollipops — Classic Assorted, Juicy Pops, Strawberry Pops, Vitamin C Pops. Real fruit flavor, zero artificial dyes.",
-          "image": "https://yumearth.eu/images/products/lollipops.png",
+          "image": "https://yumearth.eu/images/products/lollipops.webp",
           "brand": { "@type": "Brand", "name": "YumEarth" },
           "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "EUR" }
         }
@@ -29,7 +29,7 @@ import Footer from '../components/Footer.astro';
           "@type": "Product",
           "name": "Soft Candy",
           "description": "Organic soft candy — Sour Beans, Fruit Snacks, Gummy Bears, Giggles. Allergen-friendly and vegan.",
-          "image": "https://yumearth.eu/images/products/fruit-snacks.png",
+          "image": "https://yumearth.eu/images/products/fruit-snacks.webp",
           "brand": { "@type": "Brand", "name": "YumEarth" },
           "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "EUR" }
         }
@@ -51,9 +51,6 @@ import Footer from '../components/Footer.astro';
         <h1 class="text-5xl md:text-6xl mb-4 font-black" style="font-family:'Nunito',sans-serif; letter-spacing:-0.03em; line-height:0.95;">
           Products
         </h1>
-        <p class="text-xl" style="color:var(--color-ink-muted);">
-          Two categories. All organic. Zero artificial anything.
-        </p>
       </div>
     </section>
 
@@ -78,20 +75,16 @@ import Footer from '../components/Footer.astro';
         >
           <div class="flex-1 flex items-center justify-center p-12">
             <img
-              src="/images/products/lollipops.png"
+              src="/images/products/lollipops.webp"
               alt="YumEarth Organic Lollipops"
               class="w-48 h-48 md:w-64 md:h-64 object-contain transition-transform duration-500 group-hover:scale-105"
               style="filter:drop-shadow(0 20px 40px rgba(215,0,45,0.2));"
             />
           </div>
           <div class="p-8 pt-0">
-            <p class="text-xs font-black uppercase tracking-widest mb-2" style="color:#D7002D;">#besteverlollipop</p>
-            <h2 class="font-black mb-2" style="font-family:'ClashDisplay',sans-serif; font-size:clamp(2rem,4vw,2.8rem); line-height:0.95; letter-spacing:-0.03em;">
+            <h2 class="font-black mb-2" style="font-family:'Nunito',sans-serif; font-weight:900; font-size:clamp(2rem,4vw,2.8rem); line-height:0.95; letter-spacing:-0.03em;">
               Lollipops
             </h2>
-            <p class="text-sm mb-4" style="color:rgba(0,0,0,0.5); line-height:1.6;">
-              Classic Assorted · Juicy Pops · Strawberry Pops · Vitamin C Pops
-            </p>
             <span class="inline-flex items-center gap-2 text-sm font-black" style="color:#D7002D;">
               View range →
             </span>
@@ -106,21 +99,17 @@ import Footer from '../components/Footer.astro';
         >
           <div class="flex-1 flex items-center justify-center p-12">
             <img
-              src="/images/products/fruit-snacks.png"
+              src="/images/products/fruit-snacks.webp"
               alt="YumEarth Soft Candy"
               class="w-48 h-48 md:w-64 md:h-64 object-contain transition-transform duration-500 group-hover:scale-105"
               style="filter:drop-shadow(0 20px 40px rgba(74,145,0,0.2));"
             />
           </div>
           <div class="p-8 pt-0">
-            <p class="text-xs font-black uppercase tracking-widest mb-2" style="color:#4a9100;">Organic soft candy</p>
-            <h2 class="font-black mb-2" style="font-family:'ClashDisplay',sans-serif; font-size:clamp(2rem,4vw,2.8rem); line-height:0.95; letter-spacing:-0.03em;">
+            <h2 class="font-black mb-2" style="font-family:'Nunito',sans-serif; font-weight:900; font-size:clamp(2rem,4vw,2.8rem); line-height:0.95; letter-spacing:-0.03em;">
               Soft Candy
             </h2>
-            <p class="text-sm mb-4" style="color:rgba(0,0,0,0.5); line-height:1.6;">
-              Sour Beans · Fruit Snacks · Gummy Bears · Giggles
-            </p>
-            <span class="inline-flex items-center gap-2 text-sm font-black" style="color:#4a9100;">
+            <span class="inline-flex items-center gap-2 text-sm font-black" style="color:var(--color-green-dark);">
               View range →
             </span>
           </div>

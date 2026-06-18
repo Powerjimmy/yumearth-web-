@@ -54,21 +54,16 @@ import TestimonialsSection from '../components/react/TestimonialsSection';
           class="font-black mb-4"
           style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(2rem,5vw,3.5rem); line-height:0.95; letter-spacing:-0.03em;"
         >
-          Europe. Middle East.<br />
+          Europe. Middle East & Africa<br />
           <span style="color:var(--color-teal);">And beyond.</span>
         </h2>
-        <p class="text-xl mb-10 max-w-xl mx-auto" style="color:var(--color-ink-muted); line-height:1.65;">
-          Kazakhstan, Saudi Arabia, Greece, UAE, France and more.
-          If you want YumEarth in your market, we're your people.
-        </p>
-
         <div class="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto mb-12">
           {[
-            { flag: '🇰🇿', name: 'Kazakhstan' },
             { flag: '🇸🇦', name: 'Saudi Arabia' },
+            { flag: '🇰🇿', name: 'Kazakhstan' },
+            { flag: '🇸🇰', name: 'Slovakia' },
             { flag: '🇬🇷', name: 'Greece' },
             { flag: '🇨🇿', name: 'Czech Republic' },
-            { flag: '🇸🇰', name: 'Slovakia' },
             { flag: '🇰🇬', name: 'Kyrgyzstan' },
             { flag: '🇦🇪', name: 'UAE' },
             { flag: '🇫🇷', name: 'France' },
@@ -77,7 +72,7 @@ import TestimonialsSection from '../components/react/TestimonialsSection';
           ].map(c => (
             <span
               class="text-sm font-bold px-4 py-2 rounded-full flex items-center gap-1.5"
-              style="background:white; color:var(--color-dark); box-shadow:0 1px 4px rgba(0,0,0,0.06);"
+              style="background:white; color:var(--color-ink); box-shadow:0 1px 4px rgba(0,0,0,0.06);"
             ><span>{c.flag}</span>{c.name}</span>
           ))}
           <a href="/distribution" class="text-sm font-bold px-4 py-2 rounded-full" style="background:var(--color-teal); color:white;">
@@ -100,14 +95,9 @@ import TestimonialsSection from '../components/react/TestimonialsSection';
           style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(2rem,5vw,3rem); line-height:0.95; letter-spacing:-0.03em;"
         >
           have questions?<br />
-          <span style="color:var(--color-teal);">send us a note.</span>
+          <span style="color:var(--color-teal);">send us a message.</span>
         </h2>
-        <p class="text-xl mb-10" style="color:var(--color-ink-muted); line-height:1.65;">
-          Distributors, retailers, press, or just curious about the products.
-          We reply within 24-48h.
-        </p>
         <div class="flex flex-wrap gap-4 justify-center">
-          <a href="/contact" class="btn-primary text-base">Get in touch →</a>
           <a href="mailto:info@yumearth.eu" class="btn-secondary text-base">info@yumearth.eu</a>
         </div>
       </div>

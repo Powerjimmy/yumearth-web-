@@ -16,6 +16,8 @@
     --color-ink-muted:   #5a5a5a;
     --color-surface:     #F4F9F0;
     --color-dark:        #103a3c;
+    --color-green-dark:  #5a8a00;
+    --color-teal-wash:   #E8F7F9;
 
     /* Emil Kowalski easing tokens */
     --ease-out:     cubic-bezier(0.23, 1, 0.32, 1);
@@ -23,7 +25,8 @@
     --ease-drawer:  cubic-bezier(0.32, 0.72, 0, 1);
   }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body { overflow-x: hidden; }
 
   h1, h2, h3, h4 {
     font-family: 'Nunito', sans-serif;

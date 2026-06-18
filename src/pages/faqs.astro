@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const CATEGORY_ID = '6979729954715';
+const BASE = 'https://yumearthhelp.zendesk.com/api/v2/help_center/en-us';
+
+// Fetch sections and articles in parallel
+const [sectionsRes, articlesRes] = await Promise.all([
+  fetch(`${BASE}/categories/${CATEGORY_ID}/sections.json`).catch(() => null),
+  fetch(`${BASE}/categories/${CATEGORY_ID}/articles.json?per_page=100`).catch(() => null),
+]);
+
+interface ZDSection { id: number; name: string; }
+interface ZDArticle { id: number; title: string; body: string; section_id: number; }
+
+let sections: ZDSection[] = [];
+let articles: ZDArticle[] = [];
+
+if (sectionsRes?.ok) {
+  const data = await sectionsRes.json();
+  sections = data.sections ?? [];
+}
+if (articlesRes?.ok) {
+  const data = await articlesRes.json();
+  articles = data.articles ?? [];
+}
+
+// Group articles by section
+const grouped = sections
+  .filter(s => articles.some(a => a.section_id === s.id))
+  .map(s => ({
+    section: s,
+    articles: articles.filter(a => a.section_id === s.id),
+  }));
+
+// Articles with no matching section
+const ungrouped = articles.filter(a => !sections.find(s => s.id === a.section_id));
+---
+
+<Layout title="FAQs & Allergens — YumEarth EU" description="Allergen information, certifications and product questions answered by the YumEarth team.">
+  <Nav />
+  <main class="pt-32 pb-24">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <div class="badge mb-6" style="background:rgba(0,178,191,0.12); color:var(--color-teal);">FAQs & Allergens</div>
+      <h1 class="font-black mb-2" style="font-family:'Nunito',sans-serif; font-size:clamp(2.5rem,6vw,4rem); line-height:0.95; letter-spacing:-0.03em; color:var(--color-ink);">
+        got questions?
+      </h1>
+      <p class="text-sm mb-12" style="color:var(--color-ink-muted);">
+        Content maintained by the YumEarth team. <a href="https://yumearthhelp.zendesk.com/hc/en-us/categories/6979729954715-Allergens-Product-Questions" target="_blank" rel="noopener noreferrer" style="color:var(--color-teal); font-weight:700;">View original ↗</a>
+      </p>
+
+      {grouped.length === 0 && articles.length === 0 && (
+        <div style="text-align:center; padding: 4rem 0;">
+          <p style="color:var(--color-ink-muted); margin-bottom:1.5rem;">Could not load FAQs right now.</p>
+          <a href="https://yumearthhelp.zendesk.com/hc/en-us/categories/6979729954715-Allergens-Product-Questions" target="_blank" rel="noopener noreferrer" class="btn-primary text-base">
+            Open Help Centre →
+          </a>
+        </div>
+      )}
+
+      {grouped.map(({ section, articles: sectionArticles }) => (
+        <div class="faq-section mb-12">
+          <h2 style="font-family:'Nunito',sans-serif; font-weight:900; font-size:1.3rem; color:var(--color-ink); letter-spacing:-0.02em; margin-bottom:1rem; padding-bottom:0.75rem; border-bottom:2px solid rgba(0,178,191,0.15);">
+            {section.name}
+          </h2>
+          <div class="faq-list">
+            {sectionArticles.map(article => (
+              <details class="faq-item">
+                <summary class="faq-q">{article.title}</summary>
+                <div class="faq-body" set:html={article.body} />
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      {ungrouped.length > 0 && (
+        <div class="faq-section mb-12">
+          <div class="faq-list">
+            {ungrouped.map(article => (
+              <details class="faq-item">
+                <summary class="faq-q">{article.title}</summary>
+                <div class="faq-body" set:html={article.body} />
+              </details>
+            ))}
+          </div>
+        </div>
+      )}
+
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .faq-item {
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-q {
+    list-style: none;
+    cursor: pointer;
+    padding: 1rem 0;
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: var(--color-ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Satoshi', 'Nunito', sans-serif;
+    transition: color 150ms;
+  }
+  .faq-q::-webkit-details-marker { display: none; }
+  .faq-q::after {
+    content: '+';
+    flex-shrink: 0;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-teal);
+    transition: transform 200ms cubic-bezier(0.23,1,0.32,1);
+  }
+  details[open] .faq-q::after {
+    transform: rotate(45deg);
+  }
+  details[open] .faq-q {
+    color: var(--color-teal);
+  }
+  .faq-body {
+    padding-bottom: 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--color-ink-muted);
+    max-width: 60ch;
+  }
+  .faq-body p { margin-bottom: 0.5rem; }
+  .faq-body a { color: var(--color-teal); font-weight: 700; }
+  .faq-body ul, .faq-body ol { padding-left: 1.25rem; margin-bottom: 0.5rem; }
+  .faq-body li { margin-bottom: 0.2rem; }
+</style>

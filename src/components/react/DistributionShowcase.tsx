@@ -77,7 +77,7 @@ export default function DistributionShowcase() {
       <section style={{ background: 'var(--color-dark)', position: 'relative', overflow: 'hidden', padding: '6rem 0' }}>
 
         {/* Decorative product floaters — very subtle */}
-        <img src="/images/img/bolsa-lollipop-14.png" alt=""
+        <img src="/images/img/bolsa-lollipop-14.webp" alt=""
           aria-hidden="true"
           style={{ position: 'absolute', left: '-4%', top: '50%', transform: 'translateY(-50%) rotate(-12deg)',
             width: 320, opacity: 0.08, pointerEvents: 'none', userSelect: 'none',

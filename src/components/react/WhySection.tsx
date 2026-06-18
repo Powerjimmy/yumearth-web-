@@ -4,21 +4,21 @@ const statements = [
   {
     number: '01',
     headline: 'Zero artificial colors.',
-    body: 'Every shade comes from real fruit and vegetable juice. No petroleum-derived dyes. Ever.',
+    body: '',
     accent: 'var(--color-teal)',
     image: '/images/img/Zero-artificial.png',
   },
   {
     number: '02',
     headline: 'Certified Organic.',
-    body: 'Third-party certified. Non-GMO verified. The certifications that actually mean something.',
+    body: '',
     accent: 'var(--color-green)',
     image: '/images/img/Certified-Organic..png',
   },
   {
     number: '03',
     headline: 'Kids actually want to eat it.',
-    body: 'Allergen-friendly, gluten-free, and genuinely delicious. No compromise required and vegan.',
+    body: '',
     accent: 'var(--color-magenta)',
     image: '/images/img/vegan-glutenfree.png',
   },
@@ -90,16 +90,6 @@ export default function WhySection() {
                   {s.headline}
                 </motion.h3>
 
-                {/* Center image */}
-                <div className="flex-shrink-0 flex items-center justify-center md:w-40">
-                  <img
-                    src={s.image}
-                    alt=""
-                    style={{ height: 72, width: 'auto', maxWidth: 160, objectFit: 'contain' }}
-                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                  />
-                </div>
-
                 {/* Body */}
                 <p
                   className="text-base leading-relaxed flex-1"
@@ -108,10 +98,15 @@ export default function WhySection() {
                   {s.body}
                 </p>
 
-                <div
-                  className="hidden md:block w-2 h-2 rounded-full flex-shrink-0"
-                  style={{ background: s.accent }}
-                />
+                {/* Image — right side */}
+                <div className="flex-shrink-0 flex items-center justify-end md:w-48">
+                  <img
+                    src={s.image}
+                    alt=""
+                    style={{ height: 150, width: 'auto', maxWidth: 220, objectFit: 'contain' }}
+                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                  />
+                </div>
               </motion.div>
             ))}
           </div>

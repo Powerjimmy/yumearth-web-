@@ -6,76 +6,88 @@ import Footer from '../components/Footer.astro';
 const products = [
   {
     name: 'Classic Assorted Lollipops',
-    pack: '14-pack',
-    desc: 'The original YumEarth lollipop. Real fruit juice, colored by plants, zero artificial anything. Four classic flavors in every bag.',
+    pack: '14 u',
+    desc: '',
     flavors: ['Pomegranate Pucker', 'Strawberry Smash', 'Very Very Cherry', 'Perfectly Peach'],
-    image: '/images/products/bolsa-lollipops-14.png',
-    hoverImage: '/images/products/3d-1024-back-yumearth-2.png',
-    fallback: '/images/products/lollipops.png',
+    image: '/images/products/bolsa-lollipops-14.webp',
+    hoverImage: '/images/products/3d-1024-back-yumearth-2.webp',
+    fallback: '/images/products/lollipops.webp',
     color: '#FFF0F2',
     accent: '#D7002D',
-    badge: '#besteverlollipop',
+    badge: '',
   },
   {
-    name: 'Juicy Pops',
-    pack: 'Assorted bag',
-    desc: 'A bolder mix with a sour twist. Tart apple, cherry, and grape: all certified organic, all real fruit flavor.',
+    name: 'Juicy Lollipops',
+    pack: '14 u',
+    desc: '',
     flavors: ['Sour Apple Tart', 'Very Very Cherry', 'Googly Grape'],
-    image: '/images/products/bolsa-juicy-pops.png',
-    hoverImage: '/images/products/3d-1026-back-organic-juicy-2.png',
-    fallback: '/images/products/lollipops.png',
+    image: '/images/products/bolsa-juicy-pops.webp',
+    hoverImage: '/images/products/3d-1026-back-organic-juicy-2.webp',
+    fallback: '/images/products/lollipops.webp',
     color: '#FFF5E0',
     accent: '#FF7803',
-    badge: 'Juicy & bold',
+    badge: '',
   },
   {
-    name: 'Vitamin C Pops',
-    pack: '14-pack',
-    desc: '100% daily Vitamin C per pop. All the flavor of a classic YumEarth lollipop with an immune system boost built in.',
+    name: 'Vitamin C Lollipops',
+    pack: '14 u',
+    desc: '',
     flavors: ['Strawberry Smash', 'Very Very Cherry', 'Razzmatazz Berry'],
-    image: '/images/products/bolsa-vitamin-c.png',
-    hoverImage: '/images/products/3d-1669-back-vitaminC-2.png',
-    fallback: '/images/products/vitamin-lollipops.png',
+    image: '/images/products/bolsa-vitamin-c.webp',
+    hoverImage: '/images/products/3d-1669-back-vitaminC-2.webp',
+    fallback: '/images/products/vitamin-lollipops.webp',
     color: '#FFF5E6',
     accent: '#FF7803',
-    badge: '100% Daily Vitamin C',
+    badge: '',
+  },
+  {
+    name: 'Strawberry Lollipops',
+    pack: '14 u',
+    desc: '',
+    flavors: ['Strawberry Smash'],
+    image: '/images/products/bolsas/bolsa-lollipops-fresa-front-14.webp',
+    hoverImage: '/images/products/bolsas/bolsa-lollipops-fresa-back-14.webp',
+    fallback: '/images/products/lollipops.webp',
+    color: '#FFF0F2',
+    accent: '#D7002D',
+    badge: '',
   },
   {
     name: 'Assorted 40 Lollipops',
-    pack: '40-pack',
-    desc: 'The family bag. All the classic YumEarth flavors, in bulk. Perfect for parties, classrooms, or serious lollipop fans.',
+    pack: '40 u',
+    desc: '',
     flavors: ['Pomegranate Pucker', 'Strawberry Smash', 'Very Very Cherry', 'Perfectly Peach', 'And more'],
-    image: '/images/products/bolsa-lollipops-40.png',
-    hoverImage: '/images/products/3d-1025-back-yumearth-2.png',
-    fallback: '/images/products/lollipops.png',
+    image: '/images/products/bolsa-lollipops-40.webp',
+    hoverImage: '/images/products/3d-1025-back-yumearth-2.webp',
+    fallback: '/images/products/lollipops.webp',
     color: '#F0FFF0',
     accent: '#4a9100',
-    badge: '40 pops',
+    badge: '',
   },
   {
     name: '100-unit Assorted',
-    pack: '100-pack',
-    desc: 'One box, every flavor. 100 individually wrapped lollipops ready for countertops, checkout displays, and bulk retail. The easiest yes for any buyer.',
+    pack: '100 u',
+    desc: '',
     flavors: ['Pomegranate Pucker', 'Strawberry Smash', 'Very Very Cherry', 'Perfectly Peach', 'Googly Grape', 'And more'],
-    image: '/images/img/3D-1008-Organic-Assorted-Lollipops_100_pops.png',
+    image: '/images/img/3D-1008-Organic-Assorted-Lollipops_100_pops.webp',
     hoverImage: null,
-    fallback: '/images/products/lollipops.png',
+    fallback: '/images/products/lollipops.webp',
     color: '#EBF5FF',
     accent: '#0066CC',
-    badge: '100 pops',
+    badge: '',
   },
 ];
 
 // Individual lollipop wrapper images
 const wrappers = [
-  { src: '/images/products/lollipops/pomegranate-pucker.png', hover: '/images/products/Lollipops%20unidades/PopWrappers_Pomegranate.png', label: 'Pomegranate Pucker', color: '#8b1a4a' },
-  { src: '/images/products/lollipops/strawberry-smash.png', hover: '/images/products/Lollipops%20unidades/PopWrappers_Strawberry.png', label: 'Strawberry Smash', color: '#D7002D' },
-  { src: '/images/products/lollipops/very-very-cherry.png', hover: '/images/products/Lollipops%20unidades/PopWrappers_Cherry.png', label: 'Very Very Cherry', color: '#c0001a' },
-  { src: '/images/products/lollipops/perfectly-peach.png', hover: '/images/products/Lollipops%20unidades/PopWrappers_Peach.png', label: 'Perfectly Peach', color: '#e87c2a' },
-  { src: '/images/products/lollipops/googly-grape.png', hover: '/images/products/Lollipops%20unidades/PopWrappers_Grape.png', label: 'Googly Grape', color: '#6b2fa0' },
-  { src: '/images/products/lollipops/razzmatazz-berry.png', hover: '/images/products/Lollipops%20unidades/PopWrappers_Blueberry.png', label: 'Razzmatazz Berry', color: '#c21460' },
-  { src: '/images/products/lollipops/watermelon.png', hover: '/images/products/Lollipops%20unidades/PopWrappers_Watermelon.png', label: 'Watermelon', color: '#2d9e4a' },
-  { src: '/images/products/lollipops/mango-tango.png', hover: '/images/products/Lollipops%20unidades/PopWrappers_Mango.png', label: 'Mango Tango', color: '#e8920a' },
+  { src: '/images/products/lollipops/pomegranate-pucker.webp', hover: '/images/products/lollipops-unidades/PopWrappers_Pomegranate.png', label: 'Pomegranate Pucker', color: '#8b1a4a' },
+  { src: '/images/products/lollipops/strawberry-smash.webp', hover: '/images/products/lollipops-unidades/PopWrappers_Strawberry.png', label: 'Strawberry Smash', color: '#D7002D' },
+  { src: '/images/products/lollipops/very-very-cherry.webp', hover: '/images/products/lollipops-unidades/PopWrappers_Cherry.png', label: 'Very Very Cherry', color: '#c0001a' },
+  { src: '/images/products/lollipops/perfectly-peach.webp', hover: '/images/products/lollipops-unidades/PopWrappers_Peach.png', label: 'Perfectly Peach', color: '#e87c2a' },
+  { src: '/images/products/lollipops/googly-grape.webp', hover: '/images/products/lollipops-unidades/PopWrappers_Grape.png', label: 'Googly Grape', color: '#6b2fa0' },
+  { src: '/images/products/lollipops/razzmatazz-berry.webp', hover: '/images/products/lollipops-unidades/PopWrappers_Blueberry.png', label: 'Razzmatazz Berry', color: '#c21460' },
+  { src: '/images/products/lollipops/watermelon.webp', hover: '/images/products/lollipops-unidades/PopWrappers_Watermelon.png', label: 'Watermelon', color: '#2d9e4a' },
+  { src: '/images/products/lollipops/mango-tango.webp', hover: '/images/products/lollipops-unidades/PopWrappers_Mango.png', label: 'Mango Tango', color: '#e8920a' },
 ];
 ---
 
@@ -91,16 +103,9 @@ const wrappers = [
         </a>
       </div>
       <div class="max-w-3xl">
-        <div class="badge mb-6" style="background:rgba(215,0,45,0.10); color:#D7002D;">
-          #besteverlollipop
-        </div>
         <h1 class="font-black mb-4" style="font-family:'Nunito',sans-serif; font-size:clamp(2.5rem,6vw,4.5rem); line-height:0.95; letter-spacing:-0.03em;">
           Lollipops
         </h1>
-        <p class="text-xl" style="color:var(--color-ink-muted); line-height:1.65;">
-          Five varieties. All USDA Organic. Made with real fruit juice,
-          colored by plants, free from artificial dyes and flavors.
-        </p>
       </div>
       <div class="mt-4">
         <img
@@ -115,7 +120,6 @@ const wrappers = [
     <!-- Individual flavor wrappers -->
     <section class="pb-16" style="background:var(--color-surface);">
       <div class="max-w-7xl mx-auto px-6 py-12">
-        <p class="text-xs font-black uppercase tracking-widest mb-8 text-center" style="color:var(--color-ink-muted);">All flavors</p>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
           {wrappers.map(w => (
             <div class="flex flex-col items-center gap-2">
@@ -216,69 +220,6 @@ const wrappers = [
       </div>
     </section>
 
-    <!-- PLV & Displays -->
-    <section style="background:#FEF7E8; overflow:hidden;">
-      <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <!-- Text -->
-        <div class="order-2 md:order-1">
-          <p class="text-xs font-black uppercase tracking-widest mb-4" style="color:#C8860A;">For retailers</p>
-          <h2 class="font-black mb-5" style="font-family:'Nunito',sans-serif; font-size:clamp(2rem,4vw,3.2rem); line-height:0.95; letter-spacing:-0.03em; color:var(--color-ink);">
-            PLV &amp; Displays
-          </h2>
-          <p class="text-lg mb-6" style="color:var(--color-ink-muted); line-height:1.65; max-width:420px;">
-            Ready-to-place gravity feed displays and counter units. Designed for high-traffic retail: no setup, no fuss, maximum visibility.
-          </p>
-          <ul class="space-y-3 mb-8" role="list">
-            {[
-              'Gravity feed display: self-refilling countertop unit',
-              'Horizontal display: shelf-ready, planogram-friendly',
-              'Pre-filled or empty options available',
-              'Co-branded with your logo on request',
-            ].map(item => (
-              <li class="flex items-start gap-3 text-sm" style="color:var(--color-ink-muted);">
-                <span aria-hidden="true" style="color:#C8860A; flex-shrink:0; margin-top:2px; font-weight:900;">✓</span>
-                {item}
-              </li>
-            ))}
-          </ul>
-          <a href="/contact" class="plv-btn inline-flex items-center gap-2 font-bold text-sm px-6 py-3 rounded-full"
-            style="background:#C8860A; color:white;">
-            Ask about displays
-          </a>
-        </div>
-        <!-- Image -->
-        <div class="order-1 md:order-2 flex items-center justify-center">
-          <button
-            class="display-zoom cursor-zoom-in rounded-2xl overflow-hidden"
-            data-lightbox-front="/images/img/displays.png"
-            data-lightbox-name="PLV Display"
-            aria-label="Zoom PLV display image"
-            type="button"
-          >
-            <img
-              src="/images/img/displays.png"
-              alt="YumEarth gravity feed display and horizontal shelf unit for retail"
-              class="w-full max-w-md block"
-              style="filter:drop-shadow(0 32px 64px rgba(0,0,0,0.5)); border-radius:16px; transition: transform 0.3s var(--ease-out);"
-              loading="lazy"
-            />
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="py-20" style="background:#FFF0F2;">
-      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
-        <div>
-          <h2 class="font-black mb-2" style="font-family:'Nunito',sans-serif; font-size:clamp(1.8rem,4vw,2.8rem); line-height:0.95; letter-spacing:-0.03em; color:var(--color-ink);">want to stock these?</h2>
-          <p style="color:var(--color-ink-muted); max-width:420px; line-height:1.6;">
-            Distributors and retailers: pricing, stock, and full support for your territory.
-          </p>
-        </div>
-        <a href="/contact" class="btn-primary whitespace-nowrap text-base">Get in touch</a>
-      </div>
-    </section>
 
   </main>
   <Footer />

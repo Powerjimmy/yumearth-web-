@@ -22,7 +22,7 @@ const products: Product[] = [
     bg: '#FFF0F2',
     accent: '#D7002D',
     emoji: '🍭',
-    img: '/images/products/lollipops.png',
+    img: '/images/products/lollipops.webp',
     flavors: ['Pomegranate Pucker', 'Strawberry Smash', 'Very Very Cherry', 'Perfectly Peach', 'Sour Apple Tart'],
   },
   {
@@ -32,7 +32,7 @@ const products: Product[] = [
     bg: '#F5F0FF',
     accent: '#7314A1',
     emoji: '🍇',
-    img: '/images/products/fruit-snacks.png',
+    img: '/images/products/fruit-snacks.webp',
     flavors: ['Cherry', 'Peach', 'Strawberry', 'Banana'],
   },
   {
@@ -42,7 +42,7 @@ const products: Product[] = [
     bg: '#EFF8E6',
     accent: '#4a9100',
     emoji: '🐻',
-    img: '/images/products/gummy-bears.png',
+    img: '/images/products/gummy-bears.webp',
     flavors: ['Pomegranate'],
   },
   {
@@ -52,7 +52,7 @@ const products: Product[] = [
     bg: '#F0FAE6',
     accent: '#6a9328',
     emoji: '🫘',
-    img: '/images/products/sour-beans.png',
+    img: '/images/products/sour-beans.webp',
     flavors: ['Apple', 'Peach', 'Mango', 'Cherry'],
   },
   {
@@ -62,7 +62,7 @@ const products: Product[] = [
     bg: '#FFF0F8',
     accent: '#C45BAE',
     emoji: '😄',
-    img: '/images/products/giggles.png',
+    img: '/images/products/giggles.webp',
     flavors: ['Strawberry', 'Orange', 'Lemon', 'Green Apple'],
   },
   {
@@ -72,7 +72,7 @@ const products: Product[] = [
     bg: '#FFF5E6',
     accent: '#FF7803',
     emoji: '🍬',
-    img: '/images/products/vitamin-lollipops.png',
+    img: '/images/products/vitamin-lollipops.webp',
     flavors: ['Strawberry Smash', 'Very Very Cherry', 'Razzmatazz Berry'],
   },
 ];

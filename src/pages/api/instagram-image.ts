@@ -2,10 +2,27 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
+// Whitelist: only Instagram/Facebook CDN domains allowed
+const ALLOWED_HOSTS = ['cdninstagram.com', 'fbcdn.net'];
+
+function isAllowedImageUrl(raw: string): boolean {
+  try {
+    const parsed = new URL(raw);
+    if (parsed.protocol !== 'https:') return false;
+    return ALLOWED_HOSTS.some(h => parsed.hostname === h || parsed.hostname.endsWith('.' + h));
+  } catch {
+    return false;
+  }
+}
+
 export const GET: APIRoute = async ({ url }) => {
   const imageUrl = url.searchParams.get('url');
   if (!imageUrl) {
     return new Response('Missing url param', { status: 400 });
+  }
+
+  if (!isAllowedImageUrl(imageUrl)) {
+    return new Response('Forbidden', { status: 403 });
   }
 
   try {

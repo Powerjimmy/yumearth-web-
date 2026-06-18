@@ -270,44 +270,11 @@ export default function GlobeMap() {
               color: "var(--color-ink)",
               marginBottom: "1.25rem",
             }}>
-              44 countries.<br />
+              +40 countries.<br />
               <span style={{ color: "var(--color-teal)" }}>one mission.</span>
             </h2>
 
-            <p style={{
-              fontSize: "1rem", color: "var(--color-ink-muted)",
-              fontFamily: "'Satoshi','Nunito',sans-serif", fontWeight: 500,
-              lineHeight: 1.65, marginBottom: "2rem", maxWidth: "360px",
-            }}>
-              Organic candy reaching Europe, Central Asia, MENA &amp; beyond.
-              Drag the globe to explore.
-            </p>
 
-            {/* Stats */}
-            <div style={{ display: "flex", gap: "2.5rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
-              {[
-                { n: "30", label: "Europe & Central Asia" },
-                { n: "14", label: "MENA & Other" },
-              ].map(({ n, label }) => (
-                <div key={label}>
-                  <div style={{
-                    fontFamily: "'ClashDisplay','Nunito',sans-serif",
-                    fontWeight: 700,
-                    fontSize: "clamp(2.4rem, 5vw, 3.2rem)",
-                    lineHeight: 1,
-                    letterSpacing: "-0.03em",
-                    color: "var(--color-teal)",
-                  }}>{n}</div>
-                  <div style={{
-                    fontSize: "0.7rem", fontWeight: 700,
-                    textTransform: "uppercase", letterSpacing: "0.08em",
-                    color: "rgba(0,0,0,0.35)",
-                    fontFamily: "'Satoshi','Nunito',sans-serif",
-                    marginTop: "0.2rem",
-                  }}>{label}</div>
-                </div>
-              ))}
-            </div>
 
             {/* Country detail pill */}
             {expanded && (() => {
@@ -347,7 +314,7 @@ export default function GlobeMap() {
 
           {/* ── Right: Globe ── */}
           <div
-            style={{ position: "relative", aspectRatio: "1", width: "100%", maxWidth: 520, margin: "0 auto" }}
+            style={{ position: "relative", aspectRatio: "1", width: "100%", maxWidth: 676, margin: "0 auto" }}
             onClick={() => setExpandedBoth(null)}
           >
             <canvas

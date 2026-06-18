@@ -10,17 +10,10 @@ import Footer from '../components/Footer.astro';
 
     <section class="max-w-7xl mx-auto px-6 pb-16">
       <div class="max-w-xl">
-        <div class="badge mb-6" style="background:rgba(196,91,174,0.12); color:var(--color-magenta);">
-          Reach Out
-        </div>
-        <h1 class="text-display mb-4" style="font-size:clamp(2.5rem,6vw,4.5rem);">
+        <h1 class="mb-4" style="font-family:'Nunito',sans-serif; font-weight:900; font-size:clamp(2.5rem,6vw,4.5rem); line-height:0.95; letter-spacing:-0.03em; color:var(--color-ink);">
           have questions?<br />
-          <span style="color:var(--color-teal);">send us a note.</span>
+          <span style="color:var(--color-teal);">send us a message.</span>
         </h1>
-        <p class="text-xl" style="color:var(--color-ink-muted); line-height:1.65;">
-          Distributors, retailers, press, or any product questions.
-          We reply within 24-48h.
-        </p>
       </div>
     </section>
 
@@ -31,11 +24,11 @@ import Footer from '../components/Footer.astro';
         <div>
           <h3 class="text-xs font-bold uppercase tracking-widest mb-4" style="color:var(--color-ink-muted);">Direct contact</h3>
           <a
-            href="mailto:info@yumearth.eu"
+            href="mailto:hello@yumearth.eu"
             class="text-xl font-black transition-colors"
             style="font-family:'Satoshi',sans-serif; color:var(--color-teal);"
           >
-            info@yumearth.eu
+            hello@yumearth.eu
           </a>
         </div>
 
@@ -60,12 +53,11 @@ import Footer from '../components/Footer.astro';
         <div>
           <h3 class="text-xs font-bold uppercase tracking-widest mb-4" style="color:var(--color-ink-muted);">FAQs</h3>
           <a
-            href="https://yumearthhelp.zendesk.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-sm font-bold hover:text-teal transition-colors"
+            href="/faqs"
+            class="text-sm font-bold transition-colors"
+            style="color:var(--color-teal);"
           >
-            yumearthhelp.zendesk.com →
+            View FAQs →
           </a>
           <p class="text-xs mt-1" style="color:var(--color-ink-muted);">Allergens, ingredients, certifications.</p>
         </div>
@@ -110,19 +102,47 @@ import Footer from '../components/Footer.astro';
             />
           </div>
           <div>
-            <label for="subject" class="block text-sm font-bold mb-2">Subject</label>
+            <label for="country" class="block text-sm font-bold mb-2">Country</label>
             <select
-              id="subject" name="subject"
+              id="country" name="country"
               class="w-full px-4 py-3 rounded-2xl text-sm font-medium"
-              style="border:2px solid rgba(0,0,0,0.08); background:white; outline:none;"
+              style="border:2px solid rgba(0,0,0,0.08); background:white; outline:none; font-family:'Satoshi',sans-serif;"
             >
-              <option value="">Select a subject</option>
-              <option value="distribution">I want to distribute YumEarth</option>
-              <option value="retail">I want to sell in my store / e-commerce</option>
-              <option value="product">Product question</option>
-              <option value="press">Press / collaboration</option>
+              <option value="">Select your country</option>
+              <option>Afghanistan</option><option>Albania</option><option>Algeria</option><option>Andorra</option><option>Angola</option><option>Antigua and Barbuda</option><option>Argentina</option><option>Armenia</option><option>Australia</option><option>Austria</option><option>Azerbaijan</option>
+              <option>Bahamas</option><option>Bahrain</option><option>Bangladesh</option><option>Barbados</option><option>Belarus</option><option>Belgium</option><option>Belize</option><option>Benin</option><option>Bhutan</option><option>Bolivia</option><option>Bosnia and Herzegovina</option><option>Botswana</option><option>Brazil</option><option>Brunei</option><option>Bulgaria</option><option>Burkina Faso</option><option>Burundi</option>
+              <option>Cabo Verde</option><option>Cambodia</option><option>Cameroon</option><option>Canada</option><option>Central African Republic</option><option>Chad</option><option>Chile</option><option>China</option><option>Colombia</option><option>Comoros</option><option>Congo</option><option>Costa Rica</option><option>Croatia</option><option>Cuba</option><option>Cyprus</option><option>Czech Republic</option>
+              <option>Denmark</option><option>Djibouti</option><option>Dominica</option><option>Dominican Republic</option>
+              <option>Ecuador</option><option>Egypt</option><option>El Salvador</option><option>Equatorial Guinea</option><option>Eritrea</option><option>Estonia</option><option>Eswatini</option><option>Ethiopia</option>
+              <option>Fiji</option><option>Finland</option><option>France</option>
+              <option>Gabon</option><option>Gambia</option><option>Georgia</option><option>Germany</option><option>Ghana</option><option>Greece</option><option>Grenada</option><option>Guatemala</option><option>Guinea</option><option>Guinea-Bissau</option><option>Guyana</option>
+              <option>Haiti</option><option>Honduras</option><option>Hungary</option>
+              <option>Iceland</option><option>India</option><option>Indonesia</option><option>Iran</option><option>Iraq</option><option>Ireland</option><option>Israel</option><option>Italy</option><option>Ivory Coast</option>
+              <option>Jamaica</option><option>Japan</option><option>Jordan</option>
+              <option>Kazakhstan</option><option>Kenya</option><option>Kiribati</option><option>Kosovo</option><option>Kuwait</option><option>Kyrgyzstan</option>
+              <option>Laos</option><option>Latvia</option><option>Lebanon</option><option>Lesotho</option><option>Liberia</option><option>Libya</option><option>Liechtenstein</option><option>Lithuania</option><option>Luxembourg</option>
+              <option>Madagascar</option><option>Malawi</option><option>Malaysia</option><option>Maldives</option><option>Mali</option><option>Malta</option><option>Marshall Islands</option><option>Mauritania</option><option>Mauritius</option><option>Mexico</option><option>Micronesia</option><option>Moldova</option><option>Monaco</option><option>Mongolia</option><option>Montenegro</option><option>Morocco</option><option>Mozambique</option><option>Myanmar</option>
+              <option>Namibia</option><option>Nauru</option><option>Nepal</option><option>Netherlands</option><option>New Zealand</option><option>Nicaragua</option><option>Niger</option><option>Nigeria</option><option>North Korea</option><option>North Macedonia</option><option>Norway</option>
+              <option>Oman</option>
+              <option>Pakistan</option><option>Palau</option><option>Palestine</option><option>Panama</option><option>Papua New Guinea</option><option>Paraguay</option><option>Peru</option><option>Philippines</option><option>Poland</option><option>Portugal</option>
+              <option>Qatar</option>
+              <option>Romania</option><option>Russia</option><option>Rwanda</option>
+              <option>Saint Kitts and Nevis</option><option>Saint Lucia</option><option>Saint Vincent and the Grenadines</option><option>Samoa</option><option>San Marino</option><option>São Tomé and Príncipe</option><option>Saudi Arabia</option><option>Senegal</option><option>Serbia</option><option>Seychelles</option><option>Sierra Leone</option><option>Singapore</option><option>Slovakia</option><option>Slovenia</option><option>Solomon Islands</option><option>Somalia</option><option>South Africa</option><option>South Korea</option><option>South Sudan</option><option>Spain</option><option>Sri Lanka</option><option>Sudan</option><option>Suriname</option><option>Sweden</option><option>Switzerland</option><option>Syria</option>
+              <option>Taiwan</option><option>Tajikistan</option><option>Tanzania</option><option>Thailand</option><option>Timor-Leste</option><option>Togo</option><option>Tonga</option><option>Trinidad and Tobago</option><option>Tunisia</option><option>Turkey</option><option>Turkmenistan</option><option>Tuvalu</option>
+              <option>UAE</option><option>Uganda</option><option>Ukraine</option><option>United Kingdom</option><option>United States</option><option>Uruguay</option><option>Uzbekistan</option>
+              <option>Vanuatu</option><option>Vatican City</option><option>Venezuela</option><option>Vietnam</option>
+              <option>Yemen</option>
+              <option>Zambia</option><option>Zimbabwe</option>
               <option value="other">Other</option>
             </select>
+            <input
+              type="text" id="country-other" name="country_other"
+              placeholder="Please specify your country"
+              class="w-full px-4 py-3 rounded-2xl text-sm font-medium mt-2"
+              style="border:2px solid rgba(0,0,0,0.08); background:white; outline:none; transition:border-color 0.15s; display:none;"
+              onfocus="this.style.borderColor='var(--color-teal)'"
+              onblur="this.style.borderColor='rgba(0,0,0,0.08)'"
+            />
           </div>
           <div>
             <label for="message" class="block text-sm font-bold mb-2">Message *</label>
@@ -147,7 +167,7 @@ import Footer from '../components/Footer.astro';
           </div>
           <div id="error-msg" class="hidden py-3 px-5 rounded-2xl text-sm font-bold text-center"
             style="background:rgba(212,0,45,0.08); color:var(--color-lollipop);">
-            Error sending message. Write to us directly at info@yumearth.eu
+            Error sending message. Write to us directly at hello@yumearth.eu
           </div>
         </form>
       </div>
@@ -158,6 +178,13 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <script>
+  // Show/hide "Other" country input
+  const countrySelect = document.getElementById('country') as HTMLSelectElement;
+  const countryOther = document.getElementById('country-other') as HTMLInputElement;
+  countrySelect?.addEventListener('change', () => {
+    countryOther.style.display = countrySelect.value === 'other' ? 'block' : 'none';
+  });
+
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const btn = document.getElementById('submit-btn') as HTMLButtonElement;
   const successMsg = document.getElementById('success-msg')!;
@@ -170,10 +197,15 @@ import Footer from '../components/Footer.astro';
     btn.textContent = 'Sending...';
     btn.setAttribute('disabled', '');
     try {
+      const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+      if (data.country === 'other' && data.country_other?.trim()) {
+        data.country = data.country_other.trim();
+      }
+      delete data.country_other;
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        body: JSON.stringify(data),
       });
       if (res.ok) {
         form.reset();
