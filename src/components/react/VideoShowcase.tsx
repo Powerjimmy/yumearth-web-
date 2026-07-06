@@ -76,6 +76,7 @@ export default function VideoShowcase() {
               muted
               loop
               preload="metadata"
+              poster="/images/og-default.jpg"
             />
 
             {/* Unmute button — shown after autoplay starts */}

@@ -10,8 +10,8 @@ const stagger = {
 };
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.23, 1, 0.32, 1] } },
+  hidden: { opacity: 1, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.23, 1, 0.32, 1] } },
 };
 
 // CSS keyframes for float animations — GPU composited, off main thread
@@ -117,7 +117,7 @@ export default function HeroReact() {
 
               {/* Floater soft-candy */}
               <img
-                src="/images/img/soft-candy.png" alt=""
+                src="/images/img/soft-candy.webp" alt=""
                 style={{ position: 'absolute', left: '10%', top: '-8px',
                   width: 34, objectFit: 'contain', zIndex: 35,
                   filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.18))',
@@ -127,7 +127,7 @@ export default function HeroReact() {
 
               {/* Floater lollipop-ok */}
               <img
-                src="/images/img/lollipop-ok.png" alt=""
+                src="/images/img/lollipop-ok.webp" alt=""
                 style={{ position: 'absolute', right: '22%', top: '-10px',
                   width: 36, objectFit: 'contain', zIndex: 35,
                   filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.20))',
@@ -137,7 +137,7 @@ export default function HeroReact() {
 
               {/* Floater gummy-bears */}
               <img
-                src="/images/img/gummy-bears.png" alt=""
+                src="/images/img/gummy-bears.webp" alt=""
                 style={{ position: 'absolute', right: '8%', top: '-8px',
                   width: 28, objectFit: 'contain', zIndex: 35,
                   filter: 'drop-shadow(0 3px 6px rgba(0,0,0,0.18))',
@@ -147,7 +147,7 @@ export default function HeroReact() {
 
               {/* Bag left: fruit snacks */}
               <img
-                src="/images/img/bolsa-fruit-sancks.png" alt="Fruit Snacks"
+                src="/images/img/bolsa-fruit-sancks.webp" alt="Fruit Snacks"
                 style={{ width: '28%', maxWidth: 110, objectFit: 'contain', flexShrink: 0,
                   filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.15))', opacity: 0.9, zIndex: 10,
                   animation: 'hf4 4.8s ease-in-out infinite 0.6s' }}
@@ -168,7 +168,7 @@ export default function HeroReact() {
 
               {/* Bag right: gummy bears */}
               <img
-                src="/images/img/bolsa-gummy-bears.png" alt="Gummy Bears"
+                src="/images/img/bolsa-gummy-bears.webp" alt="Gummy Bears"
                 style={{ width: '26%', maxWidth: 100, objectFit: 'contain', flexShrink: 0,
                   filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.13))', opacity: 0.85, zIndex: 10,
                   animation: 'hf6 5s ease-in-out infinite 1.2s' }}
@@ -200,7 +200,7 @@ export default function HeroReact() {
 
             {/* Floater: lollipop-wrapper */}
             <img
-              src="/images/img/lollipop-wrapper.png" alt=""
+              src="/images/img/lollipop-wrapper.webp" alt=""
               style={{ position: 'absolute', right: '-3%', top: '6%', width: 60, zIndex: 30,
                 filter: 'drop-shadow(0 6px 14px rgba(0,0,0,0.18))',
                 animation: 'hf7 3.8s ease-in-out infinite 0.2s' }}
@@ -209,7 +209,7 @@ export default function HeroReact() {
 
             {/* Floater: soft-candy */}
             <img
-              src="/images/img/soft-candy.png" alt=""
+              src="/images/img/soft-candy.webp" alt=""
               style={{ position: 'absolute', left: '5%', top: '15%', width: 64, zIndex: 30,
                 filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.18))',
                 animation: 'hf8 4.2s ease-in-out infinite 0.9s' }}
@@ -218,7 +218,7 @@ export default function HeroReact() {
 
             {/* Floater: lollipop-ok */}
             <img
-              src="/images/img/lollipop-ok.png" alt=""
+              src="/images/img/lollipop-ok.webp" alt=""
               style={{ position: 'absolute', right: '18%', top: '5%', width: 56, zIndex: 35,
                 filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.20))',
                 animation: 'hf9 4.0s ease-in-out infinite 0.6s' }}
@@ -228,7 +228,7 @@ export default function HeroReact() {
             {/* Bag back-left: fruit snacks — wrapper handles positioning, img handles float */}
             <div style={{ position: 'absolute', left: '2%', top: '50%', transform: 'translateY(-50%)', zIndex: 10 }}>
               <img
-                src="/images/img/bolsa-fruit-sancks.png" alt=""
+                src="/images/img/bolsa-fruit-sancks.webp" alt=""
                 style={{ width: '155px', opacity: 0.85,
                   filter: 'drop-shadow(0 16px 32px rgba(0,0,0,0.15))',
                   animation: 'hf10 4.8s ease-in-out infinite 0.6s' }}
@@ -252,7 +252,7 @@ export default function HeroReact() {
             {/* Bag back-right: gummy bears — wrapper handles positioning, img handles float */}
             <div style={{ position: 'absolute', right: '0%', top: '62%', transform: 'translateY(-50%)', zIndex: 10 }}>
               <img
-                src="/images/img/bolsa-gummy-bears.png" alt=""
+                src="/images/img/bolsa-gummy-bears.webp" alt=""
                 style={{ width: '140px', opacity: 0.78,
                   filter: 'drop-shadow(0 12px 24px rgba(0,0,0,0.13))',
                   animation: 'hf12 5s ease-in-out infinite 1.2s' }}
@@ -262,7 +262,7 @@ export default function HeroReact() {
 
             {/* Floater: gummy-bears 1 */}
             <img
-              src="/images/img/gummy-bears.png" alt=""
+              src="/images/img/gummy-bears.webp" alt=""
               style={{ position: 'absolute', right: '2%', bottom: '15%', width: 58, zIndex: 35,
                 filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.18))',
                 animation: 'hf13 3.7s ease-in-out infinite 0.5s' }}
@@ -271,7 +271,7 @@ export default function HeroReact() {
 
             {/* Floater: gummy-bears 2 */}
             <img
-              src="/images/img/gummy-bears.png" alt=""
+              src="/images/img/gummy-bears.webp" alt=""
               style={{ position: 'absolute', right: '8%', bottom: '8%', width: 48, zIndex: 35,
                 filter: 'drop-shadow(0 5px 10px rgba(0,0,0,0.15))',
                 animation: 'hf14 4.3s ease-in-out infinite 1.1s' }}

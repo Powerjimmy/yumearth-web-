@@ -5,7 +5,6 @@ import Hero from '../components/Hero.astro';
 import Marquee from '../components/Marquee.astro';
 import WaveDivider from '../components/WaveDivider.astro';
 import Footer from '../components/Footer.astro';
-import AllergenBadges from '../components/react/AllergenBadges';
 import CategoryCards from '../components/react/CategoryCards';
 import ProductFloat3D from '../components/react/ProductFloat3D';
 import VideoShowcase from '../components/react/VideoShowcase';
@@ -17,7 +16,7 @@ import TestimonialsSection from '../components/react/TestimonialsSection';
 
 <Layout
   title="YumEarth EU"
-  description="Organic, simple, natural candies made with much love and few (if any) allergens. EMEA Master Distribution of YumEarth."
+  description="Friendly Sweets, Yummy Treats. YumEarth organic candy is vegan, allergen friendly, gluten free, non-GMO and free from artificial dyes and flavours."
 >
   <Nav />
   <main>
@@ -26,7 +25,17 @@ import TestimonialsSection from '../components/react/TestimonialsSection';
     <Hero />
 
     <!-- ALLERGEN BADGES -->
-    <AllergenBadges client:load />
+    <!-- ALLERGEN BADGES — static HTML, no React needed -->
+    <section class="pb-6 pt-6 md:pt-32" style="background:white;">
+      <div class="max-w-5xl mx-auto px-4 flex items-center justify-center">
+        <img
+          src="/images/img/icons-allergy.friendly.webp"
+          alt="Allergen friendly: Peanut Free, Tree Nut Free, Soy Free, Dairy Free, Allergy Friendly Dyes, Sesame Free, Egg Free, Gluten Free, Shellfish Free, Fish Free"
+          loading="lazy"
+          style="width:100%;max-width:900px;height:auto;"
+        />
+      </div>
+    </section>
 
     <!-- MARQUEE TICKER — below hero, above categories -->
     <Marquee />

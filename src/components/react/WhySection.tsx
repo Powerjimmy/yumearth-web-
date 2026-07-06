@@ -6,21 +6,21 @@ const statements = [
     headline: 'Zero artificial colors.',
     body: '',
     accent: 'var(--color-teal)',
-    image: '/images/img/Zero-artificial.png',
+    image: '/images/img/Zero-artificial.webp',
   },
   {
     number: '02',
     headline: 'Certified Organic.',
     body: '',
     accent: 'var(--color-green)',
-    image: '/images/img/Certified-Organic..png',
+    image: '/images/img/Certified-Organic..webp',
   },
   {
     number: '03',
     headline: 'Kids actually want to eat it.',
     body: '',
     accent: 'var(--color-magenta)',
-    image: '/images/img/vegan-glutenfree.png',
+    image: '/images/img/vegan-glutenfree.webp',
   },
 ];
 
@@ -91,12 +91,14 @@ export default function WhySection() {
                 </motion.h3>
 
                 {/* Body */}
-                <p
-                  className="text-base leading-relaxed flex-1"
-                  style={{ color: 'var(--color-ink-muted)' }}
-                >
-                  {s.body}
-                </p>
+                {s.body && (
+                  <p
+                    className="text-base leading-relaxed flex-1"
+                    style={{ color: 'var(--color-ink-muted)' }}
+                  >
+                    {s.body}
+                  </p>
+                )}
 
                 {/* Image — right side */}
                 <div className="flex-shrink-0 flex items-center justify-end md:w-48">

@@ -21,7 +21,7 @@ const FALLBACK_PHOTOS = [
     href: 'https://www.instagram.com/yumearth.eu/',
   },
   {
-    src: '/images/img/bolsa-fruit-sancks.png',
+    src: '/images/img/bolsa-fruit-sancks.webp',
     alt: 'YumEarth Fruit Snacks',
     caption: '100% organic fruit snacks',
     tall: false,
@@ -29,7 +29,7 @@ const FALLBACK_PHOTOS = [
     href: 'https://www.instagram.com/yumearth.eu/',
   },
   {
-    src: '/images/img/bolsa-gummy-bears.png',
+    src: '/images/img/bolsa-gummy-bears.webp',
     alt: 'YumEarth Gummy Bears',
     caption: 'Organic gummy bears',
     tall: false,

@@ -5,7 +5,7 @@ import {
 
 const layers = [
   {
-    img: '/images/img/sandia.png',
+    img: '/images/img/sandia.webp',
     size: 110,
     x: '12%', y: '20%',
     scrollSpeed: 0.15,
@@ -15,7 +15,7 @@ const layers = [
     zIndex: 1,
   },
   {
-    img: '/images/img/peach.png',
+    img: '/images/img/peach.webp',
     size: 100,
     x: '78%', y: '15%',
     scrollSpeed: 0.1,
@@ -25,7 +25,7 @@ const layers = [
     zIndex: 1,
   },
   {
-    img: '/images/img/cereza.png',
+    img: '/images/img/cereza.webp',
     size: 115,
     x: '72%', y: '52%',
     scrollSpeed: 0.28,
@@ -35,7 +35,7 @@ const layers = [
     zIndex: 2,
   },
   {
-    img: '/images/img/fresa.png',
+    img: '/images/img/fresa.webp',
     size: 110,
     x: '8%', y: '55%',
     scrollSpeed: 0.22,
@@ -45,7 +45,7 @@ const layers = [
     zIndex: 2,
   },
   {
-    img: '/images/img/mango.png',
+    img: '/images/img/mango.webp',
     size: 120,
     x: '30%', y: '75%',
     scrollSpeed: 0.45,
@@ -153,7 +153,7 @@ export default function ProductFloat3D() {
           <div className="md:hidden absolute inset-0 pointer-events-none">
             {/* top-left */}
             <motion.img
-              src="/images/img/sandia.png" alt=""
+              src="/images/img/sandia.webp" alt=""
               style={{ position: 'absolute', top: 16, left: 16, width: 70, height: 70, objectFit: 'contain', filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.3))' }}
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
@@ -161,7 +161,7 @@ export default function ProductFloat3D() {
             />
             {/* top-right */}
             <motion.img
-              src="/images/img/peach.png" alt=""
+              src="/images/img/peach.webp" alt=""
               style={{ position: 'absolute', top: 16, right: 16, width: 70, height: 70, objectFit: 'contain', filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.3))' }}
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.4 }}
@@ -169,7 +169,7 @@ export default function ProductFloat3D() {
             />
             {/* bottom-left */}
             <motion.img
-              src="/images/img/fresa.png" alt=""
+              src="/images/img/fresa.webp" alt=""
               style={{ position: 'absolute', bottom: 16, left: 16, width: 70, height: 70, objectFit: 'contain', filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.3))' }}
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
@@ -177,7 +177,7 @@ export default function ProductFloat3D() {
             />
             {/* bottom-right */}
             <motion.img
-              src="/images/img/mango.png" alt=""
+              src="/images/img/mango.webp" alt=""
               style={{ position: 'absolute', bottom: 16, right: 16, width: 70, height: 70, objectFit: 'contain', filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.3))' }}
               animate={{ y: [0, 7, 0] }}
               transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
