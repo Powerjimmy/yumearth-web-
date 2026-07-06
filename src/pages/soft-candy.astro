@@ -151,9 +151,9 @@ const units = [
             class="card-lift grid grid-cols-1 md:grid-cols-2 rounded-3xl overflow-hidden"
             style={`background:${p.color};`}
           >
-            <div class={`flex items-center justify-center p-10 min-h-[300px] ${i % 2 === 1 ? 'md:order-2' : ''}`}>
+            <div class={`flex items-center justify-center p-6 md:p-10 md:min-h-[300px] ${i % 2 === 1 ? 'md:order-2' : ''}`}>
               <button
-                class="product-swap relative w-56 h-56 md:w-64 md:h-64 cursor-zoom-in"
+                class="product-swap relative w-48 h-48 md:w-64 md:h-64 cursor-zoom-in"
                 data-lightbox-front={p.image}
                 data-lightbox-back={p.hoverImage}
                 data-lightbox-name={p.name}
