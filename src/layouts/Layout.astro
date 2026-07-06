@@ -10,7 +10,7 @@ interface Props {
 
 const {
   title,
-  description = 'YumEarth EU — Organic candy & snacks. No artificial colors, no artificial flavors. EMEA Master Distribution.',
+  description = 'Friendly Sweets, Yummy Treats. YumEarth organic candy is vegan, allergen friendly, gluten free, non-GMO and free from artificial dyes and flavours.',
   ogImage = '/images/og-default.jpg'
 } = Astro.props;
 
@@ -38,24 +38,46 @@ const fullTitle = title === 'YumEarth EU' ? title : `${title} | YumEarth EU`;
     <meta name="twitter:image" content={`${Astro.url.origin}${ogImage}`} />
     {Astro.url.hostname.endsWith('vercel.app') && <meta name="robots" content="noindex" />}
 
-    <!-- ClashDisplay (headlines) + Satoshi (body) via Fontshare -->
-    <link rel="preconnect" href="https://api.fontshare.com" />
+    <!-- ClashDisplay (headlines) + Satoshi (body) via Fontshare — non-render-blocking -->
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
     <link
+      rel="preload" as="style"
       href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@400,500,700&display=swap"
-      rel="stylesheet"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <!-- Nunito fallback (Houschka Rounded stand-in for brand-exact type) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <noscript>
+      <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+    </noscript>
+    <!-- Nunito fallback — non-render-blocking -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload" as="style"
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap"
-      rel="stylesheet"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
+    </noscript>
+
+    <!-- Preload LCP hero image -->
+    <link rel="preload" as="image" href="/images/img/bolsa-lollipop-14.webp" fetchpriority="high" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href={`${siteUrl}${Astro.url.pathname}`} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="canonical" href={`${siteUrl}${Astro.url.pathname.replace(/\/$/, '') || '/'}`} />
     <title>{fullTitle}</title>
     <ClientRouter />
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NS1X4PNQTW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NS1X4PNQTW');
+    </script>
 
     <!-- JSON-LD: Organization -->
     <script type="application/ld+json" set:html={JSON.stringify({

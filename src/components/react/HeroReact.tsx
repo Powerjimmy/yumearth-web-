@@ -1,4 +1,4 @@
-import { useRef, lazy, Suspense } from 'react';
+import { useRef, lazy, Suspense, type CSSProperties } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from '@phosphor-icons/react';
 
@@ -98,7 +98,7 @@ export default function HeroReact() {
                 <ConfettiBurst
                   href="/distribution"
                   className="inline-flex items-center gap-2 text-base font-black px-6 py-3 rounded-full border-2 transition-all duration-200"
-                  style={{ borderColor: 'var(--color-teal)', color: 'white', background: 'var(--color-teal)' } as React.CSSProperties}
+                  style={{ borderColor: 'var(--color-teal)', color: 'white', background: 'var(--color-teal)' } as CSSProperties}
                 >
                   Become a distributor <ArrowRight size={16} weight="bold" />
                 </ConfettiBurst>
@@ -157,6 +157,8 @@ export default function HeroReact() {
               {/* Bag center: lollipops */}
               <img
                 src="/images/img/bolsa-lollipop-14.webp" alt="YumEarth Lollipops"
+                fetchPriority="high"
+                loading="eager"
                 style={{ width: '40%', maxWidth: 160, objectFit: 'contain', flexShrink: 0,
                   filter: 'drop-shadow(0 16px 32px rgba(0,0,0,0.22))', zIndex: 20,
                   marginBottom: 0,
@@ -179,8 +181,8 @@ export default function HeroReact() {
           {/* ── Right: stacked bags (desktop only) ── */}
           <motion.div
             className="relative hidden lg:flex items-center justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
             style={{ height: '500px' }}
           >
@@ -238,6 +240,8 @@ export default function HeroReact() {
             <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', zIndex: 20 }}>
               <img
                 src="/images/img/bolsa-lollipop-14.webp" alt="YumEarth Lollipops"
+                fetchPriority="high"
+                loading="eager"
                 style={{ width: '270px',
                   filter: 'drop-shadow(0 28px 52px rgba(0,0,0,0.22))',
                   animation: 'hf11 4.2s ease-in-out infinite' }}
