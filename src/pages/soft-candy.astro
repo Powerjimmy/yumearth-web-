@@ -148,12 +148,12 @@ const units = [
       <div class="space-y-6">
         {products.map((p, i) => (
           <div
-            class="card-lift grid grid-cols-[140px_1fr] md:grid-cols-2 rounded-3xl overflow-hidden"
+            class="card-lift grid grid-cols-1 md:grid-cols-2 rounded-3xl overflow-hidden"
             style={`background:${p.color};`}
           >
-            <div class={`flex items-center justify-center p-4 md:p-10 md:min-h-[300px] ${i % 2 === 1 ? 'md:order-2' : ''}`}>
+            <div class={`flex items-center justify-center p-10 min-h-[300px] ${i % 2 === 1 ? 'md:order-2' : ''}`}>
               <button
-                class="product-swap relative w-28 h-28 md:w-64 md:h-64 cursor-zoom-in"
+                class="product-swap relative w-56 h-56 md:w-64 md:h-64 cursor-zoom-in"
                 data-lightbox-front={p.image}
                 data-lightbox-back={p.hoverImage}
                 data-lightbox-name={p.name}
@@ -177,7 +177,7 @@ const units = [
                 />
               </button>
             </div>
-            <div class={`p-5 md:p-10 flex flex-col justify-center ${i % 2 === 1 ? 'md:order-1' : ''}`}>
+            <div class={`p-10 flex flex-col justify-center ${i % 2 === 1 ? 'md:order-1' : ''}`}>
               <p class="text-xs font-black uppercase tracking-widest mb-2" style={`color:${p.accent};`}>{p.badge}</p>
               <h2 class="font-black mb-1" style={`font-family:'Nunito',sans-serif; font-size:clamp(1.6rem,3vw,2.4rem); line-height:0.95; letter-spacing:-0.02em;`}>
                 {p.name}
