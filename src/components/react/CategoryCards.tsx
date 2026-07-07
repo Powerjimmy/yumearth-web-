@@ -112,15 +112,6 @@ function Category3DCard({ href, title, tagline, desc, image, emoji, bg, accent, 
             <p className="text-sm mb-6 max-w-xs" style={{ color: 'rgba(0,0,0,0.50)', lineHeight: 1.65 }}>
               {desc}
             </p>
-            <span
-              className="inline-flex items-center gap-2 text-sm font-black transition-gap"
-              style={{ color: accent }}
-            >
-              View range
-              <span style={{ display: 'inline-block', animation: 'arrow-nudge 1.5s ease-in-out infinite' }}>
-                →
-              </span>
-            </span>
           </div>
 
           {/* Subtle shine overlay on hover */}
