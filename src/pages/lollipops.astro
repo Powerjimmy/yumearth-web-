@@ -86,7 +86,7 @@ const wrappers = [
   { src: '/images/products/lollipops/perfectly-peach.webp', hover: '/images/products/lollipops-unidades/PopWrappers_Peach.png', label: 'Perfectly Peach', color: '#e87c2a' },
   { src: '/images/products/lollipops/googly-grape.webp', hover: '/images/products/lollipops-unidades/PopWrappers_Grape.png', label: 'Googly Grape', color: '#6b2fa0' },
   { src: '/images/products/lollipops/razzmatazz-berry.webp', hover: '/images/products/lollipops-unidades/PopWrappers_Blueberry.png', label: 'Razzmatazz Berry', color: '#c21460' },
-  { src: '/images/products/lollipops/watermelon.webp', hover: '/images/products/lollipops-unidades/PopWrappers_Watermelon.png', label: 'Watermelon', color: '#2d9e4a' },
+  { src: '/images/products/lollipops/watermelon.webp', hover: '/images/products/lollipops-unidades/PopWrappers_Watermelon.png', label: 'Wet Face Watermelon', color: '#2d9e4a' },
   { src: '/images/products/lollipops/mango-tango.webp', hover: '/images/products/lollipops-unidades/PopWrappers_Mango.png', label: 'Mango Tango', color: '#e8920a' },
 ];
 ---
@@ -217,6 +217,41 @@ const wrappers = [
             </div>
           </div>
         ))}
+      </div>
+    </section>
+
+
+    <!-- PLV & Displays -->
+    <section style="background:#FEF7E8; overflow:hidden;">
+      <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Text -->
+        <div class="order-2 md:order-1">
+          <h2 class="font-black mb-8" style="font-family:'Nunito',sans-serif; font-size:clamp(2rem,4vw,3.2rem); line-height:0.95; letter-spacing:-0.03em; color:var(--color-ink);">
+            PLV &amp; Displays
+          </h2>
+          <a href="/contact" class="plv-btn inline-flex items-center gap-2 font-bold text-sm px-6 py-3 rounded-full"
+            style="background:#C8860A; color:white;">
+            Ask about displays
+          </a>
+        </div>
+        <!-- Image -->
+        <div class="order-1 md:order-2 flex items-center justify-center">
+          <button
+            class="display-zoom cursor-zoom-in rounded-2xl overflow-hidden"
+            data-lightbox-front="/images/img/displays.webp"
+            data-lightbox-name="PLV Display"
+            aria-label="Zoom PLV display image"
+            type="button"
+          >
+            <img
+              src="/images/img/displays.webp"
+              alt="YumEarth gravity feed display and horizontal shelf unit for retail"
+              class="w-full max-w-xl block"
+              style="filter:drop-shadow(0 32px 64px rgba(0,0,0,0.5)); border-radius:16px; transition: transform 0.3s var(--ease-out);"
+              loading="lazy"
+            />
+          </button>
+        </div>
       </div>
     </section>
 
