@@ -56,7 +56,7 @@ export default function HeroReact() {
                 className="inline-block text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded-full mb-8"
                 style={{ background: 'rgba(0,178,191,0.12)', color: 'var(--color-teal)' }}
               >
-                Organic · Allergy-friendly · NO ARTIFICIAL DYES · EMEA Master Distribution
+                EU · EMEA Master Distribution
               </span>
             </motion.div>
 
