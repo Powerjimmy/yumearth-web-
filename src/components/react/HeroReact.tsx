@@ -150,7 +150,7 @@ export default function HeroReact() {
 
               {/* Bag left: fruit snacks */}
               <img
-                src="/images/img/bolsa-fruit-sancks.webp" alt="Fruit Snacks"
+                src="/images/img/bolsa-fruit-snacks.webp" alt="Fruit Snacks"
                 loading="eager"
                 style={{ width: '28%', maxWidth: 110, objectFit: 'contain', flexShrink: 0,
                   filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.15))', opacity: 0.9, zIndex: 10,
@@ -236,7 +236,7 @@ export default function HeroReact() {
             {/* Bag back-left: fruit snacks — wrapper handles positioning, img handles float */}
             <div style={{ position: 'absolute', left: '2%', top: '50%', transform: 'translateY(-50%)', zIndex: 10 }}>
               <img
-                src="/images/img/bolsa-fruit-sancks.webp" alt=""
+                src="/images/img/bolsa-fruit-snacks.webp" alt=""
                 loading="eager"
                 style={{ width: '155px', opacity: 0.85,
                   filter: 'drop-shadow(0 16px 32px rgba(0,0,0,0.15))',

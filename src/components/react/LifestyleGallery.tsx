@@ -21,7 +21,7 @@ const FALLBACK_PHOTOS = [
     href: 'https://www.instagram.com/yumearth.eu/',
   },
   {
-    src: '/images/img/bolsa-fruit-sancks.webp',
+    src: '/images/img/bolsa-fruit-snacks.webp',
     alt: 'YumEarth Fruit Snacks',
     caption: '100% organic fruit snacks',
     tall: false,
