@@ -170,10 +170,7 @@ export default function CategoryCards() {
             transition={{ duration: 0.65, ease: [0.23, 1, 0.32, 1] }}
             className="mb-14"
           >
-            <p className="text-xs font-black uppercase tracking-widest mb-4" style={{ color: 'var(--color-teal)' }}>
-              Our candy categories
-            </p>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
               <h2 className="font-black"
                 style={{ fontFamily: "'ClashDisplay','Nunito',sans-serif", fontSize: 'clamp(2.5rem,6vw,4.5rem)', lineHeight: 0.92, letterSpacing: '-0.03em' }}>
                 it's delicious.
