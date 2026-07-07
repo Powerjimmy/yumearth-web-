@@ -51,6 +51,15 @@ export default function HeroReact() {
 
           {/* ── Left: copy ── */}
           <motion.div variants={stagger} initial="hidden" animate="show" style={{ y: textY }}>
+            <motion.div variants={fadeUp}>
+              <span
+                className="inline-block text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded-full mb-8"
+                style={{ background: 'rgba(0,178,191,0.12)', color: 'var(--color-teal)' }}
+              >
+                EMEA Master Distribution
+              </span>
+            </motion.div>
+
             <motion.h1
               variants={fadeUp}
               className="font-black mb-6"
