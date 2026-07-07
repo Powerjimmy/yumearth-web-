@@ -2,9 +2,20 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import sanitizeHtml from 'sanitize-html';
 
 const CATEGORY_ID = '6979729954715';
 const BASE = 'https://yumearthhelp.zendesk.com/api/v2/help_center/en-us';
+
+const SANITIZE_OPTIONS: sanitizeHtml.IOptions = {
+  allowedTags: ['p','br','strong','em','ul','ol','li','a','h1','h2','h3','h4','h5','h6','blockquote','span','div','table','thead','tbody','tr','th','td','img'],
+  allowedAttributes: {
+    'a': ['href','target','rel'],
+    'img': ['src','alt','width','height'],
+    '*': ['style','class'],
+  },
+  allowedSchemes: ['http','https','mailto'],
+};
 
 // Fetch sections and articles in parallel
 const [sectionsRes, articlesRes] = await Promise.all([
@@ -70,7 +81,7 @@ const ungrouped = articles.filter(a => !sections.find(s => s.id === a.section_id
             {sectionArticles.map(article => (
               <details class="faq-item">
                 <summary class="faq-q">{article.title}</summary>
-                <div class="faq-body" set:html={article.body} />
+                <div class="faq-body" set:html={sanitizeHtml(article.body, SANITIZE_OPTIONS)} />
               </details>
             ))}
           </div>
@@ -83,7 +94,7 @@ const ungrouped = articles.filter(a => !sections.find(s => s.id === a.section_id
             {ungrouped.map(article => (
               <details class="faq-item">
                 <summary class="faq-q">{article.title}</summary>
-                <div class="faq-body" set:html={article.body} />
+                <div class="faq-body" set:html={sanitizeHtml(article.body, SANITIZE_OPTIONS)} />
               </details>
             ))}
           </div>

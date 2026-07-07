@@ -339,6 +339,7 @@ export default function GlobeMap() {
                 key={m.id}
                 ref={(el) => { labelRefs.current[m.id] = el }}
                 title={m.name}
+                aria-label={m.name}
                 onClick={(e) => {
                   e.stopPropagation()
                   setExpandedBoth(expanded === m.id ? null : m.id)

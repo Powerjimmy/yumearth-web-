@@ -2,6 +2,22 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
+// Simple in-memory rate limiter — 5 requests per IP per 10 minutes
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT = 5;
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    return false;
+  }
+  if (entry.count >= RATE_LIMIT) return true;
+  entry.count++;
+  return false;
+}
 
 // Escape HTML entities to prevent injection in email template
 function esc(s: string): string {
@@ -22,6 +38,15 @@ export const POST: APIRoute = async ({ request }) => {
   if (!fromSite) {
     return new Response(JSON.stringify({ error: 'Forbidden' }), {
       status: 403,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  // Rate limiting
+  const ip = request.headers.get('x-forwarded-for')?.split(',')[0].trim() ?? 'unknown';
+  if (isRateLimited(ip)) {
+    return new Response(JSON.stringify({ error: 'Too many requests' }), {
+      status: 429,
       headers: { 'Content-Type': 'application/json' },
     });
   }
