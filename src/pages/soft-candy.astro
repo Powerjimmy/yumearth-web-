@@ -178,7 +178,7 @@ const units = [
               </button>
             </div>
             <div class={`p-10 flex flex-col justify-center ${i % 2 === 1 ? 'md:order-1' : ''}`}>
-              <p class="text-xs font-black uppercase tracking-widest mb-2" style={`color:${p.accent};`}>{p.badge}</p>
+              {p.badge && <p class="text-xs font-black uppercase tracking-widest mb-2" style={`color:${p.accent};`}>{p.badge}</p>}
               <h2 class="font-black mb-1" style={`font-family:'Nunito',sans-serif; font-size:clamp(1.6rem,3vw,2.4rem); line-height:0.95; letter-spacing:-0.02em;`}>
                 {p.name}
               </h2>
