@@ -1,22 +1,21 @@
 import type { APIRoute } from 'astro';
+import { Redis } from '@upstash/redis';
+import { Ratelimit } from '@upstash/ratelimit';
 
 export const prerender = false;
 
-// Simple in-memory rate limiter — 5 requests per IP per 10 minutes
-const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT = 5;
-const RATE_WINDOW_MS = 10 * 60 * 1000;
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const entry = rateLimitMap.get(ip);
-  if (!entry || now > entry.resetAt) {
-    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
-    return false;
-  }
-  if (entry.count >= RATE_LIMIT) return true;
-  entry.count++;
-  return false;
+// Upstash Redis rate limiter — 5 requests per IP per 10 minutes (works across serverless instances)
+let ratelimit: Ratelimit | null = null;
+if (import.meta.env.UPSTASH_REDIS_REST_URL && import.meta.env.UPSTASH_REDIS_REST_TOKEN) {
+  const redis = new Redis({
+    url: import.meta.env.UPSTASH_REDIS_REST_URL,
+    token: import.meta.env.UPSTASH_REDIS_REST_TOKEN,
+  });
+  ratelimit = new Ratelimit({
+    redis,
+    limiter: Ratelimit.slidingWindow(5, '10 m'),
+    prefix: 'contact',
+  });
 }
 
 // Escape HTML entities to prevent injection in email template
@@ -42,13 +41,16 @@ export const POST: APIRoute = async ({ request }) => {
     });
   }
 
-  // Rate limiting
+  // Rate limiting (Upstash Redis — works across serverless instances)
   const ip = request.headers.get('x-forwarded-for')?.split(',')[0].trim() ?? 'unknown';
-  if (isRateLimited(ip)) {
-    return new Response(JSON.stringify({ error: 'Too many requests' }), {
-      status: 429,
-      headers: { 'Content-Type': 'application/json' },
-    });
+  if (ratelimit) {
+    const { success } = await ratelimit.limit(ip);
+    if (!success) {
+      return new Response(JSON.stringify({ error: 'Too many requests' }), {
+        status: 429,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
   }
 
   try {
@@ -67,6 +69,7 @@ export const POST: APIRoute = async ({ request }) => {
       typeof message !== 'string' || message.length > 5000 ||
       (company && (typeof company !== 'string' || company.length > 200))
     ) {
+      console.error('[Contact 400] Invalid input lengths:', { name: typeof name, nameLen: String(name).length, email: typeof email, messageLen: String(message).length });
       return new Response(JSON.stringify({ error: 'Invalid input' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
@@ -75,6 +78,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Basic validation
     if (!name.trim() || !email.trim() || !message.trim()) {
+      console.error('[Contact 400] Missing required fields:', { name: !!name?.trim(), email: !!email?.trim(), message: !!message?.trim() });
       return new Response(JSON.stringify({ error: 'Missing required fields' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
@@ -83,6 +87,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
+      console.error('[Contact 400] Invalid email:', email);
       return new Response(JSON.stringify({ error: 'Invalid email' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
@@ -91,6 +96,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Country field length limit
     if (country && (typeof country !== 'string' || country.length > 100)) {
+      console.error('[Contact 400] Invalid country:', country);
       return new Response(JSON.stringify({ error: 'Invalid country' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
