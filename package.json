@@ -23,6 +23,7 @@
     "@types/sanitize-html": "^2.16.1",
     "@upstash/ratelimit": "^2.0.8",
     "@upstash/redis": "^1.38.0",
+    "@vercel/analytics": "^2.0.1",
     "astro": "^7.0.6",
     "canvas-confetti": "^1.9.4",
     "cobe": "^2.0.1",

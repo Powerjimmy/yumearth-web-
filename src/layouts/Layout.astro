@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   title: string;
@@ -96,5 +97,6 @@ const fullTitle = title === 'YumEarth EU' ? title : `${title} | YumEarth EU`;
     <div>
       <slot />
     </div>
+    <Analytics />
   </body>
 </html>
