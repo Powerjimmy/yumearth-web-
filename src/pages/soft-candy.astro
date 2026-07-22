@@ -87,7 +87,16 @@ const units = [
 ];
 ---
 
-<Layout title="Soft Candy" description="YumEarth EU organic soft candy — Fruit Snacks, Sour Beans, Gummy Bears, Giggles. Allergen-friendly and vegan.">
+<Layout title="Organic Soft Candy | Gummy Bears, Fruit Snacks & Sour Beans | YumEarth EU" description="YumEarth organic soft candy: allergen-free gummy bears, fruit snacks, sour beans and giggles. Vegan, gluten-free, USDA Organic. Wholesale distributor for retailers across Europe & the Middle East.">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yumearth.eu/" },
+      { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://yumearth.eu/products" },
+      { "@type": "ListItem", "position": 3, "name": "Organic Soft Candy", "item": "https://yumearth.eu/soft-candy" }
+    ]
+  })} />
   <Nav />
   <main class="pt-32">
 
@@ -100,7 +109,7 @@ const units = [
       </div>
       <div class="max-w-3xl">
         <h1 class="font-black mb-4" style="font-family:'Nunito',sans-serif; font-size:clamp(2.5rem,6vw,4.5rem); line-height:0.95; letter-spacing:-0.03em;">
-          Soft Candy
+          Organic Soft Candy
         </h1>
       </div>
       <div class="mt-4">

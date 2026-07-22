@@ -7,12 +7,14 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  noindex?: boolean;
 }
 
 const {
   title,
-  description = 'Friendly Sweets, Yummy Treats. YumEarth organic candy is vegan, allergen friendly, gluten free, non-GMO and free from artificial dyes and flavours.',
-  ogImage = '/images/og-default.jpg'
+  description = 'YumEarth EU: USDA Organic certified candy — allergen-free lollipops, gummy bears, fruit snacks. No artificial dyes or flavors. Trusted by retailers across Europe & the Middle East.',
+  ogImage = '/images/og-default.jpg',
+  noindex = false
 } = Astro.props;
 
 const siteUrl = 'https://yumearth.eu';
@@ -37,7 +39,7 @@ const fullTitle = title === 'YumEarth EU' ? title : `${title} | YumEarth EU`;
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${Astro.url.origin}${ogImage}`} />
-    {Astro.url.hostname.endsWith('vercel.app') && <meta name="robots" content="noindex" />}
+    {(noindex || Astro.url.hostname.endsWith('vercel.app')) && <meta name="robots" content="noindex, follow" />}
 
     <!-- ClashDisplay (headlines) + Satoshi (body) via Fontshare -->
     <link rel="preconnect" href="https://api.fontshare.com" />
@@ -58,6 +60,7 @@ const fullTitle = title === 'YumEarth EU' ? title : `${title} | YumEarth EU`;
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="canonical" href={`${siteUrl}${Astro.url.pathname.replace(/\/$/, '') || '/'}`} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{fullTitle}</title>
     <ClientRouter />
 
@@ -75,15 +78,25 @@ const fullTitle = title === 'YumEarth EU' ? title : `${title} | YumEarth EU`;
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "YumEarth EU",
+      "legalName": "Gurux Entertainment S.L.",
       "url": "https://yumearth.eu",
       "logo": "https://yumearth.eu/images/yumearth-logo.png",
-      "description": "EMEA Master Distribution of YumEarth organic candy. No artificial colors, no artificial flavors.",
-      "areaServed": "Europe",
-      "sameAs": ["https://www.instagram.com/yumearth.eu/"],
+      "description": "Official EMEA Master Distributor of YumEarth organic candy. USDA Organic certified — no artificial colors, no artificial flavors. Serving 30+ countries across Europe, Middle East and Central Asia.",
+      "areaServed": ["Europe", "Middle East", "Central Asia", "Africa"],
+      "sameAs": [
+        "https://www.instagram.com/yumearth.eu/",
+        "https://www.tiktok.com/@yumearth.eu"
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "hello@yumearth.eu",
-        "contactType": "customer service"
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Spanish"]
+      },
+      "potentialAction": {
+        "@type": "ContactAction",
+        "target": "https://yumearth.eu/contact",
+        "name": "Contact YumEarth EU"
       }
     })} />
   </head>

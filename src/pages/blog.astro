@@ -57,7 +57,22 @@ const posts = [
 ];
 ---
 
-<Layout title="Blog" description="YumEarth EU blog — organic food, sustainability, and the plant-based movement.">
+<Layout title="Blog | Organic Candy, No Artificial Dyes & Ingredients | YumEarth EU" description="The YumEarth EU blog — organic food, artificial dyes in candy, allergen-friendly ingredients, sustainability and the plant-based movement.">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Why We Said No to Artificial Dyes — and What We Use Instead",
+    "description": "Most candy gets its color from petroleum-derived dyes. We decided early on that wasn't good enough. Here's how YumEarth does it differently.",
+    "datePublished": "2025-06-01",
+    "author": { "@type": "Organization", "name": "YumEarth EU" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "YumEarth EU",
+      "logo": { "@type": "ImageObject", "url": "https://yumearth.eu/images/yumearth-logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://yumearth.eu/blog" },
+    "keywords": ["organic candy", "no artificial dyes", "natural food coloring", "organic lollipops", "allergen-free candy", "vegan candy"]
+  })} />
   <Nav />
   <main class="pt-32">
 

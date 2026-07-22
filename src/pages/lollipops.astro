@@ -91,7 +91,16 @@ const wrappers = [
 ];
 ---
 
-<Layout title="Lollipops" description="YumEarth EU organic lollipops — Classic Assorted, Juicy Pops, Vitamin C Pops, 100-unit bulk. Real fruit, zero artificial anything.">
+<Layout title="Organic Lollipops | Classic, Juicy & Vitamin C Pops | YumEarth EU" description="YumEarth organic lollipops: Classic Assorted, Juicy Pops, Vitamin C Pops — 14 to 100 units. Real fruit juice colors, zero artificial dyes or flavors. Wholesale available across Europe & Middle East.">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yumearth.eu/" },
+      { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://yumearth.eu/products" },
+      { "@type": "ListItem", "position": 3, "name": "Organic Lollipops", "item": "https://yumearth.eu/lollipops" }
+    ]
+  })} />
   <Nav />
   <main class="pt-32">
 
@@ -104,7 +113,7 @@ const wrappers = [
       </div>
       <div class="max-w-3xl">
         <h1 class="font-black mb-4" style="font-family:'Nunito',sans-serif; font-size:clamp(2.5rem,6vw,4.5rem); line-height:0.95; letter-spacing:-0.03em;">
-          Lollipops
+          Organic Lollipops
         </h1>
       </div>
       <div class="mt-4">
