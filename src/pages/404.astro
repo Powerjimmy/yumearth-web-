@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+Astro.response.status = 404;
+---
+
+<Layout title="Page Not Found — YumEarth EU" noindex={true}>
+  <Nav />
+  <main class="pt-32 pb-28">
+    <section class="max-w-7xl mx-auto px-6 text-center">
+      <p class="text-xs font-black uppercase tracking-widest mb-4" style="color:var(--color-teal);">404</p>
+      <h1 class="font-black mb-6" style="font-family:'Nunito',sans-serif; font-size:clamp(3rem,8vw,5rem); line-height:0.95; letter-spacing:-0.03em;">
+        page not<br /><span style="color:var(--color-orange);">found.</span>
+      </h1>
+      <p class="text-xl max-w-md mx-auto mb-10" style="color:var(--color-ink-muted); line-height:1.65; font-weight:500;">
+        This page doesn't exist. Let's get you back to the good stuff.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/" class="btn-primary text-base">Go home →</a>
+        <a href="/products/" class="btn-secondary text-base">View products</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

@@ -12,7 +12,16 @@ export default defineConfig({
 
   site: 'https://yumearth.eu',
 
-  integrations: [react(), sitemap()],
+  trailingSlash: 'always',
+
+  integrations: [
+    react(),
+    sitemap({
+      filter: (page) =>
+        !page.includes('/legal-notice') &&
+        !page.includes('/privacy-policy'),
+    }),
+  ],
 
   vite: {
     plugins: [tailwindcss()]
