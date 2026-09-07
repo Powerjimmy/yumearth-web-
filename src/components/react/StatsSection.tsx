@@ -32,7 +32,7 @@ function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {
 const stats = [
   { value: 1, suffix: '', prefix: '#', label: 'organic candy brand', color: 'var(--color-teal)' },
   { value: 0, suffix: '', prefix: '', label: 'artificial colors', color: 'var(--color-green)' },
-  { value: 30, suffix: '+', prefix: '', label: 'countries distributed', color: 'var(--color-magenta)' },
+  { value: 40, suffix: '+', prefix: '', label: 'countries distributed', color: 'var(--color-magenta)' },
   { value: 6, suffix: '', prefix: '', label: 'product lines', color: 'var(--color-teal)' },
 ];
 
@@ -50,9 +50,6 @@ export default function StatsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
             >
-              <p className="text-xs font-black uppercase tracking-widest mb-4" style={{ color: 'var(--color-teal)' }}>
-                Good Story
-              </p>
               <h2
                 className="font-black mb-8"
                 style={{

@@ -50,9 +50,6 @@ export default function VideoShowcase() {
             transition={{ duration: 0.65, ease: [0.23, 1, 0.32, 1] }}
             className="mb-10 text-center"
           >
-            <p className="text-xs font-black uppercase tracking-widest mb-3" style={{ color: 'var(--color-teal)' }}>
-              It's delicious
-            </p>
             <h2 className="font-black"
               style={{ fontFamily: "'ClashDisplay','Nunito',sans-serif", fontSize: 'clamp(2rem,5vw,3.5rem)', lineHeight: 0.95, letterSpacing: '-0.03em' }}>
               see it in action.

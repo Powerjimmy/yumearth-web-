@@ -60,9 +60,6 @@ export default function TestimonialsSection() {
             transition={{ duration: 0.65, ease: [0.23, 1, 0.32, 1] }}
             className="mb-16 text-center"
           >
-            <p className="text-xs font-black uppercase tracking-widest mb-4" style={{ color: 'var(--color-teal)' }}>
-              What they say
-            </p>
             <h2 className="font-black"
               style={{ fontFamily: "'ClashDisplay','Nunito',sans-serif", fontSize: 'clamp(2rem,5vw,3.5rem)', lineHeight: 0.95, letterSpacing: '-0.03em' }}>
               fans don't lie.
@@ -90,7 +87,7 @@ export default function TestimonialsSection() {
                       ))}
                     </div>
                     <p className="text-base leading-relaxed mb-6" style={{ color: 'var(--color-ink)', lineHeight: 1.7 }}>
-                      "{t.text}"
+                      &#x201C;{t.text}&#x201D;
                     </p>
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full flex items-center justify-center text-xs font-black"
