@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+---
+<Layout
+  title="Why We Said No to Artificial Dyes — and What We Use Instead"
+  description="Most candy gets its color from petroleum-derived dyes. We decided early on that wasn't good enough. Here's how YumEarth does it differently."
+>
+  <Nav />
+  <main class="pt-32 pb-24">
+    <article class="max-w-2xl mx-auto px-6">
+      <div class="mb-6 flex items-center gap-3">
+        <a href="/blog" class="text-xs font-bold uppercase tracking-widest" style="color:var(--color-teal);">← Blog</a>
+        <span class="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style="background:rgba(0,122,133,0.10); color:var(--color-teal);">Ingredients</span>
+        <span class="text-xs" style="color:var(--color-ink-muted);">June 2025</span>
+      </div>
+      <h1 class="font-black mb-8" style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(2rem,5vw,3rem); line-height:1.0; letter-spacing:-0.03em;">
+        Why We Said No to Artificial Dyes — and What We Use Instead
+      </h1>
+      <div class="space-y-5 text-base" style="color:var(--color-ink); line-height:1.75;">
+        <p class="text-xl font-medium" style="color:var(--color-ink-muted); line-height:1.65; max-width:65ch;">Most candy gets its color from petroleum-derived dyes: Red 40, Yellow 5, Blue 1. They're cheap, stable, and vivid. They're also made from crude oil byproducts, and several have been linked to behavioral issues in children. We decided early on that wasn't good enough.</p>
+        <h2 class="font-black text-xl mt-10 mb-2" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">The problem with FD&C dyes</h2>
+        <p style="max-width:65ch;">FD&C dyes (Food, Drug & Cosmetic certified synthetic colorants) have been the industry default for decades. They produce bright, consistent colors at low cost. But the European Food Safety Authority requires warning labels on foods containing six of them: "May have an adverse effect on activity and attention in children." That label requirement alone tells you something.</p>
+        <h2 class="font-black text-xl mt-10 mb-2" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">What we use instead</h2>
+        <p style="max-width:65ch;">Every YumEarth color comes from real food sources: organic fruit and vegetable juice concentrates, turmeric, black carrot, purple sweet potato, annatto-free natural extracts. The red in our lollipops comes from fruit. The yellow comes from turmeric. It takes more work and costs more. We think that's worth it.</p>
+        <h2 class="font-black text-xl mt-10 mb-2" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">Does it taste different?</h2>
+        <p style="max-width:65ch;">Yes, actually. When your color comes from real fruit, some of that flavor comes with it. Our strawberry lollipops taste like strawberries because strawberry is in the recipe, not just in the name on the label.</p>
+        <h2 class="font-black text-xl mt-10 mb-2" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">Why this matters for retailers</h2>
+        <p style="max-width:65ch;">Parents read labels. In our experience, a parent who picks up a YumEarth product and reads the ingredient list almost always buys it. The ingredients are the pitch. No decoding required: if you can say it out loud without stumbling, it belongs in candy.</p>
+      </div>
+      <div class="mt-16 rounded-3xl p-10" style="background:var(--color-surface);">
+        <p class="text-xs font-black uppercase tracking-widest mb-3" style="color:var(--color-teal);">Organic & allergen-friendly</p>
+        <h3 class="font-black mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(1.5rem,3vw,2rem); letter-spacing:-0.03em;">YumEarth fits the movement.</h3>
+        <p class="text-base mb-6" style="color:var(--color-ink-muted); line-height:1.65; max-width:480px;">USDA Organic certified. Vegan. Gluten-free. No artificial colors, no artificial flavors. Available across Europe, Middle East and beyond.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/products" class="btn-primary text-sm">View products →</a>
+          <a href="/contact" class="btn-secondary text-sm">Get in touch</a>
+        </div>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>

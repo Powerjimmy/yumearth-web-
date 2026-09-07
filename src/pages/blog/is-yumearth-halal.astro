@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+---
+<Layout
+  title="Is YumEarth Halal? What You Need to Know"
+  description="YumEarth contains no pork-derived gelatin and no alcohol-based flavors. Here's the full breakdown for halal-conscious shoppers and retailers."
+>
+  <Nav />
+  <main class="pt-32 pb-24">
+    <article class="max-w-2xl mx-auto px-6">
+      <div class="mb-6 flex items-center gap-3">
+        <a href="/blog" class="text-xs font-bold uppercase tracking-widest" style="color:var(--color-teal);">← Blog</a>
+        <span class="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style="background:rgba(0,122,133,0.10); color:var(--color-teal);">Ingredients</span>
+        <span class="text-xs" style="color:var(--color-ink-muted);">2025</span>
+      </div>
+      <h1 class="font-black mb-6" style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(2rem,5vw,3rem); line-height:1.0; letter-spacing:-0.03em;">
+        Is YumEarth Halal?
+      </h1>
+      <div class="space-y-5 text-base" style="color:var(--color-ink); line-height:1.75;">
+        <p class="text-xl font-medium" style="color:var(--color-ink-muted); line-height:1.65; max-width:65ch;">YumEarth does not carry official halal certification, but the ingredient profile is clean: no pork-derived gelatin, no alcohol-based flavor carriers, no animal fats. Here's the full picture.</p>
+        <h2 class="font-black text-xl mt-10 mb-2" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">The gelatin question</h2>
+        <p style="max-width:65ch;">Most gummy candy is made with gelatin derived from pork or beef. This is the main concern for halal shoppers. YumEarth uses plant-based pectin instead of gelatin across its entire soft candy range — gummy bears, fruit snacks, sour beans. No gelatin of any kind.</p>
+        <h2 class="font-black text-xl mt-10 mb-2" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">Alcohol in flavors</h2>
+        <p style="max-width:65ch;">Some natural flavors use alcohol as a carrier. YumEarth uses organic fruit and vegetable juice concentrates for both color and flavor. The ingredient declarations list natural flavors generically — if this is a concern for your community, we recommend consulting the full ingredient specification sheets, which we can provide on request.</p>
+        <h2 class="font-black text-xl mt-10 mb-2" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">Available in MENA markets</h2>
+        <p style="max-width:65ch;">YumEarth is distributed across the Middle East and North Africa through our EMEA distribution network. We work with retailers and importers in Saudi Arabia, UAE, Kuwait, and other MENA markets. If you're a retailer in the region looking to stock YumEarth, get in touch.</p>
+        <h2 class="font-black text-xl mt-10 mb-2" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">Bottom line</h2>
+        <p style="max-width:65ch;">No official halal certification — but no pork gelatin, no lard, no alcohol-based carriers. Vegan, USDA Organic, and allergen-free. For many halal-conscious consumers and families, YumEarth passes the ingredient check. For strict halal compliance requiring certification, consult your local religious authority with the full product specification.</p>
+      </div>
+      <div class="mt-16 rounded-3xl p-10" style="background:var(--color-surface);">
+        <p class="text-xs font-black uppercase tracking-widest mb-3" style="color:var(--color-teal);">Available across MENA</p>
+        <h3 class="font-black mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(1.5rem,3vw,2rem); letter-spacing:-0.03em;">Stocking YumEarth in your market?</h3>
+        <p class="text-base mb-6" style="color:var(--color-ink-muted); line-height:1.65; max-width:480px;">We distribute across Europe, the Middle East and Central Asia. Reach out for wholesale pricing, full ingredient specs, and import documentation.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/contact" class="btn-primary text-sm">Contact us →</a>
+          <a href="/products" class="btn-secondary text-sm">View products</a>
+        </div>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>

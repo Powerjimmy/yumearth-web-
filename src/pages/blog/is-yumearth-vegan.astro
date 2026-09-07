@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+---
+<Layout
+  title="Is YumEarth Vegan? Yes — Here's What's in Every Product"
+  description="YumEarth candy is 100% vegan. No gelatin, no dairy, no animal-derived ingredients of any kind. Here's a full breakdown by product line."
+>
+  <Nav />
+  <main class="pt-32 pb-24">
+    <article class="max-w-2xl mx-auto px-6">
+      <div class="mb-6 flex items-center gap-3">
+        <a href="/blog" class="text-xs font-bold uppercase tracking-widest" style="color:var(--color-teal);">← Blog</a>
+        <span class="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style="background:rgba(0,122,133,0.10); color:var(--color-teal);">Ingredients</span>
+        <span class="text-xs" style="color:var(--color-ink-muted);">2025</span>
+      </div>
+      <h1 class="font-black mb-6" style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(2rem,5vw,3rem); line-height:1.0; letter-spacing:-0.03em;">
+        Is YumEarth Vegan?
+      </h1>
+      <div class="space-y-5 text-base" style="color:var(--color-ink); line-height:1.75;">
+        <p class="text-xl font-medium" style="color:var(--color-ink-muted); line-height:1.65; max-width:65ch;">Yes. Every YumEarth product is 100% vegan. No gelatin, no dairy, no beeswax, no carmine — no animal-derived ingredients of any kind.</p>
+        <h2 class="font-black text-xl mt-10 mb-2" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">What makes candy non-vegan?</h2>
+        <p style="max-width:65ch;">Most conventional candy contains at least one of these: gelatin (from animal bones and skin, used to make gummies chewy), shellac (from lac bugs, used to coat hard candy and make it shiny), carmine (red dye from crushed cochineal insects), or beeswax (used in some candy coatings). None of these are in any YumEarth product.</p>
+        <h2 class="font-black text-xl mt-10 mb-2" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">YumEarth gummies: vegan?</h2>
+        <p style="max-width:65ch;">Yes. The gummy bears, fruit snacks, and sour beans are all made with plant-based pectin instead of gelatin. Pectin comes from fruit — most commonly apple or citrus peel. It gives the same chew without any animal byproducts.</p>
+        <h2 class="font-black text-xl mt-10 mb-2" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">YumEarth lollipops: vegan?</h2>
+        <p style="max-width:65ch;">Yes. The lollipops contain no gelatin and no shellac coating. Colors come from organic fruit and vegetable juice concentrates. Flavors come from natural extracts. The full ingredient list is short and readable — no hidden animal products.</p>
+        <h2 class="font-black text-xl mt-10 mb-2" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">Certified organic and allergen-free too</h2>
+        <p style="max-width:65ch;">Beyond being vegan, YumEarth is USDA Organic certified and free from the top 9 allergens: peanuts, tree nuts, soy, dairy, eggs, wheat/gluten, sesame, shellfish, and fish. One of the few candy brands that genuinely works for almost every dietary restriction at once.</p>
+      </div>
+      <div class="mt-16 rounded-3xl p-10" style="background:var(--color-surface);">
+        <p class="text-xs font-black uppercase tracking-widest mb-3" style="color:var(--color-teal);">100% plant-based</p>
+        <h3 class="font-black mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(1.5rem,3vw,2rem); letter-spacing:-0.03em;">Vegan candy that actually tastes good.</h3>
+        <p class="text-base mb-6" style="color:var(--color-ink-muted); line-height:1.65; max-width:480px;">No gelatin. No shellac. No carmine. Real fruit flavors, real fruit colors. Available wholesale across Europe & the Middle East.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/products" class="btn-primary text-sm">View products →</a>
+          <a href="/contact" class="btn-secondary text-sm">Get in touch</a>
+        </div>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>

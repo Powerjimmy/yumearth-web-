@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+---
+<Layout
+  title="Is YumEarth Healthy? The Honest Answer"
+  description="YumEarth is candy — not a health food. But compared to conventional candy, the difference in ingredients is significant. Here's an honest breakdown."
+>
+  <Nav />
+  <main class="pt-32 pb-24">
+    <article class="max-w-2xl mx-auto px-6">
+      <div class="mb-6 flex items-center gap-3">
+        <a href="/blog" class="text-xs font-bold uppercase tracking-widest" style="color:var(--color-teal);">← Blog</a>
+        <span class="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style="background:rgba(0,122,133,0.10); color:var(--color-teal);">Nutrition</span>
+        <span class="text-xs" style="color:var(--color-ink-muted);">2025</span>
+      </div>
+      <h1 class="font-black mb-6" style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(2rem,5vw,3rem); line-height:1.0; letter-spacing:-0.03em;">
+        Is YumEarth Healthy? The Honest Answer.
+      </h1>
+      <div class="space-y-5 text-base" style="color:var(--color-ink); line-height:1.75;">
+        <p class="text-xl font-medium" style="color:var(--color-ink-muted); line-height:1.65; max-width:65ch;">It's candy. It contains sugar. It is not a health food. But compared to what's in most conventional candy, the ingredient difference is real and significant.</p>
+        <h2 class="font-black text-xl mt-10 mb-2" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">What YumEarth doesn't contain</h2>
+        <p style="max-width:65ch;">No FD&C synthetic dyes (Red 40, Yellow 5, Blue 1, etc.). No high-fructose corn syrup. No artificial flavors. No preservatives. No top 9 allergens. No gelatin. These aren't minor omissions — they're the things parents and health-conscious shoppers specifically look to avoid.</p>
+        <h2 class="font-black text-xl mt-10 mb-2" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">What it does contain</h2>
+        <p style="max-width:65ch;">Organic cane sugar. Organic brown rice syrup. Organic fruit and vegetable juice concentrates for color. Natural flavors from fruit extracts. Vitamin C in some products. The ingredient list is short and readable — every item is something you'd recognize.</p>
+        <h2 class="font-black text-xl mt-10 mb-2" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">USDA Organic certification</h2>
+        <p style="max-width:65ch;">USDA Organic means the ingredients were grown without synthetic pesticides or fertilizers and are non-GMO. It doesn't mean low-sugar or nutritionally dense — but it does mean what's in the product meets a strict standard for how it was grown and processed.</p>
+        <h2 class="font-black text-xl mt-10 mb-2" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">The real comparison</h2>
+        <p style="max-width:65ch;">Compare YumEarth to other candy, not to an apple. On that comparison, it wins clearly: real color sources, real flavor sources, no synthetic additives, certified organic. For a family that wants to occasionally give their kids candy without the chemical load, YumEarth is one of the better options available.</p>
+      </div>
+      <div class="mt-16 rounded-3xl p-10" style="background:var(--color-surface);">
+        <p class="text-xs font-black uppercase tracking-widest mb-3" style="color:var(--color-teal);">Real ingredients</p>
+        <h3 class="font-black mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(1.5rem,3vw,2rem); letter-spacing:-0.03em;">Candy you can read the label on.</h3>
+        <p class="text-base mb-6" style="color:var(--color-ink-muted); line-height:1.65; max-width:480px;">No artificial dyes. No artificial flavors. USDA Organic certified. Available wholesale across Europe & the Middle East.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/products" class="btn-primary text-sm">View products →</a>
+          <a href="/contact" class="btn-secondary text-sm">Get in touch</a>
+        </div>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>
