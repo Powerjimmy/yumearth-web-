@@ -1,0 +1,344 @@
+- generic [ref=e2]:
+  - navigation [ref=e3]:
+    - generic [ref=e4]: Organic · Allergy-friendly · No Artificial Dyes · EMEA Master Distribution
+    - generic [ref=e5]:
+      - link "YumEarth EU" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "YumEarth EU" [ref=e7]
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - link "Products" [ref=e10] [cursor=pointer]:
+            - /url: /products
+            - text: Products
+            - img [ref=e11]
+          - generic:
+            - generic:
+              - link "Lollipops":
+                - /url: /lollipops
+                - text: Lollipops
+              - link "Soft Candy":
+                - /url: /soft-candy
+                - text: Soft Candy
+        - listitem [ref=e13]:
+          - link "Distribution" [ref=e14] [cursor=pointer]:
+            - /url: /distribution
+        - listitem [ref=e15]:
+          - link "FAQs" [ref=e16] [cursor=pointer]:
+            - /url: /faqs
+        - listitem [ref=e17]:
+          - link "Contact" [ref=e18] [cursor=pointer]:
+            - /url: /contact
+      - generic [ref=e19]:
+        - link "Instagram" [ref=e20] [cursor=pointer]:
+          - /url: https://www.instagram.com/yumearth.eu/
+          - img [ref=e21]
+        - link "Facebook" [ref=e23] [cursor=pointer]:
+          - /url: https://www.facebook.com/yumearth.eu
+          - img [ref=e24]
+        - link "LinkedIn" [ref=e26] [cursor=pointer]:
+          - /url: https://www.linkedin.com/company/yumearth-europe-by-gurux/posts/?feedView=all
+          - img [ref=e27]
+        - link "Get in touch" [ref=e29] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=e30]:
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e36]: EMEA Master Distribution
+        - heading "organic. simple. delicious." [level=1] [ref=e37]:
+          - text: organic.
+          - text: simple.
+          - text: delicious.
+        - paragraph [ref=e38]: Tasty candies with organic ingredients. No artificial dyes. No artificial flavours. Vegan certified & allergen friendly. Non-GMO, gluten free.
+        - link "Become a distributor" [ref=e40] [cursor=pointer]:
+          - /url: /distribution
+          - text: Become a distributor
+          - img [ref=e41]
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - paragraph [ref=e45]: "#1 Organic"
+          - paragraph [ref=e46]: Candy Brand
+        - img "YumEarth Lollipops" [ref=e49]
+        - generic [ref=e51]:
+          - paragraph [ref=e52]: Ships to
+          - paragraph [ref=e53]: 40+ Countries in EMEA
+    - 'img "Allergen friendly: Peanut Free, Tree Nut Free, Soy Free, Dairy Free, Allergy Friendly Dyes, Sesame Free, Egg Free, Gluten Free, Shellfish Free, Fish Free" [ref=e56]'
+    - generic [ref=e58]:
+      - generic [ref=e59]:
+        - generic [ref=e60]: Organic
+        - generic [ref=e61]: ✦
+      - generic [ref=e62]:
+        - generic [ref=e63]: Allergy-friendly
+        - generic [ref=e64]: ✦
+      - generic [ref=e65]:
+        - generic [ref=e66]: NO ARTIFICIAL DYES
+        - generic [ref=e67]: ✦
+      - generic [ref=e68]:
+        - generic [ref=e69]: EMEA Master Distribution
+        - generic [ref=e70]: ✦
+      - generic [ref=e71]:
+        - generic [ref=e72]: non-gmo
+        - generic [ref=e73]: ✦
+      - generic [ref=e74]:
+        - generic [ref=e75]: gluten free
+        - generic [ref=e76]: ✦
+      - generic [ref=e77]:
+        - generic [ref=e78]: vegan
+        - generic [ref=e79]: ✦
+      - generic [ref=e80]:
+        - generic [ref=e81]: no artificial flavours
+        - generic [ref=e82]: ✦
+      - generic [ref=e83]:
+        - generic [ref=e84]: allergen friendly
+        - generic [ref=e85]: ✦
+      - generic [ref=e86]:
+        - generic [ref=e87]: usda certified
+        - generic [ref=e88]: ✦
+      - generic [ref=e89]:
+        - generic [ref=e90]: it's delicious
+        - generic [ref=e91]: ✦
+      - generic [ref=e92]:
+        - generic [ref=e93]: Organic
+        - generic [ref=e94]: ✦
+      - generic [ref=e95]:
+        - generic [ref=e96]: Allergy-friendly
+        - generic [ref=e97]: ✦
+      - generic [ref=e98]:
+        - generic [ref=e99]: NO ARTIFICIAL DYES
+        - generic [ref=e100]: ✦
+      - generic [ref=e101]:
+        - generic [ref=e102]: EMEA Master Distribution
+        - generic [ref=e103]: ✦
+      - generic [ref=e104]:
+        - generic [ref=e105]: non-gmo
+        - generic [ref=e106]: ✦
+      - generic [ref=e107]:
+        - generic [ref=e108]: gluten free
+        - generic [ref=e109]: ✦
+      - generic [ref=e110]:
+        - generic [ref=e111]: vegan
+        - generic [ref=e112]: ✦
+      - generic [ref=e113]:
+        - generic [ref=e114]: no artificial flavours
+        - generic [ref=e115]: ✦
+      - generic [ref=e116]:
+        - generic [ref=e117]: allergen friendly
+        - generic [ref=e118]: ✦
+      - generic [ref=e119]:
+        - generic [ref=e120]: usda certified
+        - generic [ref=e121]: ✦
+      - generic [ref=e122]:
+        - generic [ref=e123]: it's delicious
+        - generic [ref=e124]: ✦
+    - generic [ref=e127]:
+      - generic [ref=e129]:
+        - heading "it's delicious." [level=2] [ref=e130]
+        - link "View all products →" [ref=e131] [cursor=pointer]:
+          - /url: /products
+      - generic [ref=e132]:
+        - link "Lollipops Lollipops" [ref=e135] [cursor=pointer]:
+          - /url: /lollipops
+          - img "Lollipops" [ref=e137]
+          - generic [ref=e138]:
+            - paragraph
+            - heading "Lollipops" [level=3] [ref=e139]
+            - paragraph
+        - link "Soft Candy Soft Candy" [ref=e142] [cursor=pointer]:
+          - /url: /soft-candy
+          - img "Soft Candy" [ref=e144]
+          - generic [ref=e145]:
+            - paragraph
+            - heading "Soft Candy" [level=3] [ref=e146]
+            - paragraph
+    - generic [ref=e149]:
+      - generic [ref=e150]:
+        - paragraph [ref=e151]: Why YumEarth
+        - heading "no shortcuts. no compromises." [level=2] [ref=e152]:
+          - text: no shortcuts.
+          - text: no compromises.
+      - generic [ref=e153]:
+        - generic [ref=e154]:
+          - generic [ref=e155]: "01"
+          - heading "Zero artificial colors." [level=3] [ref=e156]
+        - generic [ref=e158]:
+          - generic [ref=e159]: "02"
+          - heading "Certified Organic." [level=3] [ref=e160]
+        - generic [ref=e162]:
+          - generic [ref=e163]: "03"
+          - heading "Kids actually want to eat it." [level=3] [ref=e164]
+    - generic [ref=e168]:
+      - heading "see it in action." [level=2] [ref=e170]
+      - img [ref=e175]
+    - generic [ref=e181]:
+      - paragraph [ref=e182]: It's delicious
+      - heading "real ingredients. real flavours." [level=2] [ref=e183]:
+        - text: real ingredients.
+        - text: real flavours.
+      - link "See all products →" [ref=e184] [cursor=pointer]:
+        - /url: /products
+    - generic [ref=e187]:
+      - generic [ref=e188]:
+        - generic [ref=e189]:
+          - paragraph [ref=e190]: Sweet Gallery
+          - heading "the full range." [level=2] [ref=e191]
+        - link "@yumearth.eu →" [ref=e192] [cursor=pointer]:
+          - /url: https://www.instagram.com/yumearth.eu/
+      - generic [ref=e193]:
+        - 'link "YumEarth Lollipops #besteverlollipop" [ref=e194] [cursor=pointer]':
+          - /url: https://www.instagram.com/yumearth.eu/
+          - img "YumEarth Lollipops" [ref=e196]
+          - paragraph [ref=e198]: "#besteverlollipop"
+        - link "YumEarth Fruit Snacks 100% organic fruit snacks" [ref=e199] [cursor=pointer]:
+          - /url: https://www.instagram.com/yumearth.eu/
+          - img "YumEarth Fruit Snacks" [ref=e201]
+          - paragraph [ref=e203]: 100% organic fruit snacks
+        - link "YumEarth Gummy Bears Organic gummy bears" [ref=e204] [cursor=pointer]:
+          - /url: https://www.instagram.com/yumearth.eu/
+          - img "YumEarth Gummy Bears" [ref=e206]
+          - paragraph [ref=e208]: Organic gummy bears
+        - link "YumEarth Sour Beans Your new sour obsession" [ref=e209] [cursor=pointer]:
+          - /url: https://www.instagram.com/yumearth.eu/
+          - img "YumEarth Sour Beans" [ref=e211]
+          - paragraph [ref=e213]: Your new sour obsession
+        - link "YumEarth Giggles Perfect for little ones" [ref=e214] [cursor=pointer]:
+          - /url: https://www.instagram.com/yumearth.eu/
+          - img "YumEarth Giggles" [ref=e216]
+          - paragraph [ref=e218]: Perfect for little ones
+        - link "YumEarth Vitamin C Lollipops 100% Daily Vitamin C" [ref=e219] [cursor=pointer]:
+          - /url: https://www.instagram.com/yumearth.eu/
+          - img "YumEarth Vitamin C Lollipops" [ref=e221]
+          - paragraph [ref=e223]: 100% Daily Vitamin C
+      - link "View all products →" [ref=e225] [cursor=pointer]:
+        - /url: /products
+    - generic [ref=e227]:
+      - paragraph [ref=e228]: Distribution
+      - heading "Europe. Middle East & Africa And beyond." [level=2] [ref=e229]:
+        - text: Europe. Middle East & Africa
+        - text: And beyond.
+      - generic [ref=e230]:
+        - generic [ref=e231]:
+          - generic [ref=e232]: 🇸🇦
+          - text: Saudi Arabia
+        - generic [ref=e233]:
+          - generic [ref=e234]: 🇰🇿
+          - text: Kazakhstan
+        - generic [ref=e235]:
+          - generic [ref=e236]: 🇸🇰
+          - text: Slovakia
+        - generic [ref=e237]:
+          - generic [ref=e238]: 🇬🇷
+          - text: Greece
+        - generic [ref=e239]:
+          - generic [ref=e240]: 🇨🇿
+          - text: Czech Republic
+        - generic [ref=e241]:
+          - generic [ref=e242]: 🇰🇬
+          - text: Kyrgyzstan
+        - generic [ref=e243]:
+          - generic [ref=e244]: 🇦🇪
+          - text: UAE
+        - generic [ref=e245]:
+          - generic [ref=e246]: 🇫🇷
+          - text: France
+        - generic [ref=e247]:
+          - generic [ref=e248]: 🇪🇪
+          - text: Estonia
+        - generic [ref=e249]:
+          - generic [ref=e250]: 🇵🇱
+          - text: Poland
+        - link "+ more →" [ref=e251] [cursor=pointer]:
+          - /url: /distribution
+      - link "View all distribution →" [ref=e252] [cursor=pointer]:
+        - /url: /distribution
+    - generic [ref=e255]:
+      - heading "fans don't lie." [level=2] [ref=e257]
+      - generic [ref=e258]:
+        - generic [ref=e259]:
+          - generic [ref=e260]:
+            - img [ref=e261]
+            - img [ref=e263]
+            - img [ref=e265]
+            - img [ref=e267]
+            - img [ref=e269]
+          - paragraph [ref=e271]: “Finally, candy I can give my kids without worrying. The lollipops are a huge hit, and I love that they're made with real fruit juice.”
+          - generic [ref=e272]:
+            - generic [ref=e273]: SM
+            - generic [ref=e274]:
+              - paragraph [ref=e275]: Sarah M.
+              - paragraph [ref=e276]: Mom of 3
+        - generic [ref=e277]:
+          - generic [ref=e278]:
+            - img [ref=e279]
+            - img [ref=e281]
+            - img [ref=e283]
+            - img [ref=e285]
+            - img [ref=e287]
+          - paragraph [ref=e289]: “As someone with food allergies, finding safe sweets was always a challenge. YumEarth changed everything — delicious and allergen-friendly.”
+          - generic [ref=e290]:
+            - generic [ref=e291]: MT
+            - generic [ref=e292]:
+              - paragraph [ref=e293]: Marc T.
+              - paragraph [ref=e294]: Conscious parent
+      - generic [ref=e295]:
+        - button "Previous" [ref=e296]:
+          - img [ref=e297]
+        - generic [ref=e299]:
+          - button "Go to testimonial 1" [ref=e300]
+          - button "Go to testimonial 2" [ref=e301]
+          - button "Go to testimonial 3" [ref=e302]
+          - button "Go to testimonial 4" [ref=e303]
+        - button "Next" [ref=e304]:
+          - img [ref=e305]
+    - generic [ref=e308]:
+      - heading "have questions? send us a message." [level=2] [ref=e309]:
+        - text: have questions?
+        - text: send us a message.
+      - link "hello@yumearth.eu" [ref=e311] [cursor=pointer]:
+        - /url: mailto:hello@yumearth.eu
+  - contentinfo [ref=e312]:
+    - generic [ref=e313]:
+      - generic [ref=e314]:
+        - generic [ref=e315]:
+          - link "YumEarth EU" [ref=e316] [cursor=pointer]:
+            - /url: /
+            - img "YumEarth EU" [ref=e317]
+          - paragraph [ref=e318]: Gurux Entertainment S.L · hello@yumearth.eu
+          - generic [ref=e319]:
+            - link "Instagram" [ref=e320] [cursor=pointer]:
+              - /url: https://www.instagram.com/yumearth.eu/
+              - img [ref=e321]
+            - link "Facebook" [ref=e323] [cursor=pointer]:
+              - /url: https://www.facebook.com/yumearth.eu
+              - img [ref=e324]
+            - link "LinkedIn" [ref=e326] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/yumearth-europe-by-gurux/posts/?feedView=all
+              - img [ref=e327]
+        - generic [ref=e329]:
+          - paragraph [ref=e330]: Navigation
+          - list [ref=e331]:
+            - listitem [ref=e332]:
+              - link "Products" [ref=e333] [cursor=pointer]:
+                - /url: /products
+            - listitem [ref=e334]:
+              - link "Distribution" [ref=e335] [cursor=pointer]:
+                - /url: /distribution
+            - listitem [ref=e336]:
+              - link "Contact" [ref=e337] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e338]:
+          - paragraph [ref=e339]: Info
+          - list [ref=e340]:
+            - listitem [ref=e341]:
+              - link "FAQs & Allergens" [ref=e342] [cursor=pointer]:
+                - /url: /faqs
+            - listitem [ref=e343]:
+              - link "hello@yumearth.eu" [ref=e344] [cursor=pointer]:
+                - /url: mailto:hello@yumearth.eu
+            - listitem [ref=e345]:
+              - link "Privacy Policy" [ref=e346] [cursor=pointer]:
+                - /url: /privacy-policy
+            - listitem [ref=e347]:
+              - link "Legal Notice" [ref=e348] [cursor=pointer]:
+                - /url: /legal-notice
+      - generic [ref=e349]:
+        - generic [ref=e350]: © 2026 YumEarth EU · Gurux Entertainment S.L. All rights reserved.
+        - generic [ref=e351]: EMEA Master Distribution of YumEarth®
