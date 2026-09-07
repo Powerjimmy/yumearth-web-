@@ -22,6 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# playwright-cli snapshots
+.playwright-cli/
 .vercel
 
 # local asset staging

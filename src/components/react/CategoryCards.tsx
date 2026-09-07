@@ -51,7 +51,7 @@ function Category3DCard({ href, title, tagline, desc, image, emoji, bg, accent, 
           rotateY,
           transformStyle: 'preserve-3d',
           background: bg,
-          touchAction: 'none',
+          touchAction: 'pan-y',
         }}
         whileTap={{ scale: 0.98 }}
         className="rounded-3xl overflow-hidden relative cursor-pointer group"
