@@ -7,6 +7,25 @@ import Footer from '../../components/Footer.astro';
   title="Is YumEarth Healthy? The Honest Answer"
   description="YumEarth is candy — not a health food. But compared to conventional candy, the difference in ingredients is significant. Here's an honest breakdown."
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Is YumEarth Healthy? The Honest Answer",
+    "description": "YumEarth is candy — not a health food. But compared to conventional candy, the ingredient difference is significant.",
+    "datePublished": "2025-01-01",
+    "author": { "@type": "Organization", "name": "YumEarth EU" },
+    "publisher": { "@type": "Organization", "name": "YumEarth EU", "logo": { "@type": "ImageObject", "url": "https://yumearth.eu/images/yumearth-logo.png" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://yumearth.eu/blog/is-yumearth-healthy" }
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Is YumEarth healthy?", "acceptedAnswer": { "@type": "Answer", "text": "YumEarth is candy and contains sugar. It is not a health food. However, it contains no artificial dyes, no artificial flavors, no high-fructose corn syrup, and is USDA Organic certified — making it a significantly cleaner option than conventional candy." } },
+      { "@type": "Question", "name": "Does YumEarth have artificial colors?", "acceptedAnswer": { "@type": "Answer", "text": "No. YumEarth uses organic fruit and vegetable juice concentrates for color — no FD&C synthetic dyes like Red 40 or Yellow 5." } },
+      { "@type": "Question", "name": "Is YumEarth USDA Organic?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. YumEarth is USDA Organic certified, meaning ingredients were grown without synthetic pesticides or fertilizers and are non-GMO." } }
+    ]
+  })} />
   <Nav />
   <main class="pt-32 pb-24">
     <article class="max-w-2xl mx-auto px-6">

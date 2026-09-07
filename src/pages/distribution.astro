@@ -60,7 +60,7 @@ const mena = [
 ];
 ---
 
-<Layout title="Distribution" description="YumEarth EU — official EMEA distributor. Organic candy available in Spain, France, Belgium, Poland, UAE, Saudi Arabia and 30+ countries across Europe and the Middle East.">
+<Layout title="YumEarth EU — Official EMEA Distributor | Organic Candy Wholesale" description="YumEarth EU is the official EMEA master distributor for YumEarth organic candy. Wholesale supply to retailers across 40+ countries in Europe, Middle East and Central Asia.">
   <Nav />
   <main class="pt-32">
 
@@ -122,6 +122,40 @@ const mena = [
       </div>
     </section>
 
+    <!-- Wholesale CTA -->
+    <section class="py-24" style="background:var(--color-surface);">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p class="text-xs font-black uppercase tracking-widest mb-4" style="color:var(--color-teal);">Wholesale & Import</p>
+            <h2 class="font-black mb-4" style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(2rem,4vw,2.8rem); line-height:0.95; letter-spacing:-0.03em;">
+              Bring YumEarth<br />
+              <span style="color:var(--color-teal);">to your market.</span>
+            </h2>
+            <p class="text-base mb-8" style="color:var(--color-ink-muted); line-height:1.7;">
+              We work with importers, distributors, and retailers of all sizes. Full product range, competitive wholesale pricing, and import documentation for your country.
+            </p>
+            <a href="/contact" class="btn-primary">Get wholesale pricing →</a>
+          </div>
+          <div class="space-y-4">
+            {[
+              { label: 'USDA Organic certified', desc: 'Full documentation available for customs and import' },
+              { label: 'MOQ flexible', desc: 'From specialty stores to national retail chains' },
+              { label: 'Allergen-free across the range', desc: 'Safe for schools, hospitals, and mass retail' },
+              { label: '40+ countries active', desc: 'Established logistics and distribution network' },
+            ].map(item => (
+              <div class="flex gap-4 p-5 rounded-2xl" style="background:white; box-shadow:0 1px 6px rgba(0,0,0,0.05);">
+                <div class="w-2 h-2 rounded-full mt-2 flex-shrink-0" style="background:var(--color-teal);"></div>
+                <div>
+                  <p class="font-black text-sm mb-1" style="color:var(--color-ink);">{item.label}</p>
+                  <p class="text-sm" style="color:var(--color-ink-muted);">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
 
   </main>
   <Footer />

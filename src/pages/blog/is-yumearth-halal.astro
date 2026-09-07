@@ -7,6 +7,25 @@ import Footer from '../../components/Footer.astro';
   title="Is YumEarth Halal? What You Need to Know"
   description="YumEarth contains no pork-derived gelatin and no alcohol-based flavors. Here's the full breakdown for halal-conscious shoppers and retailers."
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Is YumEarth Halal? What You Need to Know",
+    "description": "YumEarth contains no pork-derived gelatin and no alcohol-based flavor carriers. Full breakdown for halal-conscious shoppers.",
+    "datePublished": "2025-01-01",
+    "author": { "@type": "Organization", "name": "YumEarth EU" },
+    "publisher": { "@type": "Organization", "name": "YumEarth EU", "logo": { "@type": "ImageObject", "url": "https://yumearth.eu/images/yumearth-logo.png" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://yumearth.eu/blog/is-yumearth-halal" }
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Is YumEarth halal?", "acceptedAnswer": { "@type": "Answer", "text": "YumEarth does not carry official halal certification, but contains no pork-derived gelatin and no alcohol-based flavor carriers. All soft candy uses plant-based pectin instead of gelatin." } },
+      { "@type": "Question", "name": "Does YumEarth contain gelatin?", "acceptedAnswer": { "@type": "Answer", "text": "No. YumEarth uses plant-based pectin instead of gelatin across its entire soft candy range — gummy bears, fruit snacks, sour beans." } },
+      { "@type": "Question", "name": "Is YumEarth available in the Middle East?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. YumEarth is distributed across the Middle East and North Africa including Saudi Arabia, UAE, Kuwait, Lebanon, Jordan, Bahrain, Oman and Qatar." } }
+    ]
+  })} />
   <Nav />
   <main class="pt-32 pb-24">
     <article class="max-w-2xl mx-auto px-6">
