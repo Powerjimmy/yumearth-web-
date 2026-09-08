@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Where to Buy YumEarth in Europe & the Middle East"
+  description="YumEarth organic candy is available across 40+ countries in Europe and the Middle East through the official EMEA distributor. Find out where to buy YumEarth near you."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where can I buy YumEarth in Europe?",
+        "acceptedAnswer": { "@type": "Answer", "text": "YumEarth is distributed across 40+ countries in Europe through the official EMEA master distributor, YumEarth EU. Available in Spain, France, Belgium, Poland, Czech Republic, Greece, Estonia, and more. Contact hello@yumearth.eu for stockist information in your country." }
+      },
+      {
+        "@type": "Question",
+        "name": "Where to buy YumEarth in the Middle East?",
+        "acceptedAnswer": { "@type": "Answer", "text": "YumEarth is available in Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman, Lebanon, Jordan, and Morocco through the official EMEA distributor. Contact hello@yumearth.eu for local stockist information." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there an official YumEarth website for Europe?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. YumEarth EU at yumearth.eu is the official EMEA master distributor website. For purchasing as a retailer or finding a stockist near you, contact hello@yumearth.eu." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I buy YumEarth online in Europe?",
+        "acceptedAnswer": { "@type": "Answer", "text": "YumEarth EU supplies wholesale to retailers and distributors across Europe and the Middle East. For individual purchases, ask your local organic or specialty food store to stock YumEarth, or contact us to find your nearest retailer." }
+      }
+    ]
+  })} />
+  <Nav />
+  <main class="pt-32 pb-24">
+    <div class="max-w-2xl mx-auto px-6">
+
+      <p class="text-xs font-black uppercase tracking-widest mb-4" style="color:var(--color-teal);">Official EMEA Distributor</p>
+      <h1 class="font-black mb-6" style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(2rem,5vw,3rem); line-height:1.0; letter-spacing:-0.03em;">
+        Where to Buy YumEarth<br />
+        <span style="color:var(--color-teal);">in Europe & the Middle East</span>
+      </h1>
+
+      <p class="text-xl mb-12" style="color:var(--color-ink-muted); line-height:1.65;">
+        YumEarth EU is the official EMEA master distributor for YumEarth organic candy. We supply retailers, importers, and specialty food stores across 40+ countries. If you're looking for YumEarth in Europe or the Middle East — you're in the right place.
+      </p>
+
+      <div class="space-y-10 text-base" style="color:var(--color-ink); line-height:1.75;">
+
+        <div>
+          <h2 class="font-black text-xl mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">Europe</h2>
+          <p style="max-width:65ch; color:var(--color-ink-muted);">Active in Spain, France, Belgium, Poland, Czech Republic, Slovakia, Greece, Estonia, Latvia, Lithuania, Denmark, Norway, Ireland, Switzerland, Romania, Bulgaria, Serbia, Albania, Georgia, Moldova, Ukraine, Uzbekistan, Kyrgyzstan, Kazakhstan, and more.</p>
+        </div>
+
+        <div>
+          <h2 class="font-black text-xl mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">Middle East & Africa</h2>
+          <p style="max-width:65ch; color:var(--color-ink-muted);">Active in Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman, Lebanon, Jordan, Morocco, Israel, Ivory Coast, South Africa, India, and Vietnam.</p>
+        </div>
+
+        <div>
+          <h2 class="font-black text-xl mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">Are you a retailer?</h2>
+          <p style="max-width:65ch; color:var(--color-ink-muted);">We work with supermarkets, organic stores, specialty food retailers, and online shops. Full product range, competitive wholesale pricing, and import documentation available.</p>
+        </div>
+
+        <div>
+          <h2 class="font-black text-xl mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">Can't find YumEarth in your country?</h2>
+          <p style="max-width:65ch; color:var(--color-ink-muted);">If YumEarth isn't in your local store yet, contact us. We can connect you with your nearest stockist or work with you to bring YumEarth to your market.</p>
+        </div>
+
+      </div>
+
+      <div class="mt-16 rounded-3xl p-10" style="background:var(--color-surface);">
+        <p class="text-xs font-black uppercase tracking-widest mb-3" style="color:var(--color-teal);">Get in touch</p>
+        <h3 class="font-black mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(1.5rem,3vw,2rem); letter-spacing:-0.03em;">Find YumEarth near you.</h3>
+        <p class="text-base mb-6" style="color:var(--color-ink-muted); line-height:1.65; max-width:480px;">Whether you're a retailer, importer, or looking for a local stockist — we can help.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/contact" class="btn-primary">Contact us →</a>
+          <a href="/distribution" class="btn-secondary">See all countries</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <Footer />
+</Layout>

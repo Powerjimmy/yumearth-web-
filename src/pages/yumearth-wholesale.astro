@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="YumEarth Wholesale Europe — Organic Candy Distributor"
+  description="YumEarth wholesale for retailers and importers across Europe and the Middle East. USDA Organic certified, allergen-free candy. Contact the official EMEA master distributor."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I buy YumEarth wholesale in Europe?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Contact YumEarth EU at hello@yumearth.eu. We are the official EMEA master distributor and supply wholesale to retailers, importers, and distributors across 40+ countries in Europe and the Middle East." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the minimum order for YumEarth wholesale?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Minimum orders vary by market and product mix. Contact hello@yumearth.eu for wholesale pricing and MOQ information for your specific country." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does YumEarth have a European distributor?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. YumEarth EU (yumearth.eu) is the official EMEA master distributor covering Europe, the Middle East, and Central Asia." }
+      },
+      {
+        "@type": "Question",
+        "name": "What organic candy does YumEarth offer for wholesale?",
+        "acceptedAnswer": { "@type": "Answer", "text": "YumEarth offers 6 product lines for wholesale: organic lollipops (Classic, Juicy Pops, Vitamin C), gummy bears, fruit snacks, sour beans, giggles, and seasonal items. All USDA Organic certified, vegan, gluten-free, and allergen-free." }
+      }
+    ]
+  })} />
+  <Nav />
+  <main class="pt-32 pb-24">
+    <div class="max-w-2xl mx-auto px-6">
+
+      <p class="text-xs font-black uppercase tracking-widest mb-4" style="color:var(--color-teal);">Wholesale & Import</p>
+      <h1 class="font-black mb-6" style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(2rem,5vw,3rem); line-height:1.0; letter-spacing:-0.03em;">
+        YumEarth Wholesale<br />
+        <span style="color:var(--color-teal);">for Europe & the Middle East</span>
+      </h1>
+
+      <p class="text-xl mb-12" style="color:var(--color-ink-muted); line-height:1.65;">
+        YumEarth EU is the official EMEA master distributor. We supply the full YumEarth range wholesale to retailers, importers, and distributors across 40+ countries. USDA Organic certified. Allergen-free. The #1 organic candy brand.
+      </p>
+
+      <div class="space-y-10 text-base" style="color:var(--color-ink); line-height:1.75;">
+
+        <div>
+          <h2 class="font-black text-xl mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">What's available wholesale</h2>
+          <ul class="space-y-2" style="color:var(--color-ink-muted); max-width:65ch;">
+            <li>Organic Lollipops — Classic Assorted, Juicy Pops, Vitamin C Pops (14 to 100 units)</li>
+            <li>Organic Gummy Bears — standard and multipack formats</li>
+            <li>Organic Fruit Snacks — multipack snack packs</li>
+            <li>Organic Sour Beans</li>
+            <li>Organic Giggles</li>
+            <li>Seasonal and limited editions</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="font-black text-xl mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">Why retailers choose YumEarth</h2>
+          <ul class="space-y-2" style="color:var(--color-ink-muted); max-width:65ch;">
+            <li>USDA Organic certified — full documentation for customs and import</li>
+            <li>Top 9 allergen-free across every product line</li>
+            <li>No artificial dyes, no artificial flavors, no HFCS</li>
+            <li>Vegan — plant-based pectin, no gelatin</li>
+            <li>Strong sell-through: parents read the label and buy</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="font-black text-xl mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">Who we work with</h2>
+          <p style="max-width:65ch; color:var(--color-ink-muted);">Supermarkets, organic food stores, specialty food retailers, online shops, foodservice distributors, and importers. From single-store boutiques to national retail chains.</p>
+        </div>
+
+        <div>
+          <h2 class="font-black text-xl mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">How to get started</h2>
+          <p style="max-width:65ch; color:var(--color-ink-muted);">Contact us at hello@yumearth.eu with your country, store type, and estimated volume. We'll come back with pricing, product specs, and import documentation for your market.</p>
+        </div>
+
+      </div>
+
+      <div class="mt-16 rounded-3xl p-10" style="background:var(--color-surface);">
+        <p class="text-xs font-black uppercase tracking-widest mb-3" style="color:var(--color-teal);">Ready to stock YumEarth?</p>
+        <h3 class="font-black mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(1.5rem,3vw,2rem); letter-spacing:-0.03em;">Let's talk wholesale.</h3>
+        <p class="text-base mb-6" style="color:var(--color-ink-muted); line-height:1.65; max-width:480px;">Send us your country, store type, and estimated volume. We'll handle the rest.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/contact" class="btn-primary">Get wholesale pricing →</a>
+          <a href="/products" class="btn-secondary">View full range</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="What Is YumEarth? The Organic Candy Brand Explained"
+  description="YumEarth is the #1 organic candy brand in the US. USDA Organic certified, allergen-free, vegan, with no artificial dyes or flavors. Distributed across 40+ countries in Europe and the Middle East."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is YumEarth?",
+        "acceptedAnswer": { "@type": "Answer", "text": "YumEarth is the #1 organic candy brand in the United States. Founded on the principle that candy should be made with real ingredients, YumEarth produces USDA Organic certified lollipops, gummy bears, fruit snacks, and sour candy with no artificial dyes, no artificial flavors, and no high-fructose corn syrup. All products are vegan and free from the top 9 allergens." }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is YumEarth from?",
+        "acceptedAnswer": { "@type": "Answer", "text": "YumEarth is an American brand founded in the United States. In Europe, the Middle East, and Central Asia, YumEarth is distributed by YumEarth EU, the official EMEA master distributor based in Spain." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is YumEarth organic?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. YumEarth is USDA Organic certified across its entire product range. This means all ingredients are grown without synthetic pesticides or fertilizers and are non-GMO." }
+      },
+      {
+        "@type": "Question",
+        "name": "What products does YumEarth make?",
+        "acceptedAnswer": { "@type": "Answer", "text": "YumEarth makes organic lollipops (Classic Assorted, Juicy Pops, Vitamin C Pops), organic gummy bears, organic fruit snacks, organic sour beans, and organic giggles. All products are vegan, gluten-free, and allergen-free." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is YumEarth available in Europe?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. YumEarth EU is the official EMEA master distributor, supplying YumEarth organic candy to retailers across 40+ countries in Europe, the Middle East, and Central Asia." }
+      }
+    ]
+  })} />
+  <Nav />
+  <main class="pt-32 pb-24">
+    <div class="max-w-2xl mx-auto px-6">
+
+      <p class="text-xs font-black uppercase tracking-widest mb-4" style="color:var(--color-teal);">The brand</p>
+      <h1 class="font-black mb-6" style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(2rem,5vw,3rem); line-height:1.0; letter-spacing:-0.03em;">
+        What Is YumEarth?
+      </h1>
+
+      <p class="text-xl mb-12" style="color:var(--color-ink-muted); line-height:1.65;">
+        YumEarth is the #1 organic candy brand in the United States. Real ingredients. No artificial dyes. No artificial flavors. USDA Organic certified, vegan, and allergen-free across every product.
+      </p>
+
+      <div class="space-y-10 text-base" style="color:var(--color-ink); line-height:1.75;">
+
+        <div>
+          <h2 class="font-black text-xl mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">The short version</h2>
+          <p style="max-width:65ch; color:var(--color-ink-muted);">Most candy gets its color from petroleum-derived synthetic dyes and its flavor from artificial compounds. YumEarth was built on the opposite idea: organic fruit and vegetable juice concentrates for color, real fruit extracts for flavor, and a short ingredient list you can read out loud without stumbling.</p>
+        </div>
+
+        <div>
+          <h2 class="font-black text-xl mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">Certifications</h2>
+          <ul class="space-y-2" style="color:var(--color-ink-muted); max-width:65ch;">
+            <li>USDA Organic certified</li>
+            <li>Non-GMO</li>
+            <li>Vegan — no gelatin, no dairy, no animal products</li>
+            <li>Gluten-free</li>
+            <li>Free from top 9 allergens: peanuts, tree nuts, soy, dairy, eggs, wheat, sesame, shellfish, fish</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="font-black text-xl mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">The product range</h2>
+          <ul class="space-y-2" style="color:var(--color-ink-muted); max-width:65ch;">
+            <li><strong>Lollipops</strong> — Classic Assorted, Juicy Pops, Vitamin C Pops. 14 flavors, from 14 to 100 units per pack.</li>
+            <li><strong>Gummy Bears</strong> — organic gummies in standard and multipack formats.</li>
+            <li><strong>Fruit Snacks</strong> — individual snack packs for lunchboxes and on-the-go.</li>
+            <li><strong>Sour Beans</strong> — organic sour candy without artificial anything.</li>
+            <li><strong>Giggles</strong> — chewy organic candy bites.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="font-black text-xl mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; letter-spacing:-0.02em;">YumEarth in Europe</h2>
+          <p style="max-width:65ch; color:var(--color-ink-muted);">YumEarth EU is the official EMEA master distributor, covering 40+ countries across Europe, the Middle East, and Central Asia. If you're a retailer or importer looking to stock YumEarth, contact us at hello@yumearth.eu.</p>
+        </div>
+
+      </div>
+
+      <div class="mt-16 rounded-3xl p-10" style="background:var(--color-surface);">
+        <p class="text-xs font-black uppercase tracking-widest mb-3" style="color:var(--color-teal);">See the full range</p>
+        <h3 class="font-black mb-3" style="font-family:'ClashDisplay','Nunito',sans-serif; font-size:clamp(1.5rem,3vw,2rem); letter-spacing:-0.03em;">Organic candy done right.</h3>
+        <p class="text-base mb-6" style="color:var(--color-ink-muted); line-height:1.65; max-width:480px;">6 product lines. USDA Organic. Vegan. Allergen-free. Available wholesale across Europe & the Middle East.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/products" class="btn-primary">View products →</a>
+          <a href="/contact" class="btn-secondary">Get in touch</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <Footer />
+</Layout>
