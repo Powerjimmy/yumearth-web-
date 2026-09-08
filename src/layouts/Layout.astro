@@ -18,7 +18,7 @@ const {
 } = Astro.props;
 
 const siteUrl = 'https://yumearth.eu';
-const fullTitle = title === 'YumEarth EU' ? title : `${title} | YumEarth EU`;
+const fullTitle = title.includes('YumEarth EU') ? title : `${title} | YumEarth EU`;
 ---
 
 <!doctype html>
