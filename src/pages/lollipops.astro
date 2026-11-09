@@ -269,6 +269,12 @@ const wrappers = [
 
   </main>
   <Footer />
+  <script>
+    declare const fbq: Function;
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'ViewContent', { content_name: 'Lollipops', content_category: 'Organic Candy' });
+    }
+  </script>
 </Layout>
 
 <!-- Lightbox -->

@@ -222,6 +222,12 @@ const units = [
 
   </main>
   <Footer />
+  <script>
+    declare const fbq: Function;
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'ViewContent', { content_name: 'Soft Candy', content_category: 'Organic Candy' });
+    }
+  </script>
 </Layout>
 
 <!-- Lightbox -->

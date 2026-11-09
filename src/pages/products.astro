@@ -82,4 +82,11 @@ import Footer from '../components/Footer.astro';
 
   </main>
   <Footer />
+  <script>
+    // Fire ViewContent once fbq is ready (fires on every Astro page transition too)
+    declare const fbq: Function;
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'ViewContent', { content_name: 'Product Catalog', content_category: 'Organic Candy' });
+    }
+  </script>
 </Layout>
