@@ -1,8 +1,7 @@
 import { defineMiddleware } from 'astro:middleware';
 
-// Block countries that generate bot-like traffic but cannot purchase
-// (sanctions, no distribution, confirmed zero conversion history)
-const BLOCKED_COUNTRIES = new Set(['IR', 'KZ', 'KG', 'UZ']);
+// Block countries with no distribution and confirmed zero conversion potential
+const BLOCKED_COUNTRIES = new Set(['IR']);
 
 export const onRequest = defineMiddleware((context, next) => {
   const country = context.request.headers.get('x-vercel-ip-country') ?? '';
